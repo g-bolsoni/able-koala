@@ -1,0 +1,91 @@
+$font-stack: Poppins, sans-serif
+$primary-color: #F4609B
+$secondary-color: #40A1B0
+$button-color: #40A1B0
+
+@mixin d-grid 
+  display: -ms-grid
+  display: grid
+
+
+@mixin d-flex ($display: inline-flex, $align: center, $justify: center, $wrap: wrap)
+    display: $display
+    align-items: $align
+    justify-content: $justify
+    flex-wrap: $wrap
+
+@mixin container ($w: 100vw, $mg: 0 auto, $pd: 30px) 
+    width: $w
+    margin: $mg
+    padding: $pd
+
+@mixin absoluteCenter ($t: 50%, $l: 50%, $y: -50%, $x: -50%)
+    position: absolute
+    top: $t!important
+    left: $l!important
+    transform: translate($y, $x)!important
+
+@mixin horizontalList () 
+    list-style: none
+    @include d-flex($display: inline-flex)
+
+@mixin animationGrow ($s: .2s, $scale: 1.1) 
+    transition: all $s ease-in-out
+    &:hover
+        transform: scale($scale)
+
+
+
+.header
+    @include d-grid()
+    @include container()
+    grid-template-columns: 200px auto
+    row-gap: 15px
+    background: $primary-color
+    background: linear-gradient(-90deg, $primary-color 0%, $secondary-color 100%)
+    font-size: 20px
+    .logo
+        width: 200px
+        height: 100px
+        grid-column-start: 1
+        grid-column-end: 2
+        grid-row-start: 1
+        grid-row-end: 3
+        align-items: center
+        position: relative
+        overflow: hidden
+        .logo_img
+            @include absoluteCenter()
+    .menu
+        width: 100%
+        grid-column-start: 2
+        grid-column-end: 3
+        grid-row-start: 2
+        grid-row-end: 3
+        justify-content: end
+        @include d-flex()
+        ul
+            @include horizontalList()
+            width: 100%
+            justify-content: end
+            li
+                width: max-content
+                margin: 0 15px
+                @include animationGrow()
+    .contact
+        @include d-flex($justify: end)
+        grid-column-start: 2
+        grid-column-end: 3
+        grid-row-start: 1
+        grid-row-end: 2
+        width: max-content
+        border-radius: 50px
+        padding: 0 15px
+        background: $button-color
+        justify-self: end
+        -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3)
+        box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3)
+        @include animationGrow()
+
+
+
