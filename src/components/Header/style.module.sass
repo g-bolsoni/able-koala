@@ -36,6 +36,16 @@ $button-color: #40A1B0
 
 
 
+.btn_menu 
+    @include d-flex()
+    background: transparent
+    border: none
+    box-shadow: none
+    svg
+        fill: #fff
+        width: 48px
+        height: 48px
+
 .header
     @include d-grid()
     @include container()
@@ -86,6 +96,57 @@ $button-color: #40A1B0
         -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3)
         box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3)
         @include animationGrow()
+
+
+
+@media (max-width: 991px) 
+    .header
+        grid-template-columns: 50px auto 50px
+        padding:15px
+        .logo
+            grid-column-start: 2
+            grid-column-end: 3
+            grid-row-start: 1
+            grid-row-end: 2
+            justify-self: center
+            align-self: center
+        .menu
+            grid-column-start: 1
+            grid-column-end: 2
+            grid-row-start: 1
+            grid-row-end: 2
+            >div
+                position: fixed
+                width: 80vw
+                height: 100vh
+                background-color: #fff
+                top: 130px
+                left: -100%
+                z-index: 10
+                padding: 30px
+                opacity: 0
+                visibility: hidden
+                @include d-flex($align: flex-start)
+                transition: all .2s ease-in-out
+                &.active
+                    left: 0
+                    opacity: 1
+                    visibility: visible
+                li
+                    color: #000
+                    margin: 0
+                    width: 100%
+        .contact
+            grid-column-start: 3
+            grid-column-end: 3
+            grid-row-start: 1
+            grid-row-end: 2
+            padding: 0
+            background-color: transparent
+            box-shadow: none
+            svg
+                width: 48px
+                height: 48px
 
 
 
