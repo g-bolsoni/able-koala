@@ -10,11 +10,13 @@ import { AiOutlineClose } from "react-icons/ai";
 export default function Header() {
 
     const [isActive, setActive] = useState(false);
-    let isMobile = false
+    const [isMobile, setIsMobile] = useState(false);
 
-    if (screen.width < 992) {
-        isMobile = true
-    }
+    useEffect(() => {
+        if (screen.width < 992) {
+            setIsMobile(true);
+        }
+    }, [isMobile]);
 
     const toggleClassMenuBtn = () => {
         setActive(!isActive);
@@ -35,9 +37,14 @@ export default function Header() {
             </div>
 
             <div className={styles.menu}>
-                <button className={styles.btn_menu} onClick={toggleClassMenuBtn}>
-                    {isActive ? <AiOutlineClose /> : <HiMenu/>}   
-                </button>
+                {
+                    isMobile ? 
+                        <button className={styles.btn_menu} onClick={toggleClassMenuBtn}>
+                            {isActive ? <AiOutlineClose /> : <HiMenu/>}   
+                        </button> 
+                    : ''
+                }
+                
                 <div className={isActive ? styles.active : null}>
                     <ul className={styles.links}>
                         <li className={styles.link}><Link href="/home">Home</Link></li>
