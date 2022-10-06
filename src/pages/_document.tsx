@@ -10,6 +10,7 @@ export default class MyDocument extends Document {
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
                     <meta name="description" content="This book helps caregivers, family members, and friends (relatives) of the elderly and people with special needs to understand the need and importance of taking care of each other."/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
                 </Head>
                 <body>
                     <Main />

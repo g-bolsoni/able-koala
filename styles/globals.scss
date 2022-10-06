@@ -6,7 +6,7 @@
 :root{
   --white: #ffffff;
 
-  --magente: #f4609b;
+  --pink: #f4609b;
   --cyan: #40a1b0;
   --gray-900: #121214;
 }
@@ -34,4 +34,7 @@ button{
 a{
   color: inherit;
   text-decoration: none;
+}
+li{
+  list-style: none;
 }
