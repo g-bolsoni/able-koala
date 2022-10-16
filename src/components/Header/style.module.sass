@@ -1,40 +1,5 @@
-$font-stack: Poppins, sans-serif
-$primary-color: #F4609B
-$secondary-color: #40A1B0
-$button-color: #40A1B0
-
-@mixin d-grid 
-  display: -ms-grid
-  display: grid
-
-
-@mixin d-flex ($display: inline-flex, $align: center, $justify: center, $wrap: wrap)
-    display: $display
-    align-items: $align
-    justify-content: $justify
-    flex-wrap: $wrap
-
-@mixin container ($w: 100vw, $mg: 0 auto, $pd: 30px) 
-    width: $w
-    margin: $mg
-    padding: $pd
-
-@mixin absoluteCenter ($t: 50%, $l: 50%, $y: -50%, $x: -50%)
-    position: absolute
-    top: $t!important
-    left: $l!important
-    transform: translate($y, $x)!important
-
-@mixin horizontalList () 
-    list-style: none
-    @include d-flex($display: inline-flex)
-
-@mixin animationGrow ($s: .2s, $scale: 1.1) 
-    transition: all $s ease-in-out
-    &:hover
-        transform: scale($scale)
-
-
+@import '../../../styles/mixins.sass'
+@import '../../../styles/variables.sass'
 
 .btn_menu 
     @include d-flex()

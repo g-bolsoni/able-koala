@@ -6,6 +6,7 @@ import logo from './images/logos/2.png'
 import { HiMenu, HiOutlineMail } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { NavLinks } from "../NavLinks"
 
 export default function Header() {
 
@@ -46,18 +47,12 @@ export default function Header() {
                 }
                 
                 <div className={isActive ? styles.active : null}>
-                    <ul className={styles.links}>
-                        <li className={styles.link}><Link href="/home">Home</Link></li>
-                        <li className={styles.link}><Link href="/about-us">About Us</Link></li>
-                        <li className={styles.link}><Link href="/services">Services</Link></li>
-                        <li className={styles.link}><Link href="/carrers">Carrers</Link></li>
-                        <li className={styles.link}><Link href="/contact-us">Contact Us</Link></li>
-                    </ul>
+                    <NavLinks />
                 </div>
             </div>
             <div className={styles.contact}>
-                <Link href="mailto:info@ablekoala.com.au" className={styles.email_link}>
-                    {isMobile ? <HiOutlineMail /> : 'e info@ablekoala.com.au'}
+                <Link href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`} className={styles.email_link}>
+                    {isMobile ? <HiOutlineMail /> : `e ${process.env.NEXT_PUBLIC_EMAIL}`}
                 </Link>
             </div>
             

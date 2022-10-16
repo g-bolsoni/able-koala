@@ -1,0 +1,29 @@
+@import '../../../styles/mixins.sass'
+@import '../../../styles/variables.sass'
+
+
+.footer 
+    @include container()
+    @include d-grid()
+    background-color: $secondary-color
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr))
+    line-height: 2.5em
+    padding-top: calc($gap * 3)
+    >div            
+        &:not(:first-child)
+            padding-left: $gap
+    .footer_title 
+        font-size: $font-size-footer-title
+        font-weight: 700
+    ul 
+        list-style: none
+        li 
+            font-size: $font-size-links
+.aside 
+    background-color: $secondary-color
+    text-align: center
+    padding: $gap
+
+@media (max-width: 991px) 
+    .footer
+        grid-template-columns: repeat(auto-fill, minmax(25%, 100%))
