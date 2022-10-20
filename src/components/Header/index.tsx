@@ -1,24 +1,43 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import styles from './style.module.scss';
-import { BiMenuAltLeft } from "react-icons/bi";
+import { useState } from 'react';
+import { NavLinks } from './NavLinks';
+import { BiMenuAltLeft, BiX } from "react-icons/bi";
 
+import { motion } from 'framer-motion';
 
 export default function Header() {
-    const [ismobile, setIsmobile] = useState(false);
+    const [open, setOpen] = useState<boolean>(false);
+    const rotateFrom = {opacity: 0, x: -100};
+    const rotateTo   = {opacity: 1, x: 0};
 
-    useEffect(() => {
-        if(window.screen.width <= 765){
-            setIsmobile(true);
-        }
-    }, [1000]);
+    const    hamburguerIcon =   <motion.button className={styles.hamburgue} initial={rotateFrom} animate={rotateTo} transition={{delay:0.1}} onClick={() => setOpen(!open)  }>
+                                    <BiMenuAltLeft size={30} color="#FFF"  />
+                                </motion.button>;
+    const   closeIcon       =   <motion.button className={styles.hamburgue} initial={rotateFrom} animate={rotateTo} transition={{delay:0.1}} onClick={() => setOpen(!open)  }>
+                                    <BiX size={30} color="#FFF"  />
+                                </motion.button>;
 
-  return (
+    const closeMobileMenu = () => setOpen(false);
 
-    <div className={styles.container_grid}>
 
-        {ismobile ?
-            <>
-                <h1>true</h1>
+  return (    
+    <>
+        <MobileView className={styles.header_mobile}>
+                <div className={styles.categories_mobile}>
+                    {!open ? hamburguerIcon : closeIcon}
+                    <nav>
+                        {open &&  <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} /> }
+                    </nav>
+                   
+                </div>
+                <div className={styles.logo}>
+                    <img src="./logos/logo.png" alt="logo" width={190} height={100} />
+                </div>
+        </MobileView>
+            
+        <BrowserView>   
+            <div className={styles.container_grid}>        
                 <div className="logo">
                     <img src="./logos/logo.png" alt="logo" width={190} height={100} />
                 </div>
@@ -32,27 +51,10 @@ export default function Header() {
                         <li>Contact Us</li>
                     </ul>
                 </div>
-            </>
-         :
-            <>
-                <h1>false</h1>
-                <div className={styles.informations}>
-                    <div className="hamburguer">
-                        <BiMenuAltLeft size={20} color="#FFF"  />
-                    </div>
-                    <ul className={styles.categories}>
-                        <li>Home</li>
-                        <li>About Us</li>
-                        <li>Services</li>
-                        <li>Carres</li>
-                        <li>Contact Us</li>
-                    </ul>
-                </div>
-                <div className="logo">
-                    <img src="./logos/logo.png" alt="logo" width={190} height={100} />
-                </div>
-            </>
-        }
-    </div>
+            </div>
+        </BrowserView>
+    </>
+        
+    
   )
 }
