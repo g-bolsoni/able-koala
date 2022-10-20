@@ -1,4 +1,4 @@
-import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion';
 
 export function NavLinks(props) {
@@ -8,35 +8,35 @@ export function NavLinks(props) {
 
   return (
       <ul>
-          <a href="/"> 
+          <Link href="/"> 
             <motion.li initial={animateFrom} animate={animateTo} transition={{delay:0.1}} onClick={() => props.isMobile && props.closeMobileMenu()} >
               Home
             </motion.li>
-          </a>
+          </Link>
 
-          <a href="/">
+          <Link href="/">
             <motion.li initial={animateFrom} animate={animateTo} transition={{delay:0.2}} onClick={() => props.isMobile && props.closeMobileMenu()} >
                 About Us
             </motion.li>
-          </a>
+          </Link>
             
-          <a href="/">
+          <Link href="/">
             <motion.li initial={animateFrom} animate={animateTo} transition={{delay:0.3}} onClick={() => props.isMobile && props.closeMobileMenu()} >
               Services
             </motion.li>
-          </a>
+          </Link>
             
-          <a href="/">
+          <Link href="/">
             <motion.li initial={animateFrom} animate={animateTo} transition={{delay:0.4}} onClick={() => props.isMobile && props.closeMobileMenu()} >
               Carres
             </motion.li>
-          </a>
+          </Link>
             
-          <a href="/">
+          <Link href="/">
             <motion.li initial={animateFrom} animate={animateTo} transition={{delay:0.5}} onClick={() => props.isMobile && props.closeMobileMenu()} >
               Contact Us
             </motion.li>
-          </a>
+          </Link>
       </ul>
   )
 }

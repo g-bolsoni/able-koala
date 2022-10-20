@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 import { useState } from 'react';
 import { NavLinks } from './NavLinks';
 import { BiMenuAltLeft, BiX } from "react-icons/bi";
-
+import Image from 'next/image'
 import { motion } from 'framer-motion';
 
 export default function Header() {
@@ -32,14 +32,24 @@ export default function Header() {
                    
                 </div>
                 <div className={styles.logo}>
-                    <img src="./logos/logo.png" alt="logo" width={190} height={100} />
+                    <Image
+                        src="/logos/logo.png" 
+                        alt="logo" 
+                        width={140} 
+                        height={80} 
+                    />
                 </div>
         </MobileView>
             
         <BrowserView>   
             <div className={styles.container_grid}>        
                 <div className="logo">
-                    <img src="./logos/logo.png" alt="logo" width={190} height={100} />
+                    <Image
+                        src="/logos/logo.png" 
+                        alt="logo" 
+                        width={190} 
+                        height={100} 
+                    />
                 </div>
                 <div className={styles.informations}>
                     <button className={styles.btn_mail} value="info@ablekoala.com.au">info@ablekoala.com.au</button>
