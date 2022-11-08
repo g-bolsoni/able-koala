@@ -5,6 +5,7 @@ import { NavLinks } from "../NavLinks";
 import style from './style.module.sass';
 import footer_logo from "../../../public/logos/3_cut.png"
 import { BsFacebook } from "react-icons/bs";
+import styles from './style.module.scss'
 
 export default function Footer() {
   return (
