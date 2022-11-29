@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Tarja from "../../public/banners/tarja_.png"
 
 import InfoImage from "../../public/banners/p1_1.png"
+import Testimonial from "../components/Testimonial";
 
 export default function Home() {
   return (
@@ -31,9 +32,14 @@ export default function Home() {
             <div className="info-image">
               <Image 
                 src={InfoImage}
+                width={800}
+                height={400}
+                layout="responsive"
+                alt="Able Koala"
               />
             </div>
           </div>
+          <Testimonial />
         </main>
       </Layout>
     </>

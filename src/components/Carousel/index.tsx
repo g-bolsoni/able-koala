@@ -21,7 +21,7 @@ export default function Carousel () {
             spaceBetween={0}
             slidesPerView={1}
             autoplay={{
-              delay: 2500,
+              delay: 5000,
               disableOnInteraction: false,
             }}
             pagination={{
@@ -53,7 +53,6 @@ export default function Carousel () {
               />
             </SwiperSlide>
 
-            ...
         </Swiper>
     </>
   );

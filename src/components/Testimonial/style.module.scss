@@ -1,0 +1,24 @@
+.title{
+    color: #000;
+}
+
+.testimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container{
+        max-width: 1200px;
+        width: 100%;
+        .title{
+            text-align: center;
+        }
+        .testimonial{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #000;
+        }
+    }
+}
