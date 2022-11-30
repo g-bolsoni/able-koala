@@ -40,7 +40,11 @@
     .testimonials .testimonial {
         width: 70%;
     }
-    .swiper-button-prev:after ,.swiper-button-next:after    {
+    .swiper-button-prev:after,
+    .swiper-button-next:after{
         font-size: 80%;
+    }
+    .testimonials .container .title{
+        font-size: 2.75rem;
     }
 }
