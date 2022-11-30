@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { Pagination, Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 
 
 export default function Testimonial() {
@@ -15,32 +15,27 @@ export default function Testimonial() {
     <section className={style.testimonials}>
       <div className={style.container}>
           <h1 className={style.title}>What our clients are saying?</h1>
-          <Swiper  
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            pagination={{
-              clickable: true,
-            }}
+          <Swiper 
             navigation={true}
-            modules={[Pagination, Navigation]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay, Navigation]} 
+            loop={true}
           >
                 {
                   testimonials.testimonials.map(testimonial => (
                     <SwiperSlide className={style.testimonial_list}  key={testimonial.id} >
                       <div className={style.testimonial}>
                         <p>{testimonial.testimony}</p>
-                        {testimonial.name}
+                        <span className={style.testimony_name}>{testimonial.name}</span>
                       </div>
                     </SwiperSlide>
                   ))
                 }
           </Swiper>
       </div>
-
-     
-        
-    
     </section>
 
   )

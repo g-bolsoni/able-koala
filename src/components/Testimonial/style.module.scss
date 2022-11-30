@@ -1,7 +1,8 @@
-.title{
+
+.swiper-button-prev,
+.swiper-button-next{
     color: #000;
 }
-
 .testimonials{
     display: flex;
     justify-content: center;
@@ -12,6 +13,8 @@
         width: 100%;
         .title{
             text-align: center;
+            font-size: 3.75rem;
+            color: #000;
         }
         .testimonial{
             display: flex;
@@ -19,6 +22,25 @@
             justify-content: center;
             flex-direction: column;
             color: #000;
+            margin: 80px auto;
+            p{
+                font-size: 1.15rem;
+            }
+            .testimony_name{
+                position: absolute;
+                top: 80%;
+                font-style: italic;
+                font-size: 1rem;
+            }
         }
+    }
+}
+
+@media (max-width: 992px) {
+    .testimonials .testimonial {
+        width: 70%;
+    }
+    .swiper-button-prev:after ,.swiper-button-next:after    {
+        font-size: 80%;
     }
 }
