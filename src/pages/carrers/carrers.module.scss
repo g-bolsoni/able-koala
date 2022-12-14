@@ -1,0 +1,74 @@
+.banner{
+    position: relative;
+    .title{
+        color: var(--white) ;
+        font-size: 3.75rem;
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 15%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    @media (max-width: 992px){
+        .title{
+            font-size: 2.75rem;
+        }        
+    }
+    @media (max-width: 568px){
+        .title{
+            font-size: 1.75rem;
+            left: 5%;
+        }
+    }
+
+}
+.section_title{
+    height: 109px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 2rem;
+    color: var(--gray-900);
+    border-bottom: 1px solid var(--gray-900);
+}
+
+
+.disponibility_works{
+    .work_list{
+        height: 208px;
+        background-color: var(--gray-300);
+        border-radius: 30px;
+        margin: 31px 0 ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+        color: var(--gray-900);
+        .work_title{
+            font-weight: 500;
+            font-size: 2.625rem;
+            line-height: 3.75rem;
+        }
+        .location{
+            font-size: 1rem;
+            line-height: 1rem;
+        }
+        .read_more{
+            color: var(--white);
+            background-color: var(--cyan);
+            font-style: normal;
+            font-weight: 300;
+            font-size: .87rem;
+            line-height: 24px;
+            width: 120px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            cursor: pointer;
+        }
+    }
+}
