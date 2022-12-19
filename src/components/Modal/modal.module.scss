@@ -1,0 +1,50 @@
+.backdrop{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .75);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    .modal{
+        background-color: var(--gray-300);
+        color: var(--gray-900);
+        padding: 2rem;
+        border-radius: .75rem;
+        max-width: 75vw;
+        height: max-content;
+        position: relative;
+
+        .modalClose{
+            width: 1.24rem;
+            height: 1.24rem;
+            cursor: pointer;
+            background-color: transparent;
+            border: transparent;
+            color: var(--gray-900);
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            display: flex;
+        }
+        &::after, &::before{
+            content: '';
+            position: absolute;
+            top: 1.5rem;
+            right: 1rem;
+            width: 1.25rem;
+            height: 0.125rem;
+            background-color: currentColor;
+            border-radius: 0.125rem;
+        }
+        &::after{
+            transform: rotate(45deg);
+        }
+        &::before{
+            transform: rotate(135deg);
+        }
+    }
+}

@@ -16,11 +16,11 @@ export default function carrers() {
         <section className={styles.banner}>
             <h2 className={styles.title}>Services</h2>
             <Image
-            alt="wheelchair_user"
-            src={about_us}
-            width={1440}
-            height={588}
-            sizes="100vw"
+                alt="wheelchair_user"
+                src={about_us}
+                width={1440}
+                height={588}
+                sizes="100vw"
             >
             </Image>
         </section>
@@ -36,7 +36,7 @@ export default function carrers() {
                             <h2 className={styles.work_title}>{work.title}</h2>
                             <span className={styles.location}>{work.location}</span>
                         </div>
-                        <Link href="/carrers" >
+                        <Link href={`/carrers/${work.id}`} >
                             <div className={styles.read_more}>
                                 Read More
                             </div>

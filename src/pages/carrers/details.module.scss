@@ -1,0 +1,65 @@
+
+.back {
+    color: var(--gray-900);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    svg{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.work_container{
+    margin-top: 30px;
+    color: var(--gray-900);
+    h1{
+        font-size: 3rem !important;
+        font-weight: 500;
+    }
+    .description_title{
+        font-size: 1.5rem !important;
+        font-weight: 400;
+        margin-top: 20px;
+    }
+    .description_title + p{
+        margin: 10px 0 0 30px;
+    }
+}
+
+.requirements{
+    margin-bottom: 100px;
+    .requirements_title{
+        font-size: 1.5rem !important;
+        font-weight: 400;
+        margin-top: 20px;
+    }
+    ul{
+        li{
+            list-style: disc;
+            margin: 10px 0 0 50px;
+        }
+    }
+}
+
+.button{
+    background-color: var(--cyan);
+    width: 400px;
+    height: 55px;
+    border: none;
+    color: var(--white);
+    border-radius: 15px;
+    margin-bottom: 100px;
+    transition: all .3s linear;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    &:hover{
+        filter: brightness(.9);
+    }
+}
+
+.jobs_form{
+    display: flex;
+    flex-direction: column;
+}

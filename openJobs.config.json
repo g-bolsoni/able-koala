@@ -3,20 +3,38 @@
         {
             "id":1,
             "title": "Disability Support Worker",
-            "description": "“I am glad i found Snowbridge Care. Their quality of service and putting me first is very well appreciated.”",
-            "location": "Australia"
+            "location": "Australia",
+            "description":"Lorem ipsum nisl aenean ipsum velit rhoncus class, suscipit taciti vulputate eu habitant id ipsum justo, praesent tempus eros suscipit justo velit. interdum condimentum nunc vivamus per inceptos lobortis volutpat pretium libero, faucibus senectus lorem erat feugiat aenean urna aenean morbi, sem pharetra sapien ullamcorper faucibus luctus ante lacus. neque tempor adipiscing orci aenean malesuada mauris ac magna, praesent curae senectus malesuada nibh ullamcorper vitae interdum, fringilla phasellus egestas aenean massa pretium viverra. lacinia dolor hendrerit volutpat congue a quisque nibh dui feugiat bibendum etiam quam viverra curabitur, magna porttitor ullamcorper odio urna odio quis purus nisi inceptos primis etiam. ",
+            "requirements": [
+                {"id": 1, "requirement": "Graduação na área (Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia da Computação, etc.) ou experiência similar"},
+                {"id": 2, "requirement": "Experiência em criação de websites e sistemas web amigáveis para usuários."},
+                {"id": 3, "requirement": "Experiência comprovada como Desenvolvedor(a) Front-end;"},
+                {"id": 4, "requirement": "Familiaridade com desenvolvimento cross-browser, responsivo ou mobile híbrido."}
+            ]
         },
         {
             "id":2,
             "title": "Disability Support Worker 2",
-            "description": "“I am glad i found Snowbridge Care. Their quality of service and putting me first is very well appreciated.”",
-            "location": "Australia"
+            "description": "Lorem ipsum nisl aenean ipsum velit rhoncus class, suscipit taciti vulputate eu habitant id ipsum justo, praesent tempus eros suscipit justo velit. interdum condimentum nunc vivamus per inceptos lobortis volutpat pretium libero, faucibus senectus lorem erat feugiat aenean urna aenean morbi, sem pharetra sapien ullamcorper faucibus luctus ante lacus. neque tempor adipiscing orci aenean malesuada mauris ac magna, praesent curae senectus malesuada nibh ullamcorper vitae interdum, fringilla phasellus egestas aenean massa pretium viverra. lacinia dolor hendrerit volutpat congue a quisque nibh dui feugiat bibendum etiam quam viverra curabitur, magna porttitor ullamcorper odio urna odio quis purus nisi inceptos primis etiam. ",
+            "location": "Australia",
+            "requirements": [
+                {"id": 1, "requirement": "Graduação na área (Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia da Computação, etc.) ou experiência similar"},
+                {"id": 2, "requirement": "Experiência em criação de websites e sistemas web amigáveis para usuários."},
+                {"id": 3, "requirement": "Experiência comprovada como Desenvolvedor(a) Front-end;"},
+                {"id": 4, "requirement": "Familiaridade com desenvolvimento cross-browser, responsivo ou mobile híbrido."}
+            ]
         },
         {
             "id":3,
             "title": "Disability Support Worker 3",
-            "description": "“I am glad i found Snowbridge Care. Their quality of service and putting me first is very well appreciated.”",
-            "location": "Australia"
+            "description": "Lorem ipsum nisl aenean ipsum velit rhoncus class, suscipit taciti vulputate eu habitant id ipsum justo, praesent tempus eros suscipit justo velit. interdum condimentum nunc vivamus per inceptos lobortis volutpat pretium libero, faucibus senectus lorem erat feugiat aenean urna aenean morbi, sem pharetra sapien ullamcorper faucibus luctus ante lacus. neque tempor adipiscing orci aenean malesuada mauris ac magna, praesent curae senectus malesuada nibh ullamcorper vitae interdum, fringilla phasellus egestas aenean massa pretium viverra. lacinia dolor hendrerit volutpat congue a quisque nibh dui feugiat bibendum etiam quam viverra curabitur, magna porttitor ullamcorper odio urna odio quis purus nisi inceptos primis etiam. ",
+            "location": "Australia",
+            "requirements": [
+                {"id": 1, "requirement": "Graduação na área (Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia da Computação, etc.) ou experiência similar"},
+                {"id": 2, "requirement": "Experiência em criação de websites e sistemas web amigáveis para usuários."},
+                {"id": 3, "requirement": "Experiência comprovada como Desenvolvedor(a) Front-end;"},
+                {"id": 4, "requirement": "Familiaridade com desenvolvimento cross-browser, responsivo ou mobile híbrido."}
+            ]
         }
     ]
 }
