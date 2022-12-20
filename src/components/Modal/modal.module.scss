@@ -14,8 +14,10 @@
         color: var(--gray-900);
         padding: 2rem;
         border-radius: .75rem;
-        max-width: 75vw;
-        height: max-content;
+        max-width: 1000px;
+        min-height: 400px;
+        height: 100%;
+        width: 100%;
         position: relative;
 
         .modalClose{

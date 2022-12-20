@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import Link from 'next/link';
 
 import styles from './details.module.scss';
@@ -11,6 +11,8 @@ import Modal from '../../components/Modal';
 
 import works from '../../../openJobs.config.json';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { sendContactMail } from '../../services/sendMail';
+import toast from 'react-hot-toast';
 
 interface Modal {
   isOpen: boolean,
@@ -23,15 +25,41 @@ export default function index() {
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
   const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false)
   // eslint-disable-next-line react-hooks/rules-of-hooks
   let router = useRouter();
   const jobId = router.query.job_id;
 
+async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    if(loading) return;
+    if(!email.trim() || !name.trim() || !number.trim()) {
+      toast.error('Preencha todos os campos', {style: {
+        background: '#ff5555',
+        color: '#fff'
+      }});
+      return;
+    }
+    try {
+      setLoading(true);
+      await sendContactMail(name, email, number)
+      setName('');
+      setEmail('');
+      setNumber('');
 
+      toast.success('Curriculo enviado com sucesso')
+    } catch (error) {
+      toast.error('Ocorreu um erro ao enviar seu contato, tente mais tarde', {style: {
+        background: '#ff5555',
+        color: '#fff'
+      }});
+      return;
+    } finally{
+      setLoading(false);
+    }
+}
 
   return (
-    
-
     <>
      <Header />
 
@@ -76,16 +104,33 @@ export default function index() {
 
 
         <Modal isOpen={modalOpen} setIsOpen={setmodalOpen} closeButton={false}>
-          <form className={styles.jobs_form}  action="" method="post" acceptCharset="utf-8" encType="multipart/form-data">
-            <label htmlFor="formName">Name:</label>
-            <input type="text" name="name" id='formName' value={name} onChange={(e) => setName(e.target.value)}/>
-            <label htmlFor="formMail">Email:</label>
-            <input type="text" name="email"  id='formMail'  value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <label htmlFor="formNumber">Number:</label>
-            <input type="text" name="number" id='formNumber'  value={number}  onChange={(e) => setNumber(e.target.value)}/>
-            <label htmlFor="formFile">Your CV:</label>
-            <input type="file"  id='formFile' onChange={(e) => setFile(e.target.value)}/>
-            {name}, {email}, {number}, {file}
+          <form className={styles.jobs_form}  onSubmit={handleSubmit}>
+            <div className={styles.row}>
+              <div>
+                <input type="text" name="name" required value={name} onChange={(e) => setName(e.target.value)}/>
+                <span className={styles.text} >Name:</span>
+                <span className={styles.line}></span>
+              </div>
+              <div>
+                <input type="email" name="email" required value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <span className={styles.text}>Email:</span>
+                <span className={styles.line}></span>
+              </div>
+            </div>
+            <div className={styles.row}>
+              <div>
+                <input type="number" name="number" required value={number}  onChange={(e) => setNumber(e.target.value)}/>
+                <span className={styles.text}>Number</span>
+                <span className={styles.line}></span>
+              </div>
+              <div>
+                <input type="file" name="file" required value={file}  onChange={(e) => setFile(e.target.value)}/>
+                <span className={styles.text}>Select your CV</span>
+                <span className={styles.line}></span>
+              </div>
+            </div>
+
+            <button type="submit"  onClick={(e)=>{handleSubmit(e)}}  >Send </button>
           </form>
         </Modal>
         <button onClick={() => setmodalOpen(true)} className={styles.button}>I WANT APPLY </button>
