@@ -3,7 +3,7 @@
   display: grid
 
 
-@mixin d-flex ($display: inline-flex, $align: center, $justify: center, $wrap: wrap)
+@mixin d-flex ($display: flex, $align: center, $justify: center, $wrap: wrap)
     display: $display
     align-items: $align
     justify-content: $justify
@@ -28,4 +28,5 @@
     transition: all $s ease-in-out
     &:hover
         transform: scale($scale)
+
 
