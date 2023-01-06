@@ -62,37 +62,43 @@
 .jobs_form{
     display: flex;
     flex-direction: column;
+    background-color: var(--gray-100);
+    padding: 60px 100px;
+    border-radius: 20px;
     .row{
         display: flex;
         flex-wrap: wrap;
         flex: 1 0 50%;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        gap: 20px;
         div{
-            width: 40%;
+            width: 45%;
             height: 40px;
             position: relative;
             margin: 30px 0 ;
-        .text{
-                position: absolute;
-                top: 0;
-                left: 0;
-                line-height: 40px;
-                font-size: 18px;
-                padding: 0 10px;
-                display: block;
-                transition: 0.5s;
-        }
-        .line{
-                position: absolute;
-                bottom: 0;
-                display: block;
-                width: 100%;
-                height: 2px;
-                background: #fff;
-                transition: 0.5s;
-                border-radius: 2px;
-                pointer-events: none;
-        }
+            .text{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    line-height: 40px;
+                    font-size: 18px;
+                    padding: 0 10px;
+                    display: block;
+                    transition: 0.5s;
+                    color: var( --gray-900);
+            }
+            .line{
+                    position: absolute;
+                    bottom: 0;
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: var( --gray-900);
+                    transition: 0.5s;
+                    border-radius: 2px;
+                    pointer-events: none;
+                    z-index: 3;
+            }
             input {
                 position: absolute;
                 width: 100%;
@@ -105,6 +111,7 @@
                 padding: 0 10px;
                 z-index: 1;
                 color: #000;
+                border-radius: 10;
                 transition: all .3s linear;
                 &:focus{
                     background: #fff;
@@ -114,6 +121,21 @@
                     left: -10px;
                 }
             }
+        }
     }
+    .submit_button{
+        background: linear-gradient(transparent, transparent 50%, var(--cyan) 50%, var(--cyan));
+        background-size: 100% 200%;
+        transition: all .3s linear ; 
+        color: var(--gray-900);
+        font-weight: 700;
+        font-size: 1.1em;
+        width: 45%;
+        border-radius: 10px;
+        &:hover{
+            background-position: 100% 100%;
+            color: var(--white);
+            border: 1px solid var(--white);
+        }
     }
 }

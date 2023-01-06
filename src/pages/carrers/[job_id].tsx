@@ -33,7 +33,8 @@ export default function index() {
 async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if(loading) return;
-    if(!email.trim() || !name.trim() || !number.trim()) {
+    console.log(file, file.length);
+    if(!email.trim() || !name.trim() || !number.trim() || file.length !== 0 ) {
       toast.error('Preencha todos os campos', {style: {
         background: '#ff5555',
         color: '#fff'
@@ -42,10 +43,11 @@ async function handleSubmit(e: FormEvent) {
     }
     try {
       setLoading(true);
-      await sendContactMail(name, email, number)
+      await sendContactMail(name, email, number, file)
       setName('');
       setEmail('');
       setNumber('');
+      setFile(null);
 
       toast.success('Curriculo enviado com sucesso')
     } catch (error) {
@@ -70,8 +72,7 @@ async function handleSubmit(e: FormEvent) {
             Back
           </span>
         </Link>
-        { 
-          works.works.map(work => {
+        {works.works.map(work => {
             if( `${work.id}` == jobId ) {
               return (
                 <main key={work.id} className={styles.work_container}>
@@ -99,41 +100,43 @@ async function handleSubmit(e: FormEvent) {
                 </main>
               )
             }
-          })
-        }
+        })}
 
-
-        <Modal isOpen={modalOpen} setIsOpen={setmodalOpen} closeButton={false}>
-          <form className={styles.jobs_form}  onSubmit={handleSubmit}>
-            <div className={styles.row}>
-              <div>
-                <input type="text" name="name" required value={name} onChange={(e) => setName(e.target.value)}/>
-                <span className={styles.text} >Name:</span>
-                <span className={styles.line}></span>
-              </div>
-              <div>
-                <input type="email" name="email" required value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <span className={styles.text}>Email:</span>
-                <span className={styles.line}></span>
-              </div>
-            </div>
-            <div className={styles.row}>
-              <div>
-                <input type="number" name="number" required value={number}  onChange={(e) => setNumber(e.target.value)}/>
-                <span className={styles.text}>Number</span>
-                <span className={styles.line}></span>
-              </div>
-              <div>
-                <input type="file" name="file" required value={file}  onChange={(e) => setFile(e.target.value)}/>
-                <span className={styles.text}>Select your CV</span>
-                <span className={styles.line}></span>
-              </div>
-            </div>
-
-            <button type="submit"  onClick={(e)=>{handleSubmit(e)}}  >Send </button>
-          </form>
-        </Modal>
         <button onClick={() => setmodalOpen(true)} className={styles.button}>I WANT APPLY </button>
+        
+        <form className={styles.jobs_form}  onSubmit={handleSubmit}>
+          <div className={styles.row}>
+            <div>
+              <input type="text" name="name" required value={name} onChange={(e) => setName(e.target.value)}/>
+              <span className={styles.text} >Full Name</span>
+              <span className={styles.line}></span>
+            </div>
+            <div>
+              <input type="email" name="email" required value={email} onChange={(e) => setEmail(e.target.value)}/>
+              <span className={styles.text}>Your E-mail</span>
+              <span className={styles.line}></span>
+            </div>
+          </div>
+          <div className={styles.row}>
+            <div>
+              <input type="number" name="number" required value={number}  onChange={(e) => setNumber(e.target.value)}/>
+              <span className={styles.text}>Cellphone Number</span>
+              <span className={styles.line}></span>
+            </div>
+            <div>
+              <input type="file" accept="application/pdf"onChange={(e) => {
+                console.log(e.target.files[0]);
+                setFile(e.target.files[0])
+              }} />
+              <span className={styles.text}>Your CV</span>
+              <span className={styles.line}></span>
+            </div>
+          </div>
+
+          <button type="submit" className={styles.submit_button} onClick={(e)=>{handleSubmit(e)}}  >Send </button>
+        </form>
+
+        
       </div>
       <Footer />
     </>

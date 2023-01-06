@@ -1,9 +1,10 @@
 import axios from "axios";
-export const  sendContactMail = async (name:string, senderMail:string, content: string ) =>{
+export const  sendContactMail = async (name:string, senderMail:string, content: string, file: JSON) =>{
     const data = {
         name,
         senderMail,
-        content
+        content,
+        file
     }
 
     try{

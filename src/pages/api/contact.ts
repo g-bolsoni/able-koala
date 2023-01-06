@@ -14,14 +14,14 @@ const transporter = nodemailer.createTransport(
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res:NextApiResponse) => {
     try {
-        const { senderMail, name, content} = req.body;
-        if(!senderMail.trim() || !name.trim() || !content.trim())  res.status(403).send('');
+        const { senderMail, name, content, file} = req.body;
+        if(!senderMail.trim() || !name.trim() || !content.trim() || !file.trim())  res.status(403).send('');
 
         const message = {
             from: email,
             to: email,
             subject: `Nova mensagm de contato - ${name}`,
-            html: `<p><b>Email</b> ${senderMail}<br/> <b>Mensagem: </b>${content}</p>`,
+            html: `<p><b>Email</b> ${senderMail}<br/> <b>Mensagem: </b>${content}</p></br>Arquivo: ${file}`,
             replyTo: senderMail 
         }
 
