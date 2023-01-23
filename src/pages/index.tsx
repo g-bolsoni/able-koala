@@ -25,9 +25,25 @@ export default function Home() {
           <div className="module info">
             <div className="info-text">
               <h3 className="info-text-title">About Able Koala</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolores eaque ullam quos aperiam aliquam officiis sed. Sequi voluptatum assumenda vitae, illo in deleniti odit ipsam, nam ab error maxime.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolores eaque ullam quos aperiam aliquam officiis sed. Sequi voluptatum assumenda vitae, illo in deleniti odit ipsam, nam ab error maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus aut similique ut optio deserunt earum ipsam accusamus sequi nemo saepe assumenda aliquam eum fugiat officia nostrum, voluptate voluptates facilis neque?</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolores eaque ullam quos aperiam aliquam officiis sed. Sequi voluptatum assumenda vitae, illo in deleniti odit ipsam, nam ab error maxime.</p>
+              
+
+
+
+
+
+
+              <p>
+                ABLE KOALA‘s focus is on the quality of life and well-being of those with disabilities and/or aging. Our main objective is to provide harmony and peace mentally, physically and spiritually.
+              </p>
+              <p>
+                The purpose of our work is to understand the needs of each individual. To support with empathy and understanding while minimizing anxiety and discomfort.
+              </p>
+              <p>
+                Changes cause apprehension, adapting to change is finding balance in times of turbulence.
+              </p>
+              <p>
+                Our challenge is to assist family/caregivers to understand how to face a disability or the processes of aging. With a focus on acceptance, new skills can enhance connections.
+              </p>
             </div>
             <div className="info-image">
               <Image 

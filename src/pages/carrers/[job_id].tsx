@@ -7,7 +7,6 @@ import styles from './details.module.scss';
 
 import Header from '../../components/Header/index';
 import Footer from '../../components/Footer/index';
-import Modal from '../../components/Modal';
 
 import works from '../../../openJobs.config.json';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
@@ -20,7 +19,7 @@ interface Modal {
 }
 
 export default function index() {
-  const [modalOpen, setmodalOpen] = useState(false);
+  // const [modalOpen, setmodalOpen] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
@@ -33,29 +32,33 @@ export default function index() {
 async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if(loading) return;
-    console.log(file, file.length);
-    if(!email.trim() || !name.trim() || !number.trim() || file.length !== 0 ) {
+
+    if(!email.trim() || !name.trim() || !number.trim() && file) {
       toast.error('Preencha todos os campos', {style: {
         background: '#ff5555',
         color: '#fff'
       }});
       return;
     }
+    
     try {
       setLoading(true);
       await sendContactMail(name, email, number, file)
-      setName('');
-      setEmail('');
-      setNumber('');
-      setFile(null);
+      // setName('');
+      // setEmail('');
+      // setNumber('');
+      // setFile(null);
 
       toast.success('Curriculo enviado com sucesso')
     } catch (error) {
+      console.log(error);
       toast.error('Ocorreu um erro ao enviar seu contato, tente mais tarde', {style: {
         background: '#ff5555',
         color: '#fff'
       }});
+
       return;
+
     } finally{
       setLoading(false);
     }

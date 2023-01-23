@@ -6,9 +6,12 @@ export const  sendContactMail = async (name:string, senderMail:string, content: 
         content,
         file
     }
-
+    console.log('data ', data.file)
     try{
-        return await axios.post('/api/contact', data)
+        const teste = await axios.post('/api/contact', data);
+        console.log('teste');
+        console.log(teste);
+        return teste;
     }catch(error){
         return error
     }

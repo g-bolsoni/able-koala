@@ -15,7 +15,9 @@ const transporter = nodemailer.createTransport(
 export default async (req: NextApiRequest, res:NextApiResponse) => {
     try {
         const { senderMail, name, content, file} = req.body;
-        if(!senderMail.trim() || !name.trim() || !content.trim() || !file.trim())  res.status(403).send('');
+        console.log(req.body);
+        console.log('aaa');
+        if(!senderMail.trim() || !name.trim() || !content.trim() || !file)  res.status(403).send('');
 
         const message = {
             from: email,
