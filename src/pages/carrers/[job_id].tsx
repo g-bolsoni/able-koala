@@ -23,46 +23,46 @@ export default function index() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false)
   // eslint-disable-next-line react-hooks/rules-of-hooks
   let router = useRouter();
   const jobId = router.query.job_id;
 
-async function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    if(loading) return;
+  async function handleSubmit(e: FormEvent) {
+      e.preventDefault();
+      if(loading) return;
 
-    if(!email.trim() || !name.trim() || !number.trim() && file) {
-      toast.error('Preencha todos os campos', {style: {
-        background: '#ff5555',
-        color: '#fff'
-      }});
-      return;
-    }
-    
-    try {
-      setLoading(true);
-      await sendContactMail(name, email, number, file)
-      // setName('');
-      // setEmail('');
-      // setNumber('');
-      // setFile(null);
+      if(!email.trim() || !name.trim() || !number.trim()) {
+        toast.error('Preencha todos os campos', {style: {
+          background: '#ff5555',
+          color: '#fff'
+        }});
+        return;
+      }
+      
+      try {
+        setLoading(true);
+        await sendContactMail(name, email, number)
+        setName('');
+        setEmail('');
+        setNumber('');
+        // setFile(null);
 
-      toast.success('Curriculo enviado com sucesso')
-    } catch (error) {
-      console.log(error);
-      toast.error('Ocorreu um erro ao enviar seu contato, tente mais tarde', {style: {
-        background: '#ff5555',
-        color: '#fff'
-      }});
+        toast.success('Currículo enviado com sucesso');
+      } catch (error) {
+        console.log(error);
+        toast.error('Ocorreu um erro ao enviar seu contato, tente mais tarde', {style: {
+          background: '#ff5555',
+          color: '#fff'
+        }});
 
-      return;
+        return;
 
-    } finally{
-      setLoading(false);
-    }
-}
+      } finally{
+        setLoading(false);
+      }
+  }
 
   return (
     <>
@@ -105,7 +105,7 @@ async function handleSubmit(e: FormEvent) {
             }
         })}
 
-        <button onClick={() => setmodalOpen(true)} className={styles.button}>I WANT APPLY </button>
+        {/* <button onClick={() => setmodalOpen(true)} className={styles.button}>I WANT APPLY </button> */}
         
         <form className={styles.jobs_form}  onSubmit={handleSubmit}>
           <div className={styles.row}>
@@ -127,10 +127,10 @@ async function handleSubmit(e: FormEvent) {
               <span className={styles.line}></span>
             </div>
             <div>
-              <input type="file" accept="application/pdf"onChange={(e) => {
+              {/* <input type="file" accept="application/pdf"onChange={(e) => {
                 console.log(e.target.files[0]);
                 setFile(e.target.files[0])
-              }} />
+              }} /> */}
               <span className={styles.text}>Your CV</span>
               <span className={styles.line}></span>
             </div>
