@@ -1,6 +1,6 @@
 import nodemailer  from "nodemailer";
 import sendgridTransport from "nodemailer-sendgrid-transport";
-// import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 
 const email = process.env.MAIL_ADDRESS;
 const options = {
@@ -10,67 +10,46 @@ const options = {
 };
 const transporter = nodemailer.createTransport(sendgridTransport(options));
 
-const sendEmail = async (email, senderMail, name, cellphone) =>{
-    const mail = {
-        from: email,
-        to: email,
-        subject:`Nova mensagm de contato - ${name}`,
-        html: `<p><b>Email</b> ${senderMail}<br/> <b>Telefone: </b>${cellphone}</p>`,
-    };
 
-    console.log('teste 13');
+// eslint-disable-next-line import/no-anonymous-default-export
+export default async (req: NextApiRequest, res:NextApiResponse) => {
     try {
-        const aaaaa = await transporter.sendMail(mail);
-        console.log(aaaaa);
-        console.log('teste 123');
-
-        console.log('E-mail enviado com sucesso');
-        return aaaaa;
-    } catch (err) {
-        console.log('Erro ao enviar e-mail:', err);
-        return
-    }
-    
-
-}
-
-export default sendEmail;
-
-// // eslint-disable-next-line import/no-anonymous-default-export
-// export default async (req: NextApiRequest, res:NextApiResponse) => {
-
-
-//     try {
-//         const { senderMail, name, cellphone } = req.body;
-//         console.log(req.body);
+        const { senderMail, name, cellphone } = req.body;
+        console.log(req.body);
         
 
-//         if(!senderMail.trim() || !name.trim() || !cellphone.trim())  res.status(403).send('Verifique os dados!');
+        if(!senderMail.trim() || !name.trim() || !cellphone.trim())  res.status(403).send('Verifique os dados!');
 
-//         const message = {
-//             from: email,
-//             to: email,
-//             subject: `Nova mensagm de contato - ${name}`,
-//             html: `<p><b>Email</b> ${senderMail}<br/> <b>Mensagem: </b>${cellphone}</p>`,
-//             replyTo: senderMail 
-//         }
+        const message = {
+            from: email,
+            to: email,
+            subject: `Nova mensagm de contato - ${name}`,
+            html: `
+            <p style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:10px;">
+                <p>Nome do cliene: <b> ${name} </b></p>
+                <p>Email do cliente: <b> ${senderMail} </b></p>
+                <p>Telefone do cliene: <b> ${cellphone} </b></p>
+            </p>`,
+            
+            replyTo: senderMail 
+        }
 
-//         await transporter.sendMail(message, (err, info)=>{
-//             if (err){
-//                 console.log(err);
-//             }else{
-//                 console.log('Message sent', info);
-//             }
-//         });
+        await transporter.sendMail(message, (err, info)=>{
+            if (err){
+                console.log(err);
+            }else{
+                console.log('Message sent', info);
+            }
+        });
 
-//         return res.status(200).send('Mensagem enviada com sucesso!');
-//     } catch (error) {
-//         return res.json({
-//             error: true,
-//             message: error.message
-//         })
-//     }
-// }
+        return res.status(200).send('Mensagem enviada com sucesso!');
+    } catch (error) {
+        return res.json({
+            error: true,
+            message: error.message
+        })
+    }
+}
 
 
 
