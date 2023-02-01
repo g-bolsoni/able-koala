@@ -40,7 +40,6 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
         return;
     }
 
-
     const mailerRes =  await mailer({name, clientMail,cellphone});
     res.send(mailerRes);
 }

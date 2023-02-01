@@ -125,7 +125,8 @@ export default function index() {
               {/* <input type="file" accept="application/pdf"onChange={(e) => {
                 console.log(e.target.files[0]);
                 setFile(e.target.files[0])
-              }} /> */}
+              }} /> 
+              */}
               <span className={styles.text}>Your CV</span>
               <span className={styles.line}></span>
             </div>
