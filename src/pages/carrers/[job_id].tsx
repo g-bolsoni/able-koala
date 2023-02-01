@@ -13,11 +13,6 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { sendContactMail } from '../../services/sendMail';
 import toast from 'react-hot-toast';
 
-interface Modal {
-  isOpen: boolean,
-  setIsOpen: boolean,
-}
-
 export default function index() {
   // const [modalOpen, setmodalOpen] = useState(false);
   const [name, setName] = useState('');
