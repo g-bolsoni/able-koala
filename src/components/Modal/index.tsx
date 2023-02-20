@@ -12,7 +12,6 @@ export default function Modal<Modal>({ children,  isOpen, setIsOpen, closeButton
   useEffect(() => {
     if (!window) return;
     const keyUpListener = (e) => {
-      console.log(e.keyCode);
       if (e.keyCode === 27) setIsOpen(false);
     }
   

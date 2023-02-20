@@ -12,51 +12,84 @@ import works from '../../../openJobs.config.json';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { sendContactMail } from '../../services/sendMail';
 import toast from 'react-hot-toast';
+import { storage } from '../../services/firebaseConection';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
 export default function index() {
   // const [modalOpen, setmodalOpen] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
-  // const [file, setFile] = useState(null);
-  const [loading, setLoading] = useState(false)
+  const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  
   // eslint-disable-next-line react-hooks/rules-of-hooks
   let router = useRouter();
   const jobId = router.query.job_id;
 
-  async function handleSubmit(e: FormEvent) {
-      e.preventDefault();
-      if(loading) return;
+  async function generateLink()
+  {
+    const file_new = file;
+    const storageRef = ref(storage, `resumes/${name} - ${file_new.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file_new);
+    let urlFile = "";
+  
+    await new Promise((resolve, reject) => {
+      uploadTask.on(
+        "state_changed",
+        null,
+        (error) => {
+          reject(error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+            urlFile = url;
+            resolve(urlFile);
+          });
+        }
+      );
+    });
+  
+    return urlFile;
+  }
 
-      if(!email.trim() || !name.trim() || !number.trim()) {
-        toast.error('Preencha todos os campos', {style: {
-          background: '#ff5555',
-          color: '#fff'
-        }});
-        return;
-      }
-      
-      try {
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault(); 
+
+    if(!email.trim() || !name.trim() || !number.trim() ) {
+      toast.error('Preencha todos os campos', {style: {
+        background: '#ff5555',
+        color: '#fff'
+      }});
+      return;
+    }
+
+    try {
+      const resumeLink = await generateLink();
+
+      if (resumeLink) {
         setLoading(true);
-        await sendContactMail(name, email, number)
+        await sendContactMail(name, email, number, resumeLink);
+        toast.success("Currículo enviado com sucesso");
         setName('');
         setEmail('');
         setNumber('');
-        // setFile(null);
-
-        toast.success('Currículo enviado com sucesso');
-      } catch (error) {
-        console.log(error);
-        toast.error('Ocorreu um erro ao enviar seu contato, tente mais tarde', {style: {
-          background: '#ff5555',
-          color: '#fff'
-        }});
-
-        return;
-
-      } finally{
-        setLoading(false);
+        setFile(null);
+      }else{
+        toast.error("Ocorreu um erro ao enviar o email");
       }
+
+    } catch (error) {
+      toast.error('Ocorreu um erro ao enviar seu contato, tente mais tarde', {style: {
+        background: '#ff5555',
+        color: '#fff'
+      }});
+
+      return;
+
+    } finally{
+      setLoading(false);
+    }
   }
 
   return (
@@ -122,20 +155,18 @@ export default function index() {
               <span className={styles.line}></span>
             </div>
             <div>
-              {/* <input type="file" accept="application/pdf"onChange={(e) => {
-                console.log(e.target.files[0]);
+              <input type="file" accept="application/pdf"onChange={(e) => {
                 setFile(e.target.files[0])
               }} /> 
-              */}
+             
               <span className={styles.text}>Your CV</span>
               <span className={styles.line}></span>
             </div>
           </div>
 
-          <button type="submit" className={styles.submit_button} onClick={(e)=>{handleSubmit(e)}}  >Send </button>
+          {!loading ? <button type="submit" className={styles.submit_button} >Send </button> :  <button type="submit" disabled className={styles.submit_button} >Send </button>}
         </form>
 
-        
       </div>
       <Footer />
     </>

@@ -1,11 +1,13 @@
-import axios from "axios";
-export const  sendContactMail = async (name:string, clientMail:string, cellphone: string) =>{
+import axios from "axios"; 
+
+export const  sendContactMail = async (name:string, clientMail:string, cellphone: string, file: string) =>{
     const data = {
         name,
         clientMail,
-        cellphone
+        cellphone,
+        fileUrl: file
     }
-    console.log(data);
+    
     try{
         const res = await axios.post('/api/contact', data);
         return res;
