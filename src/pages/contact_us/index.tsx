@@ -1,13 +1,12 @@
-import Layout from '../../components/Layout';
 import Form from '../../components/Form';
 import styles from './style.module.scss';
 import Image from 'next/image';
 import about_us from '../../../public/banners/wheelchair_user.png';
 
-
 export default function contactUs (){
     return (
-        <Layout>
+        <>
+        
             <Image
                 alt="wheelchair_user"
                 src={about_us}
@@ -28,6 +27,7 @@ export default function contactUs (){
                     </div>
                 </article>
             </section>
-        </Layout>
+        </>
+
     );
 }

@@ -5,9 +5,6 @@ import Link from 'next/link';
 
 import styles from './details.module.scss';
 
-import Header from '../../components/Header/index';
-import Footer from '../../components/Footer/index';
-
 import works from '../../../openJobs.config.json';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { sendContactMail } from '../../services/sendMail';
@@ -94,8 +91,6 @@ export default function index() {
 
   return (
     <>
-     <Header />
-
       <div className="container">
         <Link href="/carrers">
           <span className={styles.back}>
@@ -164,11 +159,10 @@ export default function index() {
             </div>
           </div>
 
-          {!loading ? <button type="submit" className={styles.submit_button} >Send </button> :  <button type="submit" disabled className={styles.submit_button} >Send </button>}
+          {!loading ? <button type="submit" className={styles.submit_button} >Send </button> :  <button type="submit" dis className={styles.submit_button} >Send </button>}
         </form>
 
       </div>
-      <Footer />
     </>
   )
 }

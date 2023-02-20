@@ -1,6 +1,4 @@
 import styles from './carrers.module.scss';
-import Header from '../../components/Header/index';
-import Footer from '../../components/Footer/index';
 
 import Image from 'next/image';
 import Link from 'next/link'
@@ -12,7 +10,6 @@ export default function carrers() {
 
   return (
     <>
-        <Header />
         <section className={styles.banner}>
             <h2 className={styles.title}>Services</h2>
             <Image
@@ -30,7 +27,7 @@ export default function carrers() {
             </div>
             <div className={styles.disponibility_works}>
             {
-                  works.works.map(work => (
+                    works.works.map(work => (
                     <div className={styles.work_list} key={work.id} >
                         <div className={styles.work}>
                             <h2 className={styles.work_title}>{work.title}</h2>
@@ -42,11 +39,10 @@ export default function carrers() {
                             </div>
                         </Link>
                     </div>
-                  ))
+                    ))
                 }
             </div>
         </main>
-        <Footer />
     </>
   )
 }
