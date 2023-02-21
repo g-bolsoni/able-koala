@@ -23,13 +23,6 @@ export default function Home() {
         <div className="module info">
           <div className="info-text">
             <h3 className="info-text-title">About Able Koala</h3>
-            
-
-
-
-
-
-
             <p>
               ABLE KOALA‘s focus is on the quality of life and well-being of those with disabilities and/or aging. Our main objective is to provide harmony and peace mentally, physically and spiritually.
             </p>

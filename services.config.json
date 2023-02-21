@@ -1,0 +1,58 @@
+{
+    "services": [
+        {
+            "id":1,
+            "title": "Personal Care",
+            "description": "Care and support with personal needs such as washing or showering, grooming, dressing, walking or mobility, or a companion with personal outings. We provide personalised care that is personal to you. ",
+            "backgroundImage": "https://unsplash.it/584/255"
+        },
+        {
+            "id":2,
+            "title": "Companionship",
+            "description": "We help with a range of personal and lifestyle needs, while providing a welcome and authentic companionship. ",
+            "backgroundImage": "https://unsplash.it/584/255"
+        },
+        {
+            "id":3,
+            "title": "Transport",
+            "description": "Whether it be to social outings, family events, shopping or medical appointments, we’ll get you from A to B safely and on time, and be right there with you at your destination until you return home safely.",
+            "backgroundImage": "https://unsplash.it/584/255"
+        },
+        {
+            "id":4,
+            "title": "24 Hour Care",
+            "description": "Your Home Instead team is available 24 hours a day, 7 days a week to respond to any care needs or concerns.",
+            "backgroundImage": "https://unsplash.it/584/255"
+        },
+        {
+            "id":5,
+            "title": "Dementia Care",
+            "description": "Specialist dementia relationship-based care to support and ensure the comfort and safety for those living with dementia.",
+            "backgroundImage": "https://unsplash.it/584/255"
+        },
+        {
+            "id":6,
+            "title": "Palliative Care",
+            "description": "Personal, compassionate and supportive palliative care. A personalised layer of support aimed to improve the final stages of  those living with limiting conditions. ",
+            "backgroundImage": "https://unsplash.it/584/255"
+        },
+        {
+            "id":7,
+            "title": "Respite Care",
+            "description": "A chance to connect with someone new, and organised short or long-term respite care for you, while we give your family carer a chance to recharge, and take a break from their day-to-day routine.",
+            "backgroundImage": "https://unsplash.it/584/255"
+        },
+        {
+            "id":8,
+            "title": "Care Management",
+            "description": "Your care manager, will help you plan, coordinate and manage all of your current as well as long term care needs.",
+            "backgroundImage": "https://unsplash.it/584/255"
+        },
+        {
+            "id":9,
+            "title": "Hospital to Home",
+            "description": "Dedicated discharge, coordination, transport and in-home support to help ensure your transition back home to full recovery is all looked after.",
+            "backgroundImage": "https://unsplash.it/584/255"
+        }
+    ]
+}

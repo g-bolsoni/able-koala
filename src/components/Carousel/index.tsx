@@ -34,6 +34,7 @@ export default function Carousel () {
             <SwiperSlide>
               <Image
                 src={banner3}
+                height={700}
                 alt="Able Koala"
                 priority
               />
@@ -41,6 +42,7 @@ export default function Carousel () {
             <SwiperSlide>
               <Image
                 src={banner2}
+                height={700}
                 alt="Able Koala"
                 priority
               />
@@ -48,6 +50,7 @@ export default function Carousel () {
             <SwiperSlide>
               <Image
                 src={banner4}
+                height={700}
                 alt="Able Koala"
                 priority
               />
