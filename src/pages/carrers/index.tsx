@@ -3,7 +3,7 @@ import styles from './carrers.module.scss';
 import Image from 'next/image';
 import Link from 'next/link'
 
-import about_us from '../../../public/banners/p1_1.png';
+import about_us from '../../../public/banners/p1_1.jpg';
 import works from '../../../openJobs.config.json';
 
 export default function carrers() {

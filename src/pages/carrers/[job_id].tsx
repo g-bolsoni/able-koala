@@ -159,7 +159,13 @@ export default function index() {
             </div>
           </div>
 
-          {!loading ? <button type="submit" className={styles.submit_button} >Send </button> :  <button type="submit" dis className={styles.submit_button} >Send </button>}
+          <button 
+            type="submit" 
+            className={`${styles.submit_button} ${loading ? styles.disabled : ''}`} 
+            disabled={loading}
+          >
+            Send
+          </button>
         </form>
 
       </div>

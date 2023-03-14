@@ -3,7 +3,7 @@ import React from "react";
 import Carousel from "../components/Carousel"
 import Tarja from "../../public/banners/tarja_.png"
 
-import InfoImage from "../../public/banners/p1_1.png"
+import InfoImage from "../../public/banners/p1_1.jpg"
 import Testimonial from "../components/Testimonial";
 
 export default function Home() {
