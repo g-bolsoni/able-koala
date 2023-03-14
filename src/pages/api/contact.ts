@@ -13,17 +13,32 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const mailer = ({name, clientMail, cellphone, fileUrl}) =>{
+const mailer = ({name, clientMail, cellphone, fileUrl, messageText}) =>{
 
     const from = name && clientMail ? `${name}<${clientMail}>` : `${name || clientMail}`;
+    let text = '';
+
+    if(fileUrl.length){
+        text = `
+            ${name} entrou em contato com você, ele disse: ${messageText}
+            É possivel responde-lo por este email ou a partir do seguinte numero: ${cellphone}
+            este é seu curriculo: ${fileUrl}
+        `;
+    } else {
+        text = `
+            ${name} entrou em contato com você, ele disse: ${messageText}
+            É possivel responde-lo por este email ou a partir do seguinte numero: ${cellphone}
+        `;
+    }
+
     const message = {
         from,
         to: `${email}`,
         subject: `Nova mensagem de ${name}`,
-        text: `Esse é um texto e o client te o seguinte telefone ${cellphone}, e seu currículo ${fileUrl}`,
+        text: `${text}` ,
         replyTo: from
     }
-    
+
     return new Promise((resolve, reject) => {
         transporter.sendMail(message,(error, info) => {
             error ? reject(error) : resolve(info);
@@ -33,18 +48,18 @@ const mailer = ({name, clientMail, cellphone, fileUrl}) =>{
 
 // eslint-disable-next-line import/no-anonymous-default-export  
 export default async (req: NextApiRequest, res:NextApiResponse) => {
-    const {clientMail, name, cellphone, fileUrl} = req.body;
-    if(!clientMail || !name || !cellphone ) {
+    const {clientMail, name, cellphone, fileUrl, messageText} = req.body;
+    if(!clientMail || !name || !cellphone || !messageText) {
         res.status(403).send('Erro com os campos do E-mail');
         return;
     }
     
     try {
-        const mailerRes = await mailer({ name, clientMail, cellphone, fileUrl });
+        const mailerRes = await mailer({ name, clientMail, cellphone, fileUrl, messageText });
         res.send(mailerRes);
-      } catch (error) {
-        res.status(500).send("Erro ao enviar o e-mail");
-      }
+    } catch (error) {
+        res.status(500).send("Erro ao enviar o e-mail " + error);
+    }   
 
 }
 

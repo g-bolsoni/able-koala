@@ -51,7 +51,7 @@ export default function index() {
   }
 
   async function handleSubmit(e: FormEvent) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     if(!email.trim() || !name.trim() || !number.trim() ) {
       toast.error('Preencha todos os campos', {style: {
@@ -65,8 +65,9 @@ export default function index() {
       const resumeLink = await generateLink();
 
       if (resumeLink) {
+        let message = 'Olá, gostaria de declarar meu interesse na vaga';
         setLoading(true);
-        await sendContactMail(name, email, number, resumeLink);
+        await sendContactMail(name, email, number, resumeLink, message);
         toast.success("Currículo enviado com sucesso");
         setName('');
         setEmail('');
