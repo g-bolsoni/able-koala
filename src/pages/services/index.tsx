@@ -1,5 +1,6 @@
 import styles from './style.module.scss';
 import services from '../../../services.config.json';
+import Link from 'next/link'
 
 export default function contactUs (){
     return (
@@ -11,20 +12,21 @@ export default function contactUs (){
             <div className={styles.cards} >
                 {
                     services.services.map(service => (
-                        <div className={styles.cardService} key={service.id}>
-                            <div className={styles.image}>
-                                <img src={service.backgroundImage} alt="Image" />
+                        <Link href={`/services/${service.id}`} >
+                            <div className={styles.cardService} key={service.id}>
+                                <div className={styles.image}>
+                                    <img src={service.backgroundImage} alt="Image" />
+                                </div>
+                                <div className={styles.cardContent}>
+                                    <h2 className={styles.cardTitle}>{service.title}</h2>
+                                    <p className={styles.cardDescription}>{service.description}</p>
+                                </div>
                             </div>
-                            <div className={styles.cardContent}>
-                                <h2 className={styles.cardTitle}>{service.title}</h2>
-                                <p className={styles.cardDescription}>{service.description}</p>
-                            </div>
-                        </div>
+                        </Link>
                     ))
 
                 }
             </div>
-            
         </div>
     );
 }

@@ -1,0 +1,82 @@
+.title, .text, .itensList{
+    color: var(--gray-900);
+}
+
+.mainContainer{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    position: relative;
+
+    .content{
+        display: flex;
+        padding-left: 4rem;
+        .title{
+            color: var(--gray-900) ;
+            font-size: 2.441rem;
+            font-weight: bold;
+            z-index: 2;
+            margin: 1.5rem 0 ;
+        }
+        .text{
+            word-wrap: break-word;
+            max-width: 60%;
+            margin: 1.4rem 0 ;
+        }
+        @media (max-width: 992px){
+            .title{
+                font-size: 2.75rem;
+            }        
+        }
+        @media (max-width: 568px){
+            .title{
+                font-size: 1.75rem;
+                left: 5%;
+            }
+        }
+        .itensList{
+            list-style: disc;
+            margin-left: 3rem;
+            padding: .5rem 0;
+        }
+        .subtitle{
+            color: var(--gray-900);
+            margin-top: 2rem;
+            font-size: 2rem;
+        }
+    }
+    
+    .aside{
+        height: 100%;
+        position: relative;
+        padding: 2rem;
+        width: 500px;
+        background: #f5f5f5;
+        color: #121214;
+
+        .float{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1rem;
+            position: sticky;
+            top: 160px;
+            right: 0;
+            height: max-content;
+        }
+        a{
+            position: relative;
+            width: 200px;
+            padding: .3rem ;
+            border-radius: 5px;
+            transition: all .2s linear;
+            &:hover{
+                background: var(--cyan);
+                color: var(--white);
+            }
+        }
+
+ 
+        
+        
+    }
+}
