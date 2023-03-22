@@ -36,7 +36,6 @@ export default function index() {
                       <br />
                       {service?.helper_tex_2}
                     </p>
-
                   </section >
 
                 );
@@ -53,6 +52,7 @@ export default function index() {
           {
             services.services.map(service => (
               <Link
+                key={service.id}
                 href={`/services/${service.id}`}
               >
                 {service.title}
