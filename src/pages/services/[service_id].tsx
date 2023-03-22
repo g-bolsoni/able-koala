@@ -18,7 +18,7 @@ export default function index() {
               if(`${service.id}` == serviceId){
                 return(
                   <section key={service.id} >
-                    <h1 className={styles.title}>What is {service?.title} </h1>
+                    <h1 className={styles.title}>What is {service?.title}? </h1>
                     <p className={styles.text} >{service?.description}</p>
                     <p className={styles.text}> {service?.title_topics}</p>
                     <ul>
