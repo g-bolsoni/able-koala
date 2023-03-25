@@ -80,3 +80,29 @@
         
     }
 }
+
+@media (max-width: 767px) {
+    .mainContainer{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        padding: 0 1rem;
+        .content{
+            padding-left: 0;
+            .title{
+                font-size: 2rem;
+                margin: 1rem 0;
+            }
+            .text{
+                word-wrap: break-word;
+                max-width: 100%;
+                margin: 1.4rem 0 ;
+            }
+        }
+        .aside{
+            width: 100%;
+            padding: 1rem;
+            height: max-content;
+            border-radius: 10px;
+        }
+    }
+}

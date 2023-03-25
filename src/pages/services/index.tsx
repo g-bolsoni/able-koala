@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function contactUs (){
     return (
         <div className='container'>
-            <div>
+            <div className={styles.head} >
                 <h1 className={styles.title}>Us Service</h1>
                 <p>We provide a range of services to help you with your day-to-day activities, as well as around your home.</p>
             </div>
