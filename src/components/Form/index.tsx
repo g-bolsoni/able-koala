@@ -1,79 +1,171 @@
 import style from './style.module.scss';
 import { FormEvent, useState } from 'react';
 import toast from 'react-hot-toast';
-import { sendContactMail } from '../../services/sendMail';
+import { sendFormMail } from '../../services/sendMail';
+
 
 export default function Form() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [messageText, setMessageText] = useState('');
-    const [loading, setLoading] = useState(false);
+    const [ndisName, setNdisName] = useState('');
+    const [ndisEmail, setNdisEmail] = useState('');
+    const [ndisPhone, setNdisPhone] = useState('');
+    const [numberBedrooms, setNumberBedrooms] = useState(0);
+    const [specific_requirements, setSpecific_requirements] = useState('');
+    const [vouchers, setVouchers] = useState(0);
+    const [isOtherPerson, setIsOtherPerson] = useState('no');
+    const [caregiverPersonName, setCaregiverPersonName] = useState('');
+    const [subscriptionServicePerson, setSubscriptionServicePerson] = useState('');
+    const [accomodation, setAccomodation] = useState('');
+    const [checkInDate, setCheckInDate] = useState('');
+    const [checkOutDate, setCheckOutDate] = useState('');
+    const [planManaged, setPlanManaged] = useState('0');
+    const [managerEmail, setManagerEmail] = useState('');
+    const [isSupportCoordinator, setIsSupportCoordinator] = useState('no');
+    const [coordinatorName, setCoordinatorName] = useState('');
+    const [coordinatorEmail, setCoordinatorEmail] = useState('');
+    const [coordinatorPhone, setCoordinatorPhone] = useState('');
 
-    async function handleSubmit(e: FormEvent) {
-        e.preventDefault();
 
-        if(!email.trim() || !name.trim() || !phone.trim() ) {
-            toast.error('Preencha todos os campos', {style: {
-                background: '#ff5555',
-                color: '#fff'
-            }});
-            return;
-        }
 
-        try {
-
-            setLoading(true);
-            await sendContactMail(name, email, phone, '', messageText);
-            toast.success("Currículo enviado com sucesso");
-            setName('');
-            setEmail('');
-            setPhone('');
-
-        } catch (error) {
-        toast.error('Ocorreu um erro ao enviar seu contato, tente mais tarde', {style: {
-            background: '#ff5555',
-            color: '#fff'
-        }});
-
-        return;
-
-        } finally{
-            setLoading(false);
-        }
-    }
     return (
-        <>
-        <form action="/send-data-here" method="post" onSubmit={handleSubmit}>
-            <div className="mb-3">
-                <h6 className={style.title}> Send us a message</h6>
-            </div>
-            <div className="mb-3">
-                <input type="text" name="name" value={name} id="input_name" className={style.formControl} placeholder="Name" onChange={(e) => setName(e.target.value)}/>
-            </div>
-            <div className="mb-3">
-                <input type="email" name="email" required value={email} id="input_email" autoComplete='off' className={style.formControl} placeholder="E-mail" onChange={(e) => setEmail(e.target.value)}/>
-            </div>
-            <div className="mb-3">
-                <input type="tel" name="phone" value={phone} id="input_phone" className={style.formControl} placeholder="Phone" onChange={(e) => setPhone(e.target.value)}/>
-            </div>
-            <div className="mb-3">
-                <select name="how_can_we_help" id="select_how_can_we_help" className={style.formControl}>
-                    <option value="0">How can we help?</option>
-                </select>
-            </div>
-            <div className="mb-3">
-                <select name="where_did_you_hear_about_us" id="where_did_you_hear_about_us" className={style.formControl}>
-                    <option value="0">How did yout header about us?</option>
-                </select>
-            </div>
+        <form method="post"   className={style.containerFlex}>
 
-            <div className="mb-3">
-                <textarea name="messageText" value={messageText} id="inputMessageText" placeholder='Tell us a little more about the care that yout need.' className={style.formControl} rows={5} onChange={(e) => setMessageText(e.target.value)}></textarea>
-            </div>
+            <section className="group_form">
 
-            <button type="submit" className={`${style.submit_button} ${loading ? style.disabled : ''}`} disabled={loading}>Submit</button>
+                <div className="input_group">
+                    <label htmlFor="ndisName">NDIS Name</label>
+                    <input type="text" name="ndisName" value={ndisName} id="ndisName" onChange={(e) => setNdisName(e.target.value)} />
+                </div>
+
+                <div className="input_group">
+                    <label htmlFor="ndisEmail">Email</label>
+                    <input type="email" name="ndisEmail" value={ndisEmail} id="ndisEmail" onChange={(e) => setNdisEmail(e.target.value)} />
+                </div>
+
+                <div className="input_group">
+                    <label htmlFor="ndisName">Phone</label>
+                    <input type="text" name="ndisName" value={ndisPhone} id="ndisName" onChange={(e) => setNdisPhone(e.target.value)} />
+                </div>
+                
+
+                <div className="input_group">
+                    <label htmlFor="numberBedrooms">Number of bedrooms (depending on if your carer or support worker is attending the STA with you) </label>
+                    <input type="number" min={0} name="numberBedrooms" value={numberBedrooms} id="numberBedrooms" onChange={(e) => setNumberBedrooms(Number(e.target.value))} />
+                </div>
+                
+                <div className="input_group">
+                    <label htmlFor="specific_requirements">Please, specific room requirements</label>
+                    <input type="text" name="specific_requirements" value={specific_requirements} id="specific_requirements" onChange={(e) => setSpecific_requirements(e.target.value)} />
+                </div>
+
+                <div className="input_group">
+                    <label htmlFor="vouchers">Amt per day in STA prepaid vouchers for you (and your carer if attending) for meals & activities</label>
+                    <div>
+                        <input type="number" min={0} name="vouchers" value={vouchers} id="vouchers" onChange={(e) => setVouchers(Number(e.target.value))} />
+                        <span>AUD</span>
+                    </div>
+                        
+                    
+                </div>
+                
+                
+
+            </section>
+
+            <section className="group_form">
+
+                <div className="input_group">
+                    <label htmlFor="isOtherPerson">Are you a Family member, carer, support worker or friend completing this form?</label>
+                    <select name="isOtherPerson" value={isOtherPerson} id="isOtherPerson" onChange={(e) =>setIsOtherPerson(e.target.value)}>
+                        <option value="no" selected>No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+
+                {isOtherPerson == 'yes' ? (
+                    <>
+                        <div className="input_group">
+                            <label htmlFor="caregiverPersonName">Contact person to discuss building your STA </label>
+                            <input type="text" name="caregiverPersonName" value={caregiverPersonName} id="caregiverPersonName" onChange={(e) => setCaregiverPersonName(e.target.value)} />
+                        </div>
+
+                        <div className="input_group">
+                            <label htmlFor="subscriptionServicePerson">Contact person to discuss building your STA </label>
+                            <input type="text" name="subscriptionServicePerson" value={subscriptionServicePerson} id="subscriptionServicePerson" onChange={(e) => setSubscriptionServicePerson(e.target.value)} />
+                        </div>
+                    </>
+                ) : '' }
+
+
+                {/* back after */}
+                <div className="input_group">
+                    <label htmlFor="accomodation">Please list the Name of STA Accommodation you would like to stay in from our website.</label>
+                    <select name="accomodation" value={accomodation} id="accomodation" onChange={(e) =>setAccomodation(e.target.value)}>
+                        <option value="no" >No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                {/* back after */}
+
+                <div className="input_group">
+                    <label htmlFor="checkInDate">STA Respite Check in date.</label>
+                    <input type="date" name="checkInDate" id="checkInDate" value={checkInDate} onChange={e => setCheckInDate(e.target.value)}  />
+                </div>
+                
+                <div className="input_group">
+                    <label htmlFor="checkOutDate">STA Respite Check out date *</label>
+                    <input type="date" name="checkOutDate" id="checkOutDate" value={checkOutDate} onChange={e => setCheckOutDate(e.target.value)}  />
+                </div>
+                
+
+                <div className="input_group">
+                    <label htmlFor="planManaged">How is your NDIS Plan managed? *</label>
+                    <select name="planManaged" value={planManaged} id="planManaged" onChange={(e) =>setPlanManaged(e.target.value)}>
+                        <option value="0"  ></option>
+                        <option value="1">Plan Managed (Please enter Plan Manager's email in the next section if you have)</option>
+                        <option value="2">Self Managed</option>
+                        <option value="3">NDIS Managed (Habitability does not currently offer STA for NDIA managed participants)</option>
+                    </select>
+                </div>
+
+                
+                <div className="input_group">
+                    <label htmlFor="managerEmail">Plan Manager email</label>
+                    <input type="email" name="managerEmail" value={managerEmail} id="managerEmail" onChange={(e) => setManagerEmail(e.target.value)} />
+                </div>
+               
+                <div className="input_group">
+                    <label htmlFor="isSupportCoordinator">Do you have a support coordinator?</label>
+                    <select name="isSupportCoordinator" value={isSupportCoordinator} id="isSupportCoordinator" onChange={(e) =>setIsSupportCoordinator(e.target.value)} >
+                        <option value="no"  >No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+
+                {isSupportCoordinator == 'yes' ? (
+                    <>
+                        <div className="input_group">
+                            <label htmlFor="coordinatorName">Support coordinator name</label>
+                            <input type="text" name="coordinatorName" value={coordinatorName} id="coordinatorName" onChange={(e) => setCoordinatorName(e.target.value)} />
+                        </div>
+
+                        <div className="input_group">
+                            <label htmlFor="coordinatorEmail">Support coordinator email</label>
+                            <input type="email" name="coordinatorEmail" value={coordinatorEmail} id="coordinatorEmail" onChange={(e) => setCoordinatorEmail(e.target.value)} />
+                        </div>
+
+                        <div className="input_group">
+                            <label htmlFor="coordinatorPhone">Support coordinator phone</label>
+                            <input type="text" name="coordinatorPhone" value={coordinatorPhone} id="coordinatorPhone" onChange={(e) => setCoordinatorPhone(e.target.value)} />
+                        </div>
+                    </>
+                ): ''}
+
+
+            </section>
+
+
+            <button className="sendForm"> Send</button>
+
         </form>
-        </>
         )
     }
