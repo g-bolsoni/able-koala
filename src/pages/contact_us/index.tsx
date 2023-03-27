@@ -3,6 +3,8 @@ import styles from './style.module.scss';
 
 export default function contactUs (){
     return (
-        <Form />
+        <div className="container">
+            <Form />
+        </div>
     );
 }
