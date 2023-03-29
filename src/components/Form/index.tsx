@@ -3,24 +3,24 @@ import { useState } from 'react';
 
 
 export default function Form() {
-    const [ndisName, setNdisName]                                   = useState('');
-    const [ndisEmail, setNdisEmail]                                 = useState('');
-    const [ndisPhone, setNdisPhone]                                 = useState('');
+    const [ndisName, setNdisName]                                   = useState("");
+    const [ndisEmail, setNdisEmail]                                 = useState("");
+    const [ndisPhone, setNdisPhone]                                 = useState("");
     const [numberBedrooms, setNumberBedrooms]                       = useState(0);
-    const [specific_requirements, setSpecific_requirements]         = useState('');
+    const [specific_requirements, setSpecific_requirements]         = useState("");
     const [vouchers, setVouchers]                                   = useState(0);
-    const [isOtherPerson, setIsOtherPerson]                         = useState('no');
-    const [caregiverPersonName, setCaregiverPersonName]             = useState('');
-    const [subscriptionServicePerson, setSubscriptionServicePerson] = useState('');
-    const [accomodation, setAccomodation]                           = useState('');
-    const [checkInDate, setCheckInDate]                             = useState('');
-    const [checkOutDate, setCheckOutDate]                           = useState('');
-    const [planManaged, setPlanManaged]                             = useState('0');
-    const [managerEmail, setManagerEmail]                           = useState('');
-    const [isSupportCoordinator, setIsSupportCoordinator]           = useState('no');
-    const [coordinatorName, setCoordinatorName]                     = useState('');
-    const [coordinatorEmail, setCoordinatorEmail]                   = useState('');
-    const [coordinatorPhone, setCoordinatorPhone]                   = useState('');
+    const [isOtherPerson, setIsOtherPerson]                         = useState("no");
+    const [caregiverPersonName, setCaregiverPersonName]             = useState("");
+    const [subscriptionServicePerson, setSubscriptionServicePerson] = useState("");
+    const [accomodation, setAccomodation]                           = useState("");
+    const [checkInDate, setCheckInDate]                             = useState("");
+    const [checkOutDate, setCheckOutDate]                           = useState("");
+    const [planManaged, setPlanManaged]                             = useState("0");
+    const [managerEmail, setManagerEmail]                           = useState("");
+    const [isSupportCoordinator, setIsSupportCoordinator]           = useState("no");
+    const [coordinatorName, setCoordinatorName]                     = useState("");
+    const [coordinatorEmail, setCoordinatorEmail]                   = useState("");
+    const [coordinatorPhone, setCoordinatorPhone]                   = useState("");
 
 
 
