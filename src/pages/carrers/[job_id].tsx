@@ -151,7 +151,7 @@ export default function index() {
               <span className={styles.line}></span>
             </div>
             <div>
-              <input type="file" accept="application/pdf"onChange={(e) => {
+              <input type="file" accept="application/pdf" onChange={(e) => {
                 setFile(e.target.files[0])
               }} /> 
              

@@ -28,13 +28,17 @@ export default function Header() {
     <>
         <nav className={styles.header}>
             <div className={styles.logo}>
-                <Image
+                <Link
+                    href='/'
+                >
+                    <Image
                     src={logo}
                     alt="Picture of the author"
                     width={200}
                     height={200}
                     className={styles.logo_img}
-                />
+                    />
+                </Link>
             </div>
 
             <div className={styles.menu}>
@@ -46,7 +50,7 @@ export default function Header() {
                     : ''
                 }
                 
-                <div className={isActive ? styles.active : null}>
+                <div className={isActive ? styles.active : null}>   
                     <NavLinks />
                 </div>
             </div>
