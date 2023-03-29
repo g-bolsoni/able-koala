@@ -57,7 +57,7 @@ export default function Form() {
 
                 <div className={style.input_group}>
                     <label htmlFor="vouchers">Amt per day in STA prepaid vouchers for you (and your carer if attending) for meals & activities</label>
-                    <div>
+                    <div className={style.alignDiv}>
                         <input type="number" min={0} name="vouchers" value={vouchers} id="vouchers" onChange={(e) => setVouchers(Number(e.target.value))} />
                         <span>AUD</span>
                     </div>
