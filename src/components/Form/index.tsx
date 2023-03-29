@@ -1,5 +1,5 @@
-import style from './style.module.scss';
-import { useState } from 'react';
+import style from "./style.module.scss";
+import { useState } from "react";
 
 
 export default function Form() {
@@ -73,7 +73,7 @@ export default function Form() {
                     </select>
                 </div>
 
-                {isSupportCoordinator == 'yes' ? (
+                {isSupportCoordinator == "yes" ? (
                     <>
                         <div className={style.input_group}>
                             <label htmlFor="coordinatorName">Support coordinator name</label>
@@ -90,7 +90,7 @@ export default function Form() {
                             <input type="text" name="coordinatorPhone" value={coordinatorPhone} id="coordinatorPhone" onChange={(e) => setCoordinatorPhone(e.target.value)} />
                         </div>
                     </>
-                ): ''}
+                ) : ""}
                 
 
             </section>
@@ -105,7 +105,7 @@ export default function Form() {
                     </select>
                 </div>
 
-                {isOtherPerson == 'yes' ? (
+                {isOtherPerson == "yes" ? (
                     <>
                         <div className={style.input_group}>
                             <label htmlFor="caregiverPersonName">Contact person to discuss building your STA </label>
@@ -117,7 +117,7 @@ export default function Form() {
                             <input type="text" name="subscriptionServicePerson" value={subscriptionServicePerson} id="subscriptionServicePerson" onChange={(e) => setSubscriptionServicePerson(e.target.value)} />
                         </div>
                     </>
-                ) : '' }
+                ) : "" }
 
 
                 {/* back after */}
@@ -145,7 +145,7 @@ export default function Form() {
                     <label htmlFor="planManaged">How is your NDIS Plan managed? *</label>
                     <select name="planManaged" value={planManaged} id="planManaged" onChange={(e) =>setPlanManaged(e.target.value)}>
                         <option value="0" selected ></option>
-                        <option value="1">Plan Managed (Please enter Plan Manager's email in the next section if you have)</option>
+                        <option value="1">Plan Managed (Please enter Plan Managers email in the next section if you have)</option>
                         <option value="2">Self Managed</option>
                         <option value="3">NDIS Managed (Habitability does not currently offer STA for NDIA managed participants)</option>
                     </select>
