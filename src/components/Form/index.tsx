@@ -1,6 +1,5 @@
 import style from './style.module.scss';
-import { FormEvent, useState } from 'react';
-import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 
 export default function Form() {
@@ -69,7 +68,7 @@ export default function Form() {
                 <div className={style.input_group}>
                     <label htmlFor="isSupportCoordinator">Do you have a support coordinator?</label>
                     <select name="isSupportCoordinator" value={isSupportCoordinator} id="isSupportCoordinator" onChange={(e) =>setIsSupportCoordinator(e.target.value)} >
-                        <option value="no"  >No</option>
+                        <option value="no" selected >No</option>
                         <option value="yes">Yes</option>
                     </select>
                 </div>
@@ -125,7 +124,7 @@ export default function Form() {
                 <div className={style.input_group}>
                     <label htmlFor="accomodation">Please list the Name of STA Accommodation you would like to stay in from our website.</label>
                     <select name="accomodation" value={accomodation} id="accomodation" onChange={(e) =>setAccomodation(e.target.value)}>
-                        <option value="no" >No</option>
+                        <option value="no" selected >No</option>
                         <option value="yes">Yes</option>
                     </select>
                 </div>
@@ -145,7 +144,7 @@ export default function Form() {
                 <div className={style.input_group}>
                     <label htmlFor="planManaged">How is your NDIS Plan managed? *</label>
                     <select name="planManaged" value={planManaged} id="planManaged" onChange={(e) =>setPlanManaged(e.target.value)}>
-                        <option value="0"  ></option>
+                        <option value="0" selected ></option>
                         <option value="1">Plan Managed (Please enter Plan Manager's email in the next section if you have)</option>
                         <option value="2">Self Managed</option>
                         <option value="3">NDIS Managed (Habitability does not currently offer STA for NDIA managed participants)</option>
