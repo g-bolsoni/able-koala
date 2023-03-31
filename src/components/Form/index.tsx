@@ -1,8 +1,12 @@
 import style from "./style.module.scss";
 import { useState } from "react";
+import useAppData from "../../data/hook/useAppData";
 
 
 export default function Form() {
+
+    const { postContactUs } = useAppData()
+
     const [ndisName, setNdisName]                                   = useState("");
     const [ndisEmail, setNdisEmail]                                 = useState("");
     const [ndisPhone, setNdisPhone]                                 = useState("");
@@ -22,10 +26,13 @@ export default function Form() {
     const [coordinatorEmail, setCoordinatorEmail]                   = useState("");
     const [coordinatorPhone, setCoordinatorPhone]                   = useState("");
 
-
+    const setPostContactUs = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        postContactUs!()
+    }
 
     return (
-        <form method="post" className={style.containerFlex}>
+        <form method="post" onSubmit={setPostContactUs} className={style.containerFlex}>
 
             <section className={style.groupForm}>
 
