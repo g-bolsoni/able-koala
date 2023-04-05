@@ -6,7 +6,7 @@ import { contactUsSendToJson } from "../../models/contact_us_send";
 
 export default function Form() {
 
-    const { postContactUs } = useAppData()
+    const { postContactUs } = useAppData();
 
     const [ndisName, setNdisName] = useState("");
     const [ndisEmail, setNdisEmail] = useState("");
@@ -48,9 +48,10 @@ export default function Form() {
             STA_check_out_date: checkOutDate,
             NDIS_plan: planManaged,
             manager_email: managerEmail
-        }))
+        }));
     }
 
+    console.log(postContactUs);
     return (
         <form method="post" onSubmit={setPostContactUs} className={style.containerFlex}>
 
@@ -123,7 +124,6 @@ export default function Form() {
             </section>
 
             <section className={style.groupForm}>
-
                 <div className={style.input_group}>
                     <label htmlFor="isOtherPerson">Are you a Family member, carer, support worker or friend completing this form?</label>
                     <select name="isOtherPerson" value={isOtherPerson} id="isOtherPerson" onChange={(e) => setIsOtherPerson(e.target.value)}>
@@ -135,12 +135,12 @@ export default function Form() {
                 {isOtherPerson == "yes" ? (
                     <>
                         <div className={style.input_group}>
-                            <label htmlFor="caregiverPersonName">Contact person to discuss building your STA </label>
+                            <label htmlFor="caregiverPersonName">Name of contact person to discuss building your STA </label>
                             <input type="text" name="caregiverPersonName" value={caregiverPersonName} id="caregiverPersonName" onChange={(e) => setCaregiverPersonName(e.target.value)} />
                         </div>
 
                         <div className={style.input_group}>
-                            <label htmlFor="subscriptionServicePerson">Contact person to discuss building your STA </label>
+                            <label htmlFor="subscriptionServicePerson">Name of person responsible for signing STA service contract</label>
                             <input type="text" name="subscriptionServicePerson" value={subscriptionServicePerson} id="subscriptionServicePerson" onChange={(e) => setSubscriptionServicePerson(e.target.value)} />
                         </div>
                     </>
@@ -150,10 +150,11 @@ export default function Form() {
                 {/* back after */}
                 <div className={style.input_group}>
                     <label htmlFor="accomodation">Please list the Name of STA Accommodation you would like to stay in from our website.</label>
-                    <select name="accomodation" value={accomodation} id="accomodation" onChange={(e) => setAccomodation(e.target.value)}>
+                    <input type="text" name="accomodation" value={accomodation} id="accomodation"  onChange={(e) => setAccomodation(e.target.value)} />
+                    {/* <select name="accomodation" value={accomodation} id="accomodation" onChange={(e) => setAccomodation(e.target.value)}>
                         <option value="no" selected >No</option>
                         <option value="yes">Yes</option>
-                    </select>
+                    </select> */}
                 </div>
                 {/* back after */}
 
@@ -188,9 +189,7 @@ export default function Form() {
 
             </section>
 
-
             <button className={style.sendForm}> Send</button>
-
         </form>
     )
 }
