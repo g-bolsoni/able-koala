@@ -1,5 +1,4 @@
 import axios from "axios"; 
-import useAppData from "../data/hook/useAppData";
 
 export const  sendContactMail = async (name:string, clientMail:string, cellphone: string, file: string, message:String) =>{
 
@@ -21,6 +20,6 @@ export const  sendContactMail = async (name:string, clientMail:string, cellphone
 
 
 export const sendContactUs = async () => {
-    const { postContactUs } = useAppData()
-    console.log(postContactUs);
+    // aqui faz o envio de email de contato
+    console.log('teste')
 }

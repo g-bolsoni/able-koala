@@ -2,8 +2,6 @@ import style from "./style.module.scss";
 import { useState } from "react";
 import useAppData from "../../data/hook/useAppData";
 import { contactUsSendToJson } from "../../models/contact_us_send";
-import { sendContactUs } from '../../services/sendMail';
-
 
 export default function Form() {
 
@@ -49,15 +47,7 @@ export default function Form() {
             STA_check_out_date: checkOutDate,
             NDIS_plan: planManaged,
             manager_email: managerEmail
-        }));
-        
-        try {
-            await sendContactUs();
-            console.log('chamou');
-            
-        } catch (error) {
-            
-        }
+        }));       
     }
 
     return (

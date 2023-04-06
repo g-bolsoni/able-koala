@@ -2,6 +2,7 @@ import { addDoc, collection, getDocs, query } from "firebase/firestore"
 import { createContext, useEffect } from "react"
 import { ContactUsSend } from "../../models/contact_us_send"
 import { db } from "../../services/firebaseConection"
+import { sendContactUs } from '../../services/sendMail';
 
 interface AppContextProps {
     postContactUs?: (contactUs:ContactUsSend) => void
@@ -13,7 +14,13 @@ const AppContext = createContext<AppContextProps>({})
 export function AppProvider(props:AppContextProps){
 
     async function postContactUs(contactUs:ContactUsSend){
-        addDoc(collection(db, "contact"),contactUs)
+        try {
+            addDoc(collection(db, "contact"),contactUs) 
+            await sendContactUs();                     
+        } catch (error) {
+            
+        }
+        
     }
 
     return (
