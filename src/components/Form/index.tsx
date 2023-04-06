@@ -2,6 +2,7 @@ import style from "./style.module.scss";
 import { useState } from "react";
 import useAppData from "../../data/hook/useAppData";
 import { contactUsSendToJson } from "../../models/contact_us_send";
+import { sendContactUs } from '../../services/sendMail';
 
 
 export default function Form() {
@@ -27,9 +28,9 @@ export default function Form() {
     const [coordinatorEmail, setCoordinatorEmail] = useState("");
     const [coordinatorPhone, setCoordinatorPhone] = useState("");
 
-    const setPostContactUs = (e: { preventDefault: () => void; }) => {
+    const setPostContactUs = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        postContactUs!(contactUsSendToJson({
+        await postContactUs!(contactUsSendToJson({
             NDIS_name: ndisName,
             email: ndisEmail,
             phone: ndisPhone,
@@ -49,9 +50,16 @@ export default function Form() {
             NDIS_plan: planManaged,
             manager_email: managerEmail
         }));
+        
+        try {
+            await sendContactUs();
+            console.log('chamou');
+            
+        } catch (error) {
+            
+        }
     }
 
-    console.log(postContactUs);
     return (
         <form method="post" onSubmit={setPostContactUs} className={style.containerFlex}>
 
@@ -189,7 +197,7 @@ export default function Form() {
 
             </section>
 
-            <button className={style.sendForm}> Send</button>
+            <button className={style.sendForm} type="submit"  > Send</button>
         </form>
     )
 }

@@ -1,4 +1,5 @@
 import axios from "axios"; 
+import useAppData from "../data/hook/useAppData";
 
 export const  sendContactMail = async (name:string, clientMail:string, cellphone: string, file: string, message:String) =>{
 
@@ -17,3 +18,9 @@ export const  sendContactMail = async (name:string, clientMail:string, cellphone
         return error
     }
 };
+
+
+export const sendContactUs = async () => {
+    const { postContactUs } = useAppData()
+    console.log(postContactUs);
+}
