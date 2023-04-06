@@ -1,4 +1,5 @@
 import axios from "axios"; 
+import { ContactUsSend } from "../models/contact_us_send";
 
 export const  sendContactMail = async (name:string, clientMail:string, cellphone: string, file: string, message:String) =>{
 
@@ -19,7 +20,7 @@ export const  sendContactMail = async (name:string, clientMail:string, cellphone
 };
 
 
-export const sendContactUs = async () => {
+export const sendContactUs = async (contactUs:ContactUsSend) => {
     // aqui faz o envio de email de contato
     console.log('teste')
 }
