@@ -67,7 +67,7 @@ export default function Form() {
 
                 <div className={style.input_group}>
                     <label htmlFor="ndisName">Phone</label>
-                    <ReactInputMask mask={'+99 (99) 99999-9999'} type="text" required={true} name="ndisName" value={ndisPhone} id="ndisName" onChange={(e) => setNdisPhone(e.target.value)} />
+                    <ReactInputMask mask={'999 999 999'} type="text" required={true} name="ndisName" value={ndisPhone} id="ndisName" onChange={(e) => setNdisPhone(e.target.value)} />
                 </div>
 
 
