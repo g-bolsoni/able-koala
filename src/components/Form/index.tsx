@@ -2,6 +2,7 @@ import style from "./style.module.scss";
 import { useState } from "react";
 import useAppData from "../../data/hook/useAppData";
 import { contactUsSendToJson } from "../../models/contact_us_send";
+import ReactInputMask from "react-input-mask-next"
 
 export default function Form() {
 
@@ -40,34 +41,33 @@ export default function Form() {
             coodinator_email: coordinatorEmail,
             coodinator_phone: coordinatorPhone,
             family_member: isOtherPerson,
-            contact_person1:caregiverPersonName,
-            contact_person2:subscriptionServicePerson,
+            contact_person1: caregiverPersonName,
+            contact_person2: subscriptionServicePerson,
             STA_accomodation: accomodation,
             STA_check_in_date: checkInDate,
             STA_check_out_date: checkOutDate,
             NDIS_plan: planManaged,
             manager_email: managerEmail
-        }));       
+        }));
     }
 
     return (
-        <form method="post" onSubmit={setPostContactUs} className={style.containerFlex}>
-
+        <form method="post" onSubmit={setPostContactUs} className={style.containerFlex}>            
             <section className={style.groupForm}>
 
                 <div className={style.input_group}>
                     <label htmlFor="ndisName">NDIS Name</label>
-                    <input type="text" name="ndisName" value={ndisName} id="ndisName" onChange={(e) => setNdisName(e.target.value)} />
+                    <input type="text" required={true} name="ndisName" value={ndisName} id="ndisName" onChange={(e) => setNdisName(e.target.value)} />
                 </div>
 
                 <div className={style.input_group}>
                     <label htmlFor="ndisEmail">Email</label>
-                    <input type="email" name="ndisEmail" value={ndisEmail} id="ndisEmail" onChange={(e) => setNdisEmail(e.target.value)} />
+                    <input type="email" required={true} name="ndisEmail" value={ndisEmail} id="ndisEmail" onChange={(e) => setNdisEmail(e.target.value)} />
                 </div>
 
                 <div className={style.input_group}>
                     <label htmlFor="ndisName">Phone</label>
-                    <input type="number" name="ndisName" value={ndisPhone} id="ndisName" onChange={(e) => setNdisPhone(e.target.value)} />
+                    <ReactInputMask mask={'+99 (99) 99999-9999'} type="text" required={true} name="ndisName" value={ndisPhone} id="ndisName" onChange={(e) => setNdisPhone(e.target.value)} />
                 </div>
 
 
@@ -148,7 +148,7 @@ export default function Form() {
                 {/* back after */}
                 <div className={style.input_group}>
                     <label htmlFor="accomodation">Please list the Name of STA Accommodation you would like to stay in from our website.</label>
-                    <input type="text" name="accomodation" value={accomodation} id="accomodation"  onChange={(e) => setAccomodation(e.target.value)} />
+                    <input type="text" name="accomodation" value={accomodation} id="accomodation" onChange={(e) => setAccomodation(e.target.value)} />
                     {/* <select name="accomodation" value={accomodation} id="accomodation" onChange={(e) => setAccomodation(e.target.value)}>
                         <option value="no" selected >No</option>
                         <option value="yes">Yes</option>
@@ -158,12 +158,12 @@ export default function Form() {
 
                 <div className={style.input_group}>
                     <label htmlFor="checkInDate">STA Respite Check in date.</label>
-                    <input type="date" name="checkInDate" id="checkInDate" value={checkInDate} onChange={e => setCheckInDate(e.target.value)} />
+                    <input type="date" required={true} name="checkInDate" id="checkInDate" value={checkInDate} onChange={e => setCheckInDate(e.target.value)} />
                 </div>
 
                 <div className={style.input_group}>
                     <label htmlFor="checkOutDate">STA Respite Check out date *</label>
-                    <input type="date" name="checkOutDate" id="checkOutDate" value={checkOutDate} onChange={e => setCheckOutDate(e.target.value)} />
+                    <input type="date" required={true} name="checkOutDate" id="checkOutDate" value={checkOutDate} onChange={e => setCheckOutDate(e.target.value)} />
                 </div>
 
 

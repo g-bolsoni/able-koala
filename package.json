@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "axios": "^1.2.1",
     "firebase": "^9.17.1",
     "framer-motion": "^7.6.5",
@@ -20,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.4.0",
+    "react-input-mask-next": "^3.0.0-alpha.12",
     "sass": "^1.55.0",
     "swiper": "^8.3.2"
   },
