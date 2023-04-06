@@ -15,7 +15,7 @@ export function AppProvider(props:AppContextProps){
 
     async function postContactUs(contactUs:ContactUsSend){
         try {
-            addDoc(collection(db, "contact"),contactUs) 
+            await addDoc(collection(db, "contact"),contactUs) 
             await sendContactUs();                     
         } catch (error) {
             
