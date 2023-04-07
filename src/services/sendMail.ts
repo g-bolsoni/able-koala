@@ -21,6 +21,16 @@ export const  sendContactMail = async (name:string, clientMail:string, cellphone
 
 
 export const sendContactUs = async (contactUs:ContactUsSend) => {
+
+    try {
+        const res = await axios.post('/api/contact', contactUs)
+        console.log(res);
+        
+        return res;
+    } catch (error) {
+        
+    }
+
     // aqui faz o envio de email de contato
     console.log('teste')
 }
