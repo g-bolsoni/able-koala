@@ -30,7 +30,4 @@ export const sendContactUs = async (contactUs:ContactUsSend) => {
     } catch (error) {
         
     }
-
-    // aqui faz o envio de email de contato
-    console.log('teste')
 }
