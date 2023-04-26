@@ -3,8 +3,7 @@ import services from '../../../services.config.json';
 import { useRouter } from 'next/router';
 import styles from './service.module.scss';
 import Link from 'next/link';
-
-
+import Form from '../../components/Form';
 
 export default function index() {
   let router = useRouter();
@@ -36,11 +35,13 @@ export default function index() {
                       <br />
                       {service?.helper_tex_2}
                     </p>
-                  </section >
-
+                  </section > 
                 );
               }
           })
+        }
+        {
+        (serviceId == '7') ? <Form /> : ''
         }
       </section>
       <aside className={styles.aside} >

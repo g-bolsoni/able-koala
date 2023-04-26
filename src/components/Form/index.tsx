@@ -8,24 +8,31 @@ export default function Form() {
 
     const { postContactUs } = useAppData();
 
-    const [ndisName, setNdisName] = useState("");
-    const [ndisEmail, setNdisEmail] = useState("");
-    const [ndisPhone, setNdisPhone] = useState("");
-    const [numberBedrooms, setNumberBedrooms] = useState(0);
-    const [specific_requirements, setSpecific_requirements] = useState("");
-    const [vouchers, setVouchers] = useState(0);
-    const [isOtherPerson, setIsOtherPerson] = useState("no");
-    const [caregiverPersonName, setCaregiverPersonName] = useState("");
-    const [subscriptionServicePerson, setSubscriptionServicePerson] = useState("");
-    const [accomodation, setAccomodation] = useState("");
-    const [checkInDate, setCheckInDate] = useState("");
-    const [checkOutDate, setCheckOutDate] = useState("");
-    const [planManaged, setPlanManaged] = useState("0");
-    const [managerEmail, setManagerEmail] = useState("");
-    const [isSupportCoordinator, setIsSupportCoordinator] = useState("no");
-    const [coordinatorName, setCoordinatorName] = useState("");
-    const [coordinatorEmail, setCoordinatorEmail] = useState("");
-    const [coordinatorPhone, setCoordinatorPhone] = useState("");
+    const [loading, setLoading]                                         = useState(true);
+
+    const [ndisName, setNdisName]                                         = useState("");
+    const [ndisNumber, setNdisNumber]                                     = useState("");
+    const [ndisEmail, setNdisEmail]                                       = useState("");
+    const [ndisPhone, setNdisPhone]                                       = useState("");
+    const [numberBedrooms, setNumberBedrooms]                             = useState(0);
+    const [specificRequirements, setSpecificRequirements]                 = useState("standard_room");
+    const [isParkingRequired, setIsParkingRequired]                       = useState("no");
+    const [isCarTransfers, setIsCarTransfers]                             = useState("no");
+    const [specializedEquipment, setSpecializedEquipment]                 = useState("hospitalBed");
+    const [specializedEquipmentDetails, setSpecializedEquipmentDetails]   = useState("");
+    const [additional_requirements_text, setAdditional_requirements_text] = useState("");
+    const [isOtherPerson, setIsOtherPerson]                               = useState("no");
+    const [caregiverPersonName, setCaregiverPersonName]                   = useState("");
+    const [subscriptionServicePerson, setSubscriptionServicePerson]       = useState("");
+    const [accomodation, setAccomodation]                                 = useState("");
+    const [checkInDate, setCheckInDate]                                   = useState("");
+    const [checkOutDate, setCheckOutDate]                                 = useState("");
+    const [planManaged, setPlanManaged]                                   = useState("0");
+    const [managerEmail, setManagerEmail]                                 = useState("");
+    const [isSupportCoordinator, setIsSupportCoordinator]                 = useState("no");
+    const [coordinatorName, setCoordinatorName]                           = useState("");
+    const [coordinatorEmail, setCoordinatorEmail]                         = useState("");
+    const [coordinatorPhone, setCoordinatorPhone]                         = useState("");
 
     const setPostContactUs = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -34,8 +41,7 @@ export default function Form() {
             email: ndisEmail,
             phone: ndisPhone,
             bedrooms: numberBedrooms,
-            specific_room: specific_requirements,
-            vouchers: vouchers,
+            specific_room: specificRequirements,
             support_coodinator: isSupportCoordinator,
             coodinator_name: coordinatorName,
             coodinator_email: coordinatorEmail,
@@ -49,14 +55,44 @@ export default function Form() {
             NDIS_plan: planManaged,
             manager_email: managerEmail
         }));
-    }
+        setLoading(false);
+    }   
 
+
+    // Room Requirements * ok
+
+        // Standard Room
+
+        // Accessible Room
+        // Additional requirements * 
+
+    // Parking Required -> boolean ok
+
+    // Car Transfers Required -> boolean ok 
+
+    // Specialized Equipment Required -> options 
+        // Hospital bed
+        // Static shower chair
+        // Commode shower chair  
+        // Recliner chair 
+        // Hoist 
+        // None of the above
+        
+    // None of the above
+    // Please specify requirements
+    // Write N/A if Not Applicable
+
+
+// Para esse form
+
+// "Specify location for the service requested "
+// How can i Help you?
     return (
         <form method="post" onSubmit={setPostContactUs} className={style.containerFlex}>            
             <section className={style.groupForm}>
 
                 <div className={style.input_group}>
-                    <label htmlFor="ndisName">NDIS Name</label>
+                    <label htmlFor="ndisName">NDIS participante Name </label>
                     <input type="text" required={true} name="ndisName" value={ndisName} id="ndisName" onChange={(e) => setNdisName(e.target.value)} />
                 </div>
 
@@ -66,10 +102,9 @@ export default function Form() {
                 </div>
 
                 <div className={style.input_group}>
-                    <label htmlFor="ndisName">Phone</label>
-                    <ReactInputMask mask={'999 999 999'} type="text" required={true} name="ndisName" value={ndisPhone} id="ndisName" onChange={(e) => setNdisPhone(e.target.value)} />
+                    <label htmlFor="ndisPhone">Phone</label>
+                    <ReactInputMask mask={'999 999 999'} type="text" required={true} name="ndisPhone" value={ndisPhone} id="ndisPhone" onChange={(e) => setNdisPhone(e.target.value)} />
                 </div>
-
 
                 <div className={style.input_group}>
                     <label htmlFor="numberBedrooms">Number of bedrooms (depending on if your carer or support worker is attending the STA with you) </label>
@@ -77,29 +112,49 @@ export default function Form() {
                 </div>
 
                 <div className={style.input_group}>
-                    <label htmlFor="specific_requirements">Please, specific room requirements</label>
-                    <input type="text" name="specific_requirements" value={specific_requirements} id="specific_requirements" onChange={(e) => setSpecific_requirements(e.target.value)} />
+                    <label htmlFor="specificRequirements">Please, specific room requirements</label>
+                    <select name="specificRequirements" id="specificRequirements" defaultValue={specificRequirements}  onChange={(e) => setSpecificRequirements(e.target.value)}>
+                        <option value="standard_room" selected>Standard Room</option>
+                        <option value="accessible_room">Accessible Room</option>
+                        <option value="additional_requirements">Additional requirements</option>
+                    </select>
                 </div>
+
+                { specificRequirements == 'additional_requirements' && (
+                    <div className={style.input_group}>
+                        <label htmlFor="">Please, detail the room requirements </label>
+                        <input type="text" name="additional_requirements_text" value={additional_requirements_text} id="additional_requirements_text" onChange={(e) => setAdditional_requirements_text(e.target.value)} />
+                    </div>
+                )}                
 
                 <div className={style.input_group}>
-                    <label htmlFor="vouchers">Amt per day in STA prepaid vouchers for you (and your carer if attending) for meals & activities</label>
-                    <div className={style.alignDiv}>
-                        <input type="number" min={0} name="vouchers" value={vouchers} id="vouchers" onChange={(e) => setVouchers(Number(e.target.value))} />
-                        <span>AUD</span>
-                    </div>
-
-
+                    <label htmlFor="specializedEquipment">Will you need specialized equipment</label>
+                    <select name="specializedEquipment"  defaultValue={specializedEquipment} id="specializedEquipment" onChange={(e) => setSpecializedEquipment(e.target.value)} >
+                        <option value="hospitalBed" selected >Hospital bed</option>
+                        <option value="staticShowerChair">Static shower chair</option>
+                        <option value="commodeShowerChair">Commode shower chair</option>
+                        <option value="reclinerChair">Recliner chair</option>
+                        <option value="hoist">Hoist</option>
+                        <option value="none">None of the above</option>
+                    </select>
                 </div>
+
+                { specializedEquipment == 'none' && (
+                    <div className={style.input_group}>
+                        <label htmlFor="specializedEquipmentDetails">Please, specify requirements</label>
+                        <input type="text" name="specializedEquipmentDetails" value={specializedEquipmentDetails} id="specializedEquipmentDetails" onChange={(e) => setSpecializedEquipmentDetails(e.target.value)} />
+                    </div>
+                )}   
 
                 <div className={style.input_group}>
                     <label htmlFor="isSupportCoordinator">Do you have a support coordinator?</label>
-                    <select name="isSupportCoordinator" value={isSupportCoordinator} id="isSupportCoordinator" onChange={(e) => setIsSupportCoordinator(e.target.value)} >
+                    <select name="isSupportCoordinator"  defaultValue={isSupportCoordinator} id="isSupportCoordinator" onChange={(e) => setIsSupportCoordinator(e.target.value)} >
                         <option value="no" selected >No</option>
                         <option value="yes">Yes</option>
                     </select>
                 </div>
 
-                {isSupportCoordinator == "yes" ? (
+                {isSupportCoordinator == "yes" && (
                     <>
                         <div className={style.input_group}>
                             <label htmlFor="coordinatorName">Support coordinator name</label>
@@ -113,10 +168,10 @@ export default function Form() {
 
                         <div className={style.input_group}>
                             <label htmlFor="coordinatorPhone">Support coordinator phone</label>
-                            <input type="text" name="coordinatorPhone" value={coordinatorPhone} id="coordinatorPhone" onChange={(e) => setCoordinatorPhone(e.target.value)} />
+                            <ReactInputMask mask={'999 999 999'} type="text" name="coordinatorPhone" value={coordinatorPhone} id="coordinatorPhone" onChange={(e) => setCoordinatorPhone(e.target.value)} />
                         </div>
                     </>
-                ) : ""}
+                )}  
 
 
             </section>
@@ -124,13 +179,13 @@ export default function Form() {
             <section className={style.groupForm}>
                 <div className={style.input_group}>
                     <label htmlFor="isOtherPerson">Are you a Family member, carer, support worker or friend completing this form?</label>
-                    <select name="isOtherPerson" value={isOtherPerson} id="isOtherPerson" onChange={(e) => setIsOtherPerson(e.target.value)}>
+                    <select name="isOtherPerson" defaultValue={isOtherPerson} id="isOtherPerson" onChange={(e) => setIsOtherPerson(e.target.value)}>
                         <option value="no" selected>No</option>
                         <option value="yes">Yes</option>
                     </select>
                 </div>
 
-                {isOtherPerson == "yes" ? (
+                {isOtherPerson == "yes" && (
                     <>
                         <div className={style.input_group}>
                             <label htmlFor="caregiverPersonName">Name of contact person to discuss building your STA </label>
@@ -142,7 +197,23 @@ export default function Form() {
                             <input type="text" name="subscriptionServicePerson" value={subscriptionServicePerson} id="subscriptionServicePerson" onChange={(e) => setSubscriptionServicePerson(e.target.value)} />
                         </div>
                     </>
-                ) : ""}
+                )}
+
+                <div className={style.input_group}>
+                    <label htmlFor="isParkingRequired">Will you need parking?</label>
+                    <select name="isParkingRequired" defaultValue={isParkingRequired} id="isParkingRequired" onChange={(e) => setIsParkingRequired(e.target.value)}>
+                        <option value="no" selected>No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+         
+                <div className={style.input_group}>
+                    <label htmlFor="isCarTransfers">Will you need car transfers?</label>
+                    <select name="isCarTransfers" defaultValue={isCarTransfers} id="isCarTransfers" onChange={(e) => setIsCarTransfers(e.target.value)}>
+                        <option value="no" selected>No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
 
 
                 {/* back after */}
@@ -169,7 +240,7 @@ export default function Form() {
 
                 <div className={style.input_group}>
                     <label htmlFor="planManaged">How is your NDIS Plan managed? *</label>
-                    <select name="planManaged" value={planManaged} id="planManaged" onChange={(e) => setPlanManaged(e.target.value)}>
+                    <select name="planManaged" defaultValue={planManaged} id="planManaged" onChange={(e) => setPlanManaged(e.target.value)}>
                         <option value="0" selected ></option>
                         <option value="1">Plan Managed (Please enter Plan Managers email in the next section if you have)</option>
                         <option value="2">Self Managed</option>
@@ -187,7 +258,7 @@ export default function Form() {
 
             </section>
 
-            <button className={style.sendForm} type="submit"  > Send</button>
+            <button className={style.sendForm} type="submit" disabled={loading}> Send</button>
         </form>
     )
 }

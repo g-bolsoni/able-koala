@@ -60,13 +60,13 @@ export default function index() {
       }});
       return;
     }
+    setLoading(true);
 
     try {
       const resumeLink = await generateLink();
 
       if (resumeLink) {
         let message = 'Olá, gostaria de declarar meu interesse na vaga';
-        setLoading(true);
         await sendContactMail(name, email, number, resumeLink, message);
         toast.success("Currículo enviado com sucesso");
         setName('');
@@ -162,7 +162,7 @@ export default function index() {
 
           <button 
             type="submit" 
-            className={`${styles.submit_button} ${loading ? styles.disabled : ''}`} 
+            className={`${styles.submit_button}`} 
             disabled={loading}
           >
             Send
