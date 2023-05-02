@@ -16,25 +16,28 @@ export default function index() {
           services.services.map(service => {
               if(`${service.id}` == serviceId){
                 return(
-                  <section key={service.id} >
+                  <section key={service.id} className='flex align-center justify-center flex-column' >
                     <h1 className={styles.title}>What is {service?.title}? </h1>
-                    <p className={styles.text} >{service?.description}</p>
-                    <p className={styles.text}> {service?.title_topics}</p>
-                    <ul>
-                      {
-                        service.topics?.map(topic => (
-                          <li key={topic} className={styles.itensList} >{topic}</li>
-                        ))
-                      }
-                    </ul>
-
-                    <h2 className={styles.subtitle}>{service?.helper_title}</h2>
-                    <p className={styles.text} >
-                      {service?.helper_text}
-                      <br />
-                      <br />
-                      {service?.helper_tex_2}
-                    </p>
+                    {service.description && (<p className={styles.text} >{service?.description}</p>)}
+                    {service.title_topics && (<p className={styles.text}> {service?.title_topics}</p>)}
+                    {service.topics && (
+                      <ul>
+                        {
+                          service.topics?.map(topic => (
+                            <li key={topic} className={styles.itensList} >{topic}</li>
+                          ))
+                        }
+                      </ul>
+                    )}
+                    {service.helper_title && (<h2 className={styles.subtitle}>{service?.helper_title}</h2>)}
+                    {service.helper_text && (
+                      <p className={styles.text} >
+                        {service?.helper_text}
+                        <br />
+                        <br />
+                        {service?.helper_tex_2}
+                      </p>
+                    )}
                   </section > 
                 );
               }

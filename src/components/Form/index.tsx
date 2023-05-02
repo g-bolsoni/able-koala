@@ -6,35 +6,34 @@ import ReactInputMask from "react-input-mask-next"
 
 export default function Form() {
 
-    const { postContactUs } = useAppData();
-
-    const [loading, setLoading]                                         = useState(true);
-
+    const { postContactUs }                                               = useAppData();
     const [ndisName, setNdisName]                                         = useState("");
     const [ndisNumber, setNdisNumber]                                     = useState("");
     const [ndisEmail, setNdisEmail]                                       = useState("");
     const [ndisPhone, setNdisPhone]                                       = useState("");
-    const [numberBedrooms, setNumberBedrooms]                             = useState(0);
-    const [specificRequirements, setSpecificRequirements]                 = useState("standard_room");
-    const [isParkingRequired, setIsParkingRequired]                       = useState("no");
-    const [isCarTransfers, setIsCarTransfers]                             = useState("no");
-    const [specializedEquipment, setSpecializedEquipment]                 = useState("hospitalBed");
     const [specializedEquipmentDetails, setSpecializedEquipmentDetails]   = useState("");
     const [additional_requirements_text, setAdditional_requirements_text] = useState("");
-    const [isOtherPerson, setIsOtherPerson]                               = useState("no");
     const [caregiverPersonName, setCaregiverPersonName]                   = useState("");
     const [subscriptionServicePerson, setSubscriptionServicePerson]       = useState("");
     const [accomodation, setAccomodation]                                 = useState("");
     const [checkInDate, setCheckInDate]                                   = useState("");
     const [checkOutDate, setCheckOutDate]                                 = useState("");
-    const [planManaged, setPlanManaged]                                   = useState("0");
     const [managerEmail, setManagerEmail]                                 = useState("");
-    const [isSupportCoordinator, setIsSupportCoordinator]                 = useState("no");
-    const [coordinatorName, setCoordinatorName]                           = useState("");
     const [coordinatorEmail, setCoordinatorEmail]                         = useState("");
+    const [coordinatorName, setCoordinatorName]                           = useState("");
     const [coordinatorPhone, setCoordinatorPhone]                         = useState("");
+    const [numberBedrooms, setNumberBedrooms]                             = useState(0);
+    const [loading, setLoading]                                           = useState(false);
+    const [specificRequirements, setSpecificRequirements]                 = useState("standard_room");
+    const [isParkingRequired, setIsParkingRequired]                       = useState("no");
+    const [isCarTransfers, setIsCarTransfers]                             = useState("no");
+    const [specializedEquipment, setSpecializedEquipment]                 = useState("hospitalBed");
+    const [isOtherPerson, setIsOtherPerson]                               = useState("no");
+    const [planManaged, setPlanManaged]                                   = useState("0");
+    const [isSupportCoordinator, setIsSupportCoordinator]                 = useState("no");
 
     const setPostContactUs = async (e: { preventDefault: () => void; }) => {
+        setLoading(true);
         e.preventDefault();
         await postContactUs!(contactUsSendToJson({
             NDIS_name: ndisName,
