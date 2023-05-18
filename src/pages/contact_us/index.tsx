@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 import { useState } from "react";
 import ReactInputMask from "react-input-mask-next";
 
-export default function contactUs (){
+export default function ContactUs (){
 
     const [ndisName, setNdisName]                                         = useState("");
     const [ndisEmail, setNdisEmail]                                       = useState("");
