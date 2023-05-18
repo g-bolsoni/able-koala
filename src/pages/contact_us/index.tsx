@@ -1,14 +1,12 @@
 import styles from './styles.module.scss';
 import { useState } from "react";
-import ReactInputMask from "react-input-mask-next"
-
+import ReactInputMask from "react-input-mask-next";
 
 export default function contactUs (){
 
     const [ndisName, setNdisName]                                         = useState("");
     const [ndisEmail, setNdisEmail]                                       = useState("");
     const [ndisPhone, setNdisPhone]                                       = useState("");
-    const [specializedEquipmentDetails, setSpecializedEquipmentDetails]   = useState("");
     const [caregiverPersonName, setCaregiverPersonName]                   = useState("");
     const [subscriptionServicePerson, setSubscriptionServicePerson]       = useState("");
     const [managerEmail, setManagerEmail]                                 = useState("");
@@ -16,7 +14,6 @@ export default function contactUs (){
     const [coordinatorName, setCoordinatorName]                           = useState("");
     const [coordinatorPhone, setCoordinatorPhone]                         = useState("");
     const [loading, setLoading]                                           = useState(false);
-    const [specializedEquipment, setSpecializedEquipment]                 = useState("hospitalBed");
     const [isOtherPerson, setIsOtherPerson]                               = useState("no");
     const [planManaged, setPlanManaged]                                   = useState("0");
     const [isSupportCoordinator, setIsSupportCoordinator]                 = useState("no");
@@ -116,7 +113,7 @@ export default function contactUs (){
 
                 </section>
 
-                <button className={styles.sendForm} type="submit" disabled={loading}> Send</button>
+                <button className={styles.sendForm} type="submit" > Send</button>
             </form>
         </div>
     );
