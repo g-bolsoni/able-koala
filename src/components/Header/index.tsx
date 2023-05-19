@@ -25,8 +25,8 @@ export default function Header() {
   
 
   return (
-    <>
-        <nav className={styles.header}>
+    <nav className={styles.header_container}>
+        <div className={`${styles.header} container`}>
             <div className={styles.logo}>
                 <Link
                     href='/'
@@ -60,7 +60,8 @@ export default function Header() {
                 </Link>
             </div>
             
-        </nav>
-    </>
+        </div>
+    </nav>
+
   )
 }

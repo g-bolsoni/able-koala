@@ -14,16 +14,29 @@
             &:not(:first-child)
                 padding-left: $gap
         .footer_title 
-            font-size: $font-size-footer-title
+            font-size: 1.25rem
             font-weight: 700
         ul 
             list-style: none
             li 
                 font-size: $font-size-links
+        .footer_logo img 
+            max-width: 200px !important
+            width: 100% !important
+            height: max-content !important
 .aside 
     text-align: center
     padding: $gap
 
 @media (max-width: 991px) 
     .footer .main
+        padding-top: calc($gap * 1)
         grid-template-columns: repeat(auto-fill, minmax(25%, 100%))
+        justify-items: center
+        div
+            padding-top: 1rem
+
+@media (min-width: 1400px)
+    .footer_logo img 
+        max-width: 300px !important 
+    

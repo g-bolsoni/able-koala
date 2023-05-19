@@ -15,7 +15,7 @@ export default function Home() {
           <Image
             src={Tarja}
             width={1920}
-            height={132}
+            height={100}
             layout="responsive"
             alt="Able Koala"
           />
