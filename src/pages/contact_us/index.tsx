@@ -4,19 +4,20 @@ import ReactInputMask from "react-input-mask-next";
 
 export default function ContactUs (){
 
-    const [ndisName, setNdisName]                                         = useState("");
-    const [ndisEmail, setNdisEmail]                                       = useState("");
-    const [ndisPhone, setNdisPhone]                                       = useState("");
-    const [caregiverPersonName, setCaregiverPersonName]                   = useState("");
-    const [subscriptionServicePerson, setSubscriptionServicePerson]       = useState("");
-    const [managerEmail, setManagerEmail]                                 = useState("");
-    const [coordinatorEmail, setCoordinatorEmail]                         = useState("");
-    const [coordinatorName, setCoordinatorName]                           = useState("");
-    const [coordinatorPhone, setCoordinatorPhone]                         = useState("");
-    const [loading, setLoading]                                           = useState(false);
-    const [isOtherPerson, setIsOtherPerson]                               = useState("no");
-    const [planManaged, setPlanManaged]                                   = useState("0");
-    const [isSupportCoordinator, setIsSupportCoordinator]                 = useState("no");
+    const [ndisName, setNdisName]                         = useState("");
+    const [ndisEmail, setNdisEmail]                       = useState("");
+    const [ndisPhone, setNdisPhone]                       = useState("");
+    const [caregiverPersonName, setCaregiverPersonName]   = useState("");
+    const [servicePersonEmail, setServicePersonEmail]     = useState("");
+    const [servicePersonPhone, setServicePersonPhone]     = useState("");
+    const [managerEmail, setManagerEmail]                 = useState("");
+    const [coordinatorEmail, setCoordinatorEmail]         = useState("");
+    const [coordinatorName, setCoordinatorName]           = useState("");
+    const [coordinatorPhone, setCoordinatorPhone]         = useState("");
+    const [loading, setLoading]                           = useState(false);
+    const [isOtherPerson, setIsOtherPerson]               = useState("no");
+    const [planManaged, setPlanManaged]                   = useState("0");
+    const [isSupportCoordinator, setIsSupportCoordinator] = useState("no");
 
     return (
         <div className="container">
@@ -82,13 +83,18 @@ export default function ContactUs (){
                     {isOtherPerson == "yes" && (
                         <>
                             <div className={styles.input_group}>
-                                <label htmlFor="caregiverPersonName">Name of contact person to discuss building your STA </label>
+                                <label htmlFor="caregiverPersonName">Name of the person responsible for service contract    </label>
                                 <input type="text" name="caregiverPersonName" value={caregiverPersonName} id="caregiverPersonName" onChange={(e) => setCaregiverPersonName(e.target.value)} />
                             </div>
 
                             <div className={styles.input_group}>
-                                <label htmlFor="subscriptionServicePerson">Name of person responsible for signing STA service contract</label>
-                                <input type="text" name="subscriptionServicePerson" value={subscriptionServicePerson} id="subscriptionServicePerson" onChange={(e) => setSubscriptionServicePerson(e.target.value)} />
+                                <label htmlFor="servicePersonEmail">Email for the responsible persont</label>
+                                <input type="email" name="ServicePersonEmail" value={servicePersonEmail} id="servicePersonEmail" onChange={(e) => setServicePersonEmail(e.target.value)} />
+                            </div>
+
+                            <div className={styles.input_group}>
+                                <label htmlFor="servicePersonPhone">Phone for the responsible person</label>
+                                <ReactInputMask mask={'999 999 999'} type="text" name="servicePersonPhone" value={servicePersonPhone} id="servicePersonPhone" onChange={(e) => setServicePersonPhone(e.target.value)} />
                             </div>
                         </>
                     )}

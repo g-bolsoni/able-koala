@@ -2,18 +2,28 @@
     "testimonials": [
         {
             "id":1,
-            "name": "Magie",
-            "testimony": "“I am glad i found Snowbridge Care. Their quality of service and putting me first is very well appreciated.”"
+            "name": "Nella",
+            "testimony": "“Sexta-feira passada, fiquei triste e feliz ao mesmo tempo. Pela falta que a Juliana vai fazer, pela sua companhia, sua atenção, suas histórias, seu impecável trabalho, dedicação , sua responsabilidade…!! É uma menina de ouro! Muito boa pessoa, alma boa, competente e dedicada. Nasceu para auxiliar e para ajudar de forma tão natural e carinhosa! ”"
         },
         {
             "id":2,
-            "name": "Magie 2",
-            "testimony": "“I am glad i found Snowbridge Care. Their quality of service and putting me first is very well appreciated.”"
+            "name": "Alex",
+            "testimony": "“Phew, that was lucky. Thankyou for all of your help today”"
         },
         {
             "id":3,
-            "name": "Magie 3",
-            "testimony": "“I am glad i found Snowbridge Care. Their quality of service and putting me first is very well appreciated.”"
+            "name": " Alexandra Xerri",
+            "testimony": "“Its been eye opening seeing my kids smile in those pics, very special lady Juliana .”"
+        },
+        {
+            "id":4,
+            "name": "Juliana",
+            "testimony": "“Oh, I'm so grateful to have the opportunity to support this beautiful family again. The children gave me days of joy.  Alexandra was always very polite, kind, and always thanked me for giving me this support. That's beautiful on her part because I see great recognition and affection for me. Thank you to Able Koala for always leading us and enabling us to do our work with quality and with much love and dedication to our customers. Thank you very much.”"
+        },
+        {
+            "id":5,
+            "name": "Chloe O'Brien",
+            "testimony": "“Your brilliant. I much prefer this agency. Better organisation and a bit more transparent and organised.”"
         }
     ]
 }

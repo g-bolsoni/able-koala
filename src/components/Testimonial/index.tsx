@@ -16,7 +16,10 @@ export default function Testimonial() {
       <div className={style.container}>
           <h1 className={style.title}>What our clients are saying?</h1>
           <Swiper 
-            navigation={true}
+            navigation={{
+              prevEl: 'swiper-button-prev',
+              nextEl: 'swiper-button-next',
+            }}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
