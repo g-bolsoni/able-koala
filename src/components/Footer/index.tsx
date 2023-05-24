@@ -28,7 +28,7 @@ export default function Footer() {
           <div className={style.social_detail}>
               <p className={style.footer_title}>Connect with us</p>
               <ul>
-                <li><a href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`}><BsFacebook size="48px"/></a></li>
+                <li><a href="https://www.facebook.com/able.koala"><BsFacebook size="48px"/></a></li>
               </ul>
           </div>
         </section>
