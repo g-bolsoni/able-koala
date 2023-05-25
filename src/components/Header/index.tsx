@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './style.module.sass'
 import logo from './images/logos/2.png'
-import { HiMenu, HiOutlineMail } from "react-icons/hi";
+import { HiMenu } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { NavLinks } from "../NavLinks"
