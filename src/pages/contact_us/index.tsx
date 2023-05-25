@@ -88,7 +88,7 @@ export default function ContactUs (){
                             </div>
 
                             <div className={styles.input_group}>
-                                <label htmlFor="servicePersonEmail">Email for the responsible persont</label>
+                                <label htmlFor="servicePersonEmail">Email for the responsible person</label>
                                 <input type="email" name="ServicePersonEmail" value={servicePersonEmail} id="servicePersonEmail" onChange={(e) => setServicePersonEmail(e.target.value)} />
                             </div>
 
