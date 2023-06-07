@@ -24,13 +24,14 @@ export function AppProvider(props:AppContextProps){
 
     async function postContactUs(contactUs:ContactUsSend){
         try {
-            setLoading(true)
             await addDoc(collection(db, "contact"),contactUs) 
             await sendContactUs(contactUs);
-            setLoading(false)   
+
             toast.success('Send e-mail Sucessfully!')                  
         } catch (error) {
+            toast.error('Email Failed!');
             
+            console.log(error);                
         }        
     }
 

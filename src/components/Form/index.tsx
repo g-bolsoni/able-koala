@@ -8,7 +8,6 @@ export default function Form() {
 
     const { postContactUs }                                               = useAppData();
     const [ndisName, setNdisName]                                         = useState("");
-    const [ndisNumber, setNdisNumber]                                     = useState("");
     const [ndisEmail, setNdisEmail]                                       = useState("");
     const [ndisPhone, setNdisPhone]                                       = useState("");
     const [specializedEquipmentDetails, setSpecializedEquipmentDetails]   = useState("");
@@ -23,7 +22,6 @@ export default function Form() {
     const [coordinatorName, setCoordinatorName]                           = useState("");
     const [coordinatorPhone, setCoordinatorPhone]                         = useState("");
     const [numberBedrooms, setNumberBedrooms]                             = useState(0);
-    const [loading, setLoading]                                           = useState(false);
     const [specificRequirements, setSpecificRequirements]                 = useState("standard_room");
     const [isParkingRequired, setIsParkingRequired]                       = useState("no");
     const [isCarTransfers, setIsCarTransfers]                             = useState("no");
@@ -33,14 +31,18 @@ export default function Form() {
     const [isSupportCoordinator, setIsSupportCoordinator]                 = useState("no");
 
     const setPostContactUs = async (e: { preventDefault: () => void; }) => {
-        setLoading(true);
         e.preventDefault();
         await postContactUs!(contactUsSendToJson({
             NDIS_name: ndisName,
             email: ndisEmail,
             phone: ndisPhone,
+            specializedEquipmentDetails:specializedEquipmentDetails,
+            specializedEquipment:specializedEquipment,
+            additional_requirements_text:additional_requirements_text,
             bedrooms: numberBedrooms,
+            isParkingRequired:isParkingRequired,
             specific_room: specificRequirements,
+            isCarTransfers:isCarTransfers,
             support_coodinator: isSupportCoordinator,
             coodinator_name: coordinatorName,
             coodinator_email: coordinatorEmail,
@@ -54,38 +56,8 @@ export default function Form() {
             NDIS_plan: planManaged,
             manager_email: managerEmail
         }));
-        setLoading(false);
     }   
 
-
-    // Room Requirements * ok
-
-        // Standard Room
-
-        // Accessible Room
-        // Additional requirements * 
-
-    // Parking Required -> boolean ok
-
-    // Car Transfers Required -> boolean ok 
-
-    // Specialized Equipment Required -> options 
-        // Hospital bed
-        // Static shower chair
-        // Commode shower chair  
-        // Recliner chair 
-        // Hoist 
-        // None of the above
-        
-    // None of the above
-    // Please specify requirements
-    // Write N/A if Not Applicable
-
-
-// Para esse form
-
-// "Specify location for the service requested "
-// How can i Help you?
     return (
         <form method="post" onSubmit={setPostContactUs} className={style.containerFlex}>            
             <section className={style.groupForm}>
@@ -214,17 +186,10 @@ export default function Form() {
                     </select>
                 </div>
 
-
-                {/* back after */}
                 <div className={style.input_group}>
                     <label htmlFor="accomodation">Please list the Name of STA Accommodation you would like to stay in from our website.</label>
                     <input type="text" name="accomodation" value={accomodation} id="accomodation" onChange={(e) => setAccomodation(e.target.value)} />
-                    {/* <select name="accomodation" value={accomodation} id="accomodation" onChange={(e) => setAccomodation(e.target.value)}>
-                        <option value="no" selected >No</option>
-                        <option value="yes">Yes</option>
-                    </select> */}
                 </div>
-                {/* back after */}
 
                 <div className={style.input_group}>
                     <label htmlFor="checkInDate">STA Respite Check in date.</label>
@@ -257,7 +222,7 @@ export default function Form() {
 
             </section>
 
-            <button className={style.sendForm} type="submit" disabled={loading}> Send</button>
+            <button className={style.sendForm} type="submit"> Send</button>
         </form>
     )
 }

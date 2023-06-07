@@ -83,7 +83,7 @@ async function getJobMail({name, clientMail, cellphone, fileUrl}){
 async function contactUs(data){
 
     const from = data.NDIS_name && data.email ? `${data.NDIS_name}<${ data.email}>` : `${data.NDIS_name || data.email}`;
-    const subject = `You have a new e-mail from ${data.NDIS_name}`;
+    const subject = `You have a new e-mail from ${data.NDIS_name} || STA/Respite Care `;
 
     let text = `
     ${data.NDIS_name} got in touch through the contact form.
@@ -94,7 +94,11 @@ async function contactUs(data){
     Your phone: ${data?.phone}.
     Number of rooms required: ${data?.bedrooms}.
     Room requirements: ${data?.specific_room}.
-    Amt per day: ${data?.vouchers} AUD.  
+    Specialized equipment: ${data?.specializedEquipment} 
+    Specialized equipment details: ${data?.specializedEquipmentDetails} 
+    Additional requirements text:: ${data?.additional_requirements_text} 
+    Is parking required: ${data?.additional_requirements_text}
+    Is car transfers: ${data?.isCarTransfers}
 
     Does it have a coordinator: ${data?.support_coodinator}
     ${data?.support_coodinator == 'yes' && `
@@ -117,9 +121,12 @@ async function contactUs(data){
 
     try {
         const responseEmail = await sendEmail(from, subject, text);
+        console.log('response email: ' + responseEmail);
         return responseEmail;
     } catch (error) {
+        console.log('response email: ' + error);
         return error;
+        
     }   
 }
 
