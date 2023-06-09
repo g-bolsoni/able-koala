@@ -26,12 +26,13 @@ export default function Testimonial() {
             }}
             modules={[Autoplay, Navigation]} 
             loop={true}
+            className={style.swiper}
           >
                 {
                   testimonials.testimonials.map(testimonial => (
                     <SwiperSlide className={style.testimonial_list}  key={testimonial.id} >
                       <div className={style.testimonial}>
-                        <p>{testimonial.testimony}</p>
+                        <p className={style.testimony}>{testimonial.testimony}</p>
                         <span className={style.testimony_name}>{testimonial.name}</span>
                       </div>
                     </SwiperSlide>
