@@ -42,27 +42,27 @@
         }
     }
     .sendForm{
-        width: 30%;
-        border-radius: 10px;
-        font-weight: 500;
-        outline: none;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        margin-top: 30px;
+        // width: 30%;
+        // border-radius: 10px;
+        // font-weight: 500;
+        // outline: none;
+        // grid-column-start: 1;
+        // grid-column-end: 3;
+        // margin-top: 30px;
 
-        background: linear-gradient(transparent, transparent 50%, var(--cyan) 50%, var(--cyan));
-        background-size: 100% 200%;
-        transition: all .3s linear ; 
-        color: var(--gray-900);
-        font-weight: 700;
-        font-size: 1.1em;
-        width: 45%;
-        border-radius: 10px;
-        &:hover{
-            background-position: 100% 100%;
-            color: var(--white);
-            border: 1px solid var(--white);
-        }
+        // background: linear-gradient(transparent, transparent 50%, var(--cyan) 50%, var(--cyan));
+        // background-size: 100% 200%;
+        // transition: all .3s linear ; 
+        // color: var(--gray-900);
+        // font-weight: 700;
+        // font-size: 1.1em;
+        // width: 45%;
+        // border-radius: 10px;
+        // &:hover{
+        //     background-position: 100% 100%;
+        //     color: var(--white);
+        //     border: 1px solid var(--white);
+        // }
     }
 }
 @media (max-width: 992px) {

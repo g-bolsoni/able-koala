@@ -1,5 +1,6 @@
 import axios from "axios"; 
 import { ContactUsSend } from "../models/contact_us_send";
+import { ContactUs } from "../models/page_contact_us";
 
 export const  sendContactMail = async (name:string, clientMail:string, cellphone: string, file: string, message:String) =>{
 
@@ -22,7 +23,6 @@ export const  sendContactMail = async (name:string, clientMail:string, cellphone
 
 export const sendContactUs = async (contactUs:ContactUsSend) => {
 
-
     try {
         const res = await axios.post('/api/contact', contactUs)
         console.log(res);
@@ -30,5 +30,17 @@ export const sendContactUs = async (contactUs:ContactUsSend) => {
         return res;
     } catch (error) {
         console.log(error);
+    }
+}
+
+export const contactUs = async (contactUs:ContactUs) => {
+    try {
+        console.log('services sendMail');
+        console.log(JSON.stringify(contactUs));
+        const res = await axios.post('/api/contact', contactUs);
+        return res;
+    } catch (error) {
+        console.log(error);
+        return error;        
     }
 }

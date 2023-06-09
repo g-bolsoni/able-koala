@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { iconLoading } from '../Icons/icons';
 import useAppData from '../../data/hook/useAppData';
 
 export default function Loading() {

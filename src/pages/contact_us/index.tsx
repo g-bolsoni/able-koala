@@ -1,8 +1,14 @@
 import styles from './styles.module.scss';
 import { useState } from "react";
 import ReactInputMask from "react-input-mask-next";
+import LoadingButton from '../../components/Loading';
+import useAppData from '../../data/hook/useAppData';
+import { contactUs } from "../../models/page_contact_us";
+
 
 export default function ContactUs (){
+
+    const { sendContact }                                 = useAppData();
 
     const [ndisName, setNdisName]                         = useState("");
     const [ndisEmail, setNdisEmail]                       = useState("");
@@ -14,16 +20,38 @@ export default function ContactUs (){
     const [coordinatorEmail, setCoordinatorEmail]         = useState("");
     const [coordinatorName, setCoordinatorName]           = useState("");
     const [coordinatorPhone, setCoordinatorPhone]         = useState("");
-    const [loading, setLoading]                           = useState(false);
     const [isOtherPerson, setIsOtherPerson]               = useState("no");
     const [planManaged, setPlanManaged]                   = useState("0");
     const [isSupportCoordinator, setIsSupportCoordinator] = useState("no");
+
+    const [loading, setLoading] = useState(false);
+
+
+    const setPostContactUs = async () => {
+        setLoading(true);
+        await sendContact!(contactUs({
+            name              : ndisName,
+            email             : ndisEmail,
+            phone             : ndisPhone,
+            contact_person1   : caregiverPersonName,
+            servicePersonEmail: servicePersonEmail,
+            servicePersonPhone: servicePersonPhone,
+            manager_email     : managerEmail,
+            coodinator_email  : coordinatorEmail,
+            coodinator_name   : coordinatorName,
+            coodinator_phone  : coordinatorPhone,
+            family_member     : isOtherPerson,
+            NDIS_plan         : planManaged,
+            support_coodinator: isSupportCoordinator
+        }));
+        setLoading(false);
+    }   
 
     return (
         <div className="container">
             <h1 className={styles.title} >Contact Us</h1>
 
-            <form method="post"  className={styles.containerFlex}>            
+            <form method="post" className={styles.containerFlex} >            
                 <section className={styles.groupForm}>
 
                     <div className={styles.input_group}>
@@ -87,11 +115,13 @@ export default function ContactUs (){
                                 <input type="text" name="caregiverPersonName" value={caregiverPersonName} id="caregiverPersonName" onChange={(e) => setCaregiverPersonName(e.target.value)} />
                             </div>
 
+                        {/* aqui */}
                             <div className={styles.input_group}>
                                 <label htmlFor="servicePersonEmail">Email for the responsible person</label>
                                 <input type="email" name="ServicePersonEmail" value={servicePersonEmail} id="servicePersonEmail" onChange={(e) => setServicePersonEmail(e.target.value)} />
                             </div>
 
+                        {/* aqui */}
                             <div className={styles.input_group}>
                                 <label htmlFor="servicePersonPhone">Phone for the responsible person</label>
                                 <ReactInputMask mask={'999 999 999'} type="text" name="servicePersonPhone" value={servicePersonPhone} id="servicePersonPhone" onChange={(e) => setServicePersonPhone(e.target.value)} />
@@ -118,9 +148,8 @@ export default function ContactUs (){
 
 
                 </section>
-
-                <button className={styles.sendForm} type="submit" > Send</button>
             </form>
+            <LoadingButton onClick={setPostContactUs} loading={loading} text="Send" />
         </div>
     );
 }

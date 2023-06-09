@@ -20,6 +20,19 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
     const { NDIS_name } = req.body;
     const {clientMail, name, cellphone } = req.body
 
+   
+    if(req.body?.name){
+        const response = await sendContactUs(req.body);
+        let responseStatus = response.response.split(' ')[0];
+        let responseMessage = response.response.split(' ')[1];
+        
+        if(responseStatus && responseMessage){
+            res.status(responseStatus).send(responseMessage)
+        }else{
+            res.status(500).send("Erro ao enviar o e-mail");
+        }
+        
+    }
 
     if(NDIS_name){  
         const response = await contactUs(req.body); 
@@ -130,7 +143,73 @@ async function contactUs(data){
     }   
 }
 
+//função da págna contact_us
+async function sendContactUs(data) {
+    let plan = "No plan found";
+    const from = data.name && data.email ? `${data.name}<${ data.email}>` : `${data.name || data.email}`;
+    const subject = `You have a new e-mail from ${data.name} || STA/Respite Care `;
 
+    if(data?.NDIS_plan){
+        plan = verifyPlan(data.NDIS_plan);
+    }
+
+    let text = `
+    ${data.name} got in touch through the contact form.
+    Here is the information.
+
+    Your email: ${data?.email}.
+    Your phone: ${data?.phone}.
+
+    ${data?.family_member == 'yes' ? `
+    
+    Data from the person who filled out the form:
+    His name: ${data?.contact_person1}.
+    His email: ${data?.servicePersonEmail}.
+    His phone: ${data?.servicePersonPhone}.
+
+    ` : ''}
+    ${data?.support_coodinator == 'yes' ? `
+    Support coordinator details:
+    Coodinator Name: ${data?.coodinator_name}.
+    Coodinator Email: ${data?.coodinator_email}.
+    Coodinator Phone: ${data?.coodinator_phone}.
+
+    `: ''}
+    NDIS Plan managed: ${plan}
+    Plan Manager email: ${data?.manager_email}
+    `;
+    
+    try {
+        const responseEmail = await sendEmail(from, subject, text);
+        console.log('response email: ' + responseEmail);
+        return responseEmail;
+    } catch (error) {
+        console.log('response email: ' + error);
+        return error;
+    }   
+
+}
+
+function verifyPlan(plan: string){
+    let text = "";
+    switch (plan) {
+        case "1":
+            text = "Plan Managed (Please enter Plan Managers email in the next section if you have)"
+            break;
+    
+        case "2":
+            text = "Self Managed"
+            break;
+
+        case "3":
+            text = "NDIS Managed (Habitability does not currently offer STA for NDIA managed participants)"
+            break;
+    }
+
+    return text;
+}
+
+// Send emails
 function sendEmail(from, subject, messageText) {
 
     const message = {
