@@ -112,11 +112,12 @@ async function contactUs(data){
     Your phone: ${data?.phone}.
     Number of rooms required: ${data?.bedrooms}.
     Room requirements: ${data?.specific_room}.
-    Specialized equipment: ${data?.specializedEquipment} 
-    Specialized equipment details: ${data?.specializedEquipmentDetails} vazio
-    Additional requirements text: ${data?.additional_requirements_text}  vazio
+
+    ${ data?.specializedEquipment == 'none' ? '' : `Specialized equipment: ${data?.specializedEquipment}`}
+    ${ data?.specializedEquipmentDetails ? `Specialized equipment details: ${data?.specializedEquipmentDetails}` : ''}
+    ${ data?.additional_requirements_text ? `Additional requirements text: ${data?.additional_requirements_text}`: ''}
     Is parking required: ${data?.additional_requirements_text}
-    Is car transfers: ${data?.isCarTransfers} undefined
+    Is car transfers: ${data?.isCarTransfers}
     ${data?.support_coodinator == 'yes' ? `
 
     Support coordinator details:

@@ -39,14 +39,9 @@ export default function Form() {
             NDIS_name                   : ndisName,
             email                       : ndisEmail,
             phone                       : ndisPhone,
-            specializedEquipmentDetails : specializedEquipmentDetails,
-            specializedEquipment        : specializedEquipment,
-            additional_requirements_text: additional_requirements_text,
             bedrooms                    : numberBedrooms,
-            isParkingRequired           : isParkingRequired,
             specific_room               : specificRequirements,
-            isCarTransfers              : isCarTransfers,
-            support_coodinator          : isSupportCoordinator,
+            support_coodinator          : isSupportCoordinator, 
             coodinator_name             : coordinatorName,
             coodinator_email            : coordinatorEmail,
             coodinator_phone            : coordinatorPhone,
@@ -57,7 +52,13 @@ export default function Form() {
             STA_check_in_date           : checkInDate,
             STA_check_out_date          : checkOutDate,
             NDIS_plan                   : planManaged,
-            manager_email               : managerEmail
+            manager_email               : managerEmail,
+            specializedEquipmentDetails : specializedEquipmentDetails,
+            specializedEquipment        : specializedEquipment,
+            additional_requirements_text: additional_requirements_text,
+            isParkingRequired           : isParkingRequired,
+            isCarTransfers              : isCarTransfers
+
         }));
         setLoading(false);
     }   
