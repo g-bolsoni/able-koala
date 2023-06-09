@@ -92,11 +92,16 @@ async function getJobMail({name, clientMail, cellphone, fileUrl}){
     
 }
 
-
+// Função pela página de serviços
 async function contactUs(data){
 
-    const from = data.NDIS_name && data.email ? `${data.NDIS_name}<${ data.email}>` : `${data.NDIS_name || data.email}`;
+    let   plan    = "No plan found";
+    const from    = data.NDIS_name && data.email ? `${data.NDIS_name}<${ data.email}>` : `${data.NDIS_name || data.email}`;
     const subject = `You have a new e-mail from ${data.NDIS_name} || STA/Respite Care `;
+
+    if(data?.NDIS_plan){
+        plan = verifyPlan(data.NDIS_plan);
+    }
 
     let text = `
     ${data.NDIS_name} got in touch through the contact form.
@@ -108,27 +113,30 @@ async function contactUs(data){
     Number of rooms required: ${data?.bedrooms}.
     Room requirements: ${data?.specific_room}.
     Specialized equipment: ${data?.specializedEquipment} 
-    Specialized equipment details: ${data?.specializedEquipmentDetails} 
-    Additional requirements text:: ${data?.additional_requirements_text} 
+    Specialized equipment details: ${data?.specializedEquipmentDetails} vazio
+    Additional requirements text: ${data?.additional_requirements_text}  vazio
     Is parking required: ${data?.additional_requirements_text}
-    Is car transfers: ${data?.isCarTransfers}
+    Is car transfers: ${data?.isCarTransfers} undefined
+    ${data?.support_coodinator == 'yes' ? `
 
-    Does it have a coordinator: ${data?.support_coodinator}
-    ${data?.support_coodinator == 'yes' && `
+    Support coordinator details:
     Coodinator Name: ${data?.coodinator_name}.
     Coodinator Email: ${data?.coodinator_email}.
     Coodinator Phone: ${data?.coodinator_phone}.
-    `}
 
-    Did someone else fill out the form: ${data?.family_member}.
-    ${data?.family_member == 'yes' && `
+    ` : ''}
+    ${data?.family_member == 'yes' ? `
+
+    Data from the person who filled out the form:
+
     Name of contact person to discuss building your STA: ${data?.contact_person1}.
     Name of person responsible for signing STA service contract: ${data?.contact_person2}.
-    `}
+
+    `: ''}
     STA Accommodation: ${data?.STA_accomodation}.
     STA Respite Check in date: ${data?.STA_check_in_date}
     STA Respite Check out date: ${data?.STA_check_out_date}
-    NDIS Plan managed: ${data?.NDIS_plan}
+    NDIS Plan managed: ${plan}
     Plan Manager email: ${data?.manager_email}
     `;
 
@@ -181,10 +189,8 @@ async function sendContactUs(data) {
     
     try {
         const responseEmail = await sendEmail(from, subject, text);
-        console.log('response email: ' + responseEmail);
         return responseEmail;
     } catch (error) {
-        console.log('response email: ' + error);
         return error;
     }   
 
