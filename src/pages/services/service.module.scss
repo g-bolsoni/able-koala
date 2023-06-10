@@ -6,15 +6,14 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     position: relative;
-
     .content{
         display: flex;
         flex-direction: column;
         padding-left: 4rem;
         .title{
             color: var(--gray-900) ;
-            font-size: 2.441rem;
-            font-weight: bold;
+            font-size: 2rem;
+            font-weight: 600;
             z-index: 2;
             margin: 1.5rem 0 ;
         }
@@ -25,12 +24,12 @@
         }
         @media (max-width: 992px){
             .title{
-                font-size: 2.75rem;
+                font-size: 1.75rem;
             }        
         }
         @media (max-width: 568px){
             .title{
-                font-size: 1.75rem;
+                font-size: 1rem;
                 left: 5%;
             }
         }
@@ -43,6 +42,7 @@
             color: var(--gray-900);
             margin-top: 2rem;
             font-size: 2rem;
+            font-weight: 600;
         }
     }
     

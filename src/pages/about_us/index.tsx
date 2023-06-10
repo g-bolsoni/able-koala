@@ -17,8 +17,6 @@ export default function aboutUs() {
             <p>Spiritual Health: Yoga, Reiki, ThetaHealing and Access Bar.</p>
           </div>
         </div>
-
-      
         <div className={styles.our_values}>
           <div className={styles.our_vision}>
             <h2 className={styles.title}>OUR PURPOSE</h2>
