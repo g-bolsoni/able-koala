@@ -3,7 +3,7 @@ import Link from "next/link"
 import styles from './style.module.sass'
 
 type NavlinksProps = {
-    onClick: () => void
+    onClick?: () => void
 }
   
 export const NavLinks: React.FC<NavlinksProps> = ({ onClick }) => {

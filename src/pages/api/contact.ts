@@ -209,7 +209,7 @@ function verifyPlan(plan: string){
             break;
 
         case "3":
-            text = "NDIS Managed (Habitability does not currently offer STA for NDIA managed participants)"
+            text = "NDIS Managed (Able Koala does not currently offer STA for NDIA managed participants)"
             break;
     }
 

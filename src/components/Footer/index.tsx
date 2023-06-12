@@ -1,11 +1,16 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { NavLinks } from "../NavLinks";
 import style from './style.module.sass';
 import footer_logo from "../../../public/logos/3_cut.png"
 import { BsFacebook } from "react-icons/bs";
 
 export default function Footer() {
+  const [isActive, setActive] = useState(false);
+  const toggleClassMenuBtn = () => {
+    setActive(!isActive);
+  };
+  
   return (
     <>
       <footer className={style.footer}>
@@ -17,12 +22,12 @@ export default function Footer() {
             />
           </div>
           <div>
-            <NavLinks />
+            <NavLinks  onClick={toggleClassMenuBtn} />
           </div>
           <div className={style.contact_detail}>
               <p className={style.footer_title}>Contact Details</p>
               <ul>
-                <li><a href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`}>{`e ${process.env.NEXT_PUBLIC_EMAIL}`}</a></li>
+                <li><a href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`}>{`${process.env.NEXT_PUBLIC_EMAIL}`}</a></li>
               </ul>
           </div>
           <div className={style.social_detail}>

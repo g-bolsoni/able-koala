@@ -65,7 +65,9 @@ export default function Form() {
 
     return (
         <>
-            <form method="post" className={style.containerFlex}>            
+            <h2 className={style.title_form}>Learn More</h2>
+            <form method="post" className={style.containerFlex}>
+
                 <section className={style.groupForm}>
 
                     <div className={style.input_group}>
@@ -214,7 +216,7 @@ export default function Form() {
                             <option value="0" selected ></option>
                             <option value="1">Plan Managed (Please enter Plan Managers email in the next section if you have)</option>
                             <option value="2">Self Managed</option>
-                            <option value="3">NDIS Managed (Habitability does not currently offer STA for NDIA managed participants)</option>
+                            <option value="3">NDIS Managed (Able Koala does not currently offer STA for NDIA managed participants)</option>
                         </select>
                     </div>
 

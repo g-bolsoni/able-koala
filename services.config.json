@@ -15,8 +15,8 @@
                 "Personal care"
             ],
             "helper_title":"How we can Help?",
-            "helper_text": "Home Instead can help with a range of personal needs while providing welcome companionship. Your care needs are individual to you and your condition. For some people, help in the home with regular visits from CAREGivers and allied healthcare professionals is beneficial while others may need specialist or palliative care to support their needs.",
-            "helper_tex_2" : "We can support with a variety of services from transport to appointments and social outings through to specialist dementia care. Home Instead can help with your capacity building and maintaining independence in your own home. We are responsive to your changing needs and can alter the amount and level of care you receive."
+            "helper_text": "Able Koala can help with a range of personal needs while providing welcome companionship. Your care needs are individual to you and your condition. For some people, help in the home with regular visits from CAREGivers and allied healthcare professionals is beneficial while others may need specialist or palliative care to support their needs.",
+            "helper_tex_2" : "We can support with a variety of services from transport to appointments and social outings through to specialist dementia care. Able Koala can help with your capacity building and maintaining independence in your own home. We are responsive to your changing needs and can alter the amount and level of care you receive."
         },
         {
             "id":2,
@@ -33,7 +33,7 @@
         {
             "id":4,
             "title": "24 Hour Care",
-            "description": "Your Home Instead team is available 24 hours a day, 7 days a week to respond to any care needs or concerns.",
+            "description": "Your Able Koala team is available 24 hours a day, 7 days a week to respond to any care needs or concerns.",
             "backgroundImage": "https://firebasestorage.googleapis.com/v0/b/ablekoala.appspot.com/o/images%2FServices%2F24_hours_care.jpg?alt=media&token=e83e0d27-d575-4869-982e-58b5f8d55c85"
         },
         {

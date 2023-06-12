@@ -55,7 +55,7 @@ export default function Header() {
                 </div>
                 <div className={styles.contact}>
                     <Link href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`} passHref className={styles.email_link}>
-                        {isMobile ? '' : `e ${process.env.NEXT_PUBLIC_EMAIL}`}
+                        {isMobile ? '' : `${process.env.NEXT_PUBLIC_EMAIL}`}
                     </Link>
                 </div>
     
