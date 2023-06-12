@@ -23,13 +23,13 @@ export default function Header() {
         setActive(!isActive);
     };
   
-
   return (
     <nav className={styles.header_container}>
         <div className={`${styles.header} container`}>
             <div className={styles.logo}>
                 <Link
-                    href='/'
+                    href='/' 
+                    passHref
                 >
                     <Image
                         src={logo}
@@ -43,19 +43,18 @@ export default function Header() {
             <div className={styles.header_section}>
                 <div className={styles.menu}>
                     {
-                        isMobile ? 
-                            <button className={styles.btn_menu} onClick={toggleClassMenuBtn}>
-                                {isActive ? <AiOutlineClose /> : <HiMenu/>}   
-                            </button> 
-                        : ''
+                        isMobile && 
+                        <button className={styles.btn_menu} onClick={toggleClassMenuBtn}>
+                            {isActive ? <AiOutlineClose /> : <HiMenu/>}   
+                        </button> 
                     }
                     
-                    <div className={isActive ? styles.active : null}>   
-                        <NavLinks />
+                    <div className={isActive ? styles.active : styles.nav_links}>   
+                        <NavLinks  onClick={toggleClassMenuBtn} />
                     </div>
                 </div>
                 <div className={styles.contact}>
-                    <Link href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`} className={styles.email_link}>
+                    <Link href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`} passHref className={styles.email_link}>
                         {isMobile ? '' : `e ${process.env.NEXT_PUBLIC_EMAIL}`}
                     </Link>
                 </div>

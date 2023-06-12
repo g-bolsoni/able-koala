@@ -93,7 +93,7 @@ export default function index() {
   return (
     <>
       <div className="container">
-        <Link href="/carrers">
+        <Link href="/carrers" passHref>
           <span className={styles.back}>
             <AiOutlineArrowLeft/>
             Back

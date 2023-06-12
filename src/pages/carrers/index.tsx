@@ -33,7 +33,7 @@ export default function carrers() {
                             <h2 className={styles.work_title}>{work.title}</h2>
                             <span className={styles.location}>{work.location}</span>
                         </div>
-                        <Link href={`/carrers/${work.id}`} >
+                        <Link href={`/carrers/${work.id}`} passHref >
                             <div className={styles.read_more}>
                                 Read More
                             </div>

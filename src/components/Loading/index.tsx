@@ -25,7 +25,7 @@ const LoadingButton: React.FC<LoadingButtonProps> = ({ onClick, loading, text })
         onClick={handleClick}
         disabled={loading || isDisabled}
     >
-      {loading ? 'Send data...' : text}
+      {loading ? 'Sending' : text}
     </button>
   );
 };
