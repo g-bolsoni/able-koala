@@ -1,39 +1,94 @@
 {
     "works": [
         {
-            "id":1,
-            "title": "Disability Support Worker",
-            "location": "Australia",
-            "description":"Lorem ipsum nisl aenean ipsum velit rhoncus class, suscipit taciti vulputate eu habitant id ipsum justo, praesent tempus eros suscipit justo velit. interdum condimentum nunc vivamus per inceptos lobortis volutpat pretium libero, faucibus senectus lorem erat feugiat aenean urna aenean morbi, sem pharetra sapien ullamcorper faucibus luctus ante lacus. neque tempor adipiscing orci aenean malesuada mauris ac magna, praesent curae senectus malesuada nibh ullamcorper vitae interdum, fringilla phasellus egestas aenean massa pretium viverra. lacinia dolor hendrerit volutpat congue a quisque nibh dui feugiat bibendum etiam quam viverra curabitur, magna porttitor ullamcorper odio urna odio quis purus nisi inceptos primis etiam. ",
-            "requirements": [
-                {"id": 1, "requirement": "Graduação na área (Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia da Computação, etc.) ou experiência similar"},
-                {"id": 2, "requirement": "Experiência em criação de websites e sistemas web amigáveis para usuários."},
-                {"id": 3, "requirement": "Experiência comprovada como Desenvolvedor(a) Front-end;"},
-                {"id": 4, "requirement": "Familiaridade com desenvolvimento cross-browser, responsivo ou mobile híbrido."}
-            ]
-        },
-        {
-            "id":2,
-            "title": "Disability Support Worker 2",
-            "description": "Lorem ipsum nisl aenean ipsum velit rhoncus class, suscipit taciti vulputate eu habitant id ipsum justo, praesent tempus eros suscipit justo velit. interdum condimentum nunc vivamus per inceptos lobortis volutpat pretium libero, faucibus senectus lorem erat feugiat aenean urna aenean morbi, sem pharetra sapien ullamcorper faucibus luctus ante lacus. neque tempor adipiscing orci aenean malesuada mauris ac magna, praesent curae senectus malesuada nibh ullamcorper vitae interdum, fringilla phasellus egestas aenean massa pretium viverra. lacinia dolor hendrerit volutpat congue a quisque nibh dui feugiat bibendum etiam quam viverra curabitur, magna porttitor ullamcorper odio urna odio quis purus nisi inceptos primis etiam. ",
-            "location": "Australia",
-            "requirements": [
-                {"id": 1, "requirement": "Graduação na área (Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia da Computação, etc.) ou experiência similar"},
-                {"id": 2, "requirement": "Experiência em criação de websites e sistemas web amigáveis para usuários."},
-                {"id": 3, "requirement": "Experiência comprovada como Desenvolvedor(a) Front-end;"},
-                {"id": 4, "requirement": "Familiaridade com desenvolvimento cross-browser, responsivo ou mobile híbrido."}
-            ]
-        },
-        {
-            "id":3,
-            "title": "Disability Support Worker 3",
-            "description": "Lorem ipsum nisl aenean ipsum velit rhoncus class, suscipit taciti vulputate eu habitant id ipsum justo, praesent tempus eros suscipit justo velit. interdum condimentum nunc vivamus per inceptos lobortis volutpat pretium libero, faucibus senectus lorem erat feugiat aenean urna aenean morbi, sem pharetra sapien ullamcorper faucibus luctus ante lacus. neque tempor adipiscing orci aenean malesuada mauris ac magna, praesent curae senectus malesuada nibh ullamcorper vitae interdum, fringilla phasellus egestas aenean massa pretium viverra. lacinia dolor hendrerit volutpat congue a quisque nibh dui feugiat bibendum etiam quam viverra curabitur, magna porttitor ullamcorper odio urna odio quis purus nisi inceptos primis etiam. ",
-            "location": "Australia",
-            "requirements": [
-                {"id": 1, "requirement": "Graduação na área (Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia da Computação, etc.) ou experiência similar"},
-                {"id": 2, "requirement": "Experiência em criação de websites e sistemas web amigáveis para usuários."},
-                {"id": 3, "requirement": "Experiência comprovada como Desenvolvedor(a) Front-end;"},
-                {"id": 4, "requirement": "Familiaridade com desenvolvimento cross-browser, responsivo ou mobile híbrido."}
+            "id"                    : 1,
+            "title"                 : "Cleaner",
+            "description"           : "The NDIS Workforce Capability Framework describes this role as an Ancillary Worker for services funded under the NDIS.  Persons working within this role are responsible for keeping participants' homes clean and orderly and performing cleaning duties, such as cleaning floors, cleaning and dusting the environment, washing walls and cleaning glass and removing rubbish.",
+            "type_of_employment"    : "Full time / Part time / Casual",
+            "report_to"             : "",
+            "location"              : "",
+            "description_list_title": "Duties may include notifying management of:",
+            "description_list"      : [
+                {"id": 1, "requirement": "Repair needs in participant's environment."},
+                {"id": 2, "requirement": "Feedback from participants."},
+                {"id": 3, "requirement": "Changes in participant circumstances or environment."},
+                {"id": 4, "requirement": "Work health and safety issues and concerns."},
+                {"id": 5, "requirement": "Need for resources to undertake the role."},
+                {"id": 6, "requirement": "If you think that the participant is experiencing discrimination, exploitation, neglect, abuse or violence."},
+                {"id": 7, "requirement": "If you are unsure of appropriate practices."},
+                {"id": 8, "requirement": "When unsure of actions that should be undertaken."},
+                {"id": 9, "requirement": "Stressed or anxious feelings."}
+            ],
+            "main_responsibilities_text": "Provision of cleaning services to participants as detailed in their support plans",
+            "main_responsibilities"     : [
+                {
+                    "id"              : 1,
+                    "name"            : "General",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Always check your understanding of the participant's required tasks before commencing your work."},
+                        {"id": 2, "responsibility": "Implement personal hygiene and infection control procedures."},
+                        {"id": 3, "responsibility": "Be alert if you notice the participant is distressed or apathetic (uninterested or listless)."},
+                        {"id": 4, "responsibility": "Adjust your tasks to meet participant's needs, preferences and priorities."},
+                        {"id": 5, "responsibility": "Record all work as per the organisation's requirements."},
+                        {"id": 6, "responsibility": "Incorporate Child Safe Standards in their practice when working with children and young people."},
+                        {"id": 7, "responsibility": "Report any real or potential risks of harm to a participant, including child and young people."}
+                    ]
+                },
+                {
+                    "id"              : 2,
+                    "name"            : "Work Practices",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Vacuuming carpets, curtains and upholstered furniture."},
+                        {"id": 2, "responsibility": "Sweeping, mopping, waxing and polishing tiled, vinyl, timber and concrete floors."},
+                        {"id": 3, "responsibility": "Tidying rooms, emptying rubbish bins and removing refuse and recyclable material."},
+                        {"id": 4, "responsibility": "Cleaning, disinfecting and deodorising kitchens, bathrooms and toilets."},
+                        {"id": 5, "responsibility": "Dusting, cleaning and polishing furniture and other homewares."},
+                        {"id": 6, "responsibility": "Cleaning windows and other glass surfaces."}
+                    ]
+                },
+                {
+                    "id"              : 3,
+                    "name"            : "Communication",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Speak with participants in ways that are clear, inclusive, respectful and appropriate to the purpose and setting."},
+                        {"id": 2, "responsibility": "Be patient and understand that participants may do tasks differently."},
+                        {"id": 3, "responsibility": "Be open, authentic and warm."},
+                        {"id": 4, "responsibility": "Be courteous and respectful to all."},
+                        {"id": 5, "responsibility": "Check what is required to be undertaken at the commencement of the shift."}
+                    ]
+                },
+                {
+                    "id"              : 4,
+                    "name"            : "Build Trusted Relationships ",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Be reliable, punctual and follow instructions."},
+                        {"id": 2, "responsibility": "Communicate directly with the participant unless otherwise directed."},
+                        {"id": 3, "responsibility": "Seek permission before entering participants' space or touching them."},
+                        {"id": 4, "responsibility": "Respect their privacy."}
+                    ]
+                }
+            ],
+            "requirements_title": "",
+            "requirements"      : [
+                {"id": 1, "requirement": "Current Worker Screening."},
+                {"id": 2, "requirement": "First Aid Certificate (Preferred)."},
+                {"id": 3, "requirement": "Drivers License."},
+                {"id": 4, "requirement": "Reliable and comprehensively insured vehicle."},
+                {"id": 5, "requirement": "Smartphone."},
+                {"id": 6, "requirement": "New Worker NDIS Worker Orientation Module."},
+                {"id": 7, "requirement": "Willingness to travel."},
+                {"id": 8, "requirement": "Willingness to maintain confidentiality."},
+                {"id": 9, "requirement": "Ability to provide feedback to management on any issue or concern."}
+            ],
+            "skills_title": "",
+            "skills"      : [
+                {"id": 1, "requirement": "Ability to speak English fluently."},
+                {"id": 2, "requirement": "Ability to work with different cultures, genders, ages and ability levels."},
+                {"id": 3, "requirement": "Ability to build rapport and trust with clients."},
+                {"id": 4, "requirement": "Ability to complete required documentation ."},
+                {"id": 5, "requirement": "Strong time management and prioritisation ability.Strong time management and prioritisation ability."},
+                {"id": 6, "requirement": "Reliable and punctual with dedicated professionalism to job and duties."},
+                {"id": 7, "requirement": "Exhibit initiative, responsibility, and flexibility."}
             ]
         }
     ]
