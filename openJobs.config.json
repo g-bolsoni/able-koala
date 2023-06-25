@@ -102,7 +102,7 @@
                 {"id": 3, "requirement": "Work health and safety issues and concerns, including child safety."},
                 {"id": 4, "requirement": "Need for resources to undertake the role."},
                 {"id": 5, "requirement": "If you think that the participant is experiencing discrimination, exploitation, neglect, abuse or violence."},
-                {"id": 6, "requirement": "When unsure of actions that should be undertaken."},
+                {"id": 6, "requirement": "When unsure of actions that should be undertak en."},
                 {"id": 7, "requirement": "Stressed or anxious feelings."}
             ],
             "type_of_employment"    : "Full time / Part time / Casual",
@@ -256,6 +256,174 @@
                 {"id": 15, "requirement": "Ability to work as part of a team and maintain good working relationships."},
                 {"id": 16, "requirement": "Strategies and tools to manage work stress and manage personal wellness."},
                 {"id": 17, "requirement": "Working within current best practice tools, approaches and expectations about disability and related support."}
+            ]
+        },
+        {
+            "id"                    : 3,
+            "title"                 : "Nutritionist / Dietitian",
+            "description"           : "The NDIS Workforce Capability Framework describes this role as an Advanced Support Worker for services funded under the NDIS.  Persons working within this role are responsible for more complex, specialised or intense support activities, including health and allied health practitioners and other specialists.\nThe dietitian/nutritionist will evaluate the health of participants. Based on their findings, the dietitian/nutritionist will advise participants on which foods to eat and avoid to improve their health. They will also develop programs and counsel the participant on topics related to food and nutrition.\nAll practices are participant-focused and promote their choices, rights and decisions. Due to the variable nature of participants, this role requires the worker to promote participants' voices, choices and report any areas of concern. The Dietician must apply the Child Safe Standards in their practices.",
+            "description_list_title": "Dieticians / Nutritionists are required to follow all policies and procedures and report to management:",
+            "description_list"      : [
+                {"id": 1, "requirement": "Feedback from participants (positive, constructive and complaints)."},
+                {"id": 2, "requirement": "Changes in participant circumstances or environment."},
+                {"id": 3, "requirement": "Work health and safety issues and concerns."},
+                {"id": 4, "requirement": "Need for resources to undertake the role."},
+                {"id": 5, "requirement": "If you think that the participant is experiencing discrimination, exploitation, neglect, abuse or violence."},
+                {"id": 6, "requirement": "When unsure of actions that should be undertak en."},
+                {"id": 7, "requirement": "Stressed or anxious feelings."}
+            ],
+            "type_of_employment"    : "Full time / Part time / Casual",
+            "report_to"             : "",
+            "location"              : "",
+            "main_responsibilities_text": "",
+            "main_responsibilities"     : [
+                {
+                    "id"              : 1,
+                    "name"            : "General",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Always check the participant's support plan before service provision."},
+                        {"id": 2, "responsibility": "Implement personal hygiene and infection control procedures."},
+                        {"id": 3, "responsibility": "Be alert if you notice the participant is distressed or apathetic (uninterested or listless)."},
+                        {"id": 4, "responsibility": "Record strategies and practices as per the organisation's requirements."}
+                    ]
+                },
+                {
+                    "id"              : 2,
+                    "name"            : "Work Practices",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Collaborating with participants' health goals and dietary needs preferences, and restrictions needs and diet."},
+                        {"id": 2, "responsibility": "Evaluate the participant's needs and create a custom treatment plan utilising a strengths-based approach."},
+                        {"id": 3, "responsibility": "Act as a facilitator of group counselling sessions or a mediator in a conflict resolution setting."},
+                        {"id": 4, "responsibility": "Discuss your participants' desired goals and outcomes."},
+                        {"id": 5, "responsibility": "Encourage participants to discuss emotions and experiences."},
+                        {"id": 6, "responsibility": "Provide relevant information or resources specific to the participant's needs."},
+                        {"id": 7, "responsibility": "Assist participants in setting goals and adopting strategies to address their issues."},
+                        {"id": 8, "responsibility": "Help individuals with the resources needed to reach personal goals."},
+                        {"id": 9, "responsibility": "Refer participants to other healthcare professionals where appropriate."},
+                        {"id": 10, "responsibility": "Liaise with healthcare professionals as part of a health management team."},
+                        {"id": 11, "responsibility": "Incorporate Child Safe Standards in their practice when working with children and young people."},
+                        {"id": 12, "responsibility": "Report any real or potential risks of harm to a participant, including child and young people."}
+                    ]
+                },
+                {
+                    "id"              : 3,
+                    "name"            : "Communicate",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Clearly, inclusively and respectfully."},
+                        {"id": 2, "responsibility": "Observe, listen and check participant's understanding."},
+                        {"id": 3, "responsibility": "Adapt to participant's age, culture and cognitive ability."},
+                        {"id": 4, "responsibility": "Understand individual communication – verbal and non-verbal."},
+                        {"id": 5, "responsibility": "Use the best communication method to recognise the difference between self and participant."},
+                        {"id": 6, "responsibility": "Avoid jargon."},
+                        {"id": 7, "responsibility": "Use appropriate tools to communicate."},
+                        {"id": 8, "responsibility": "Be persistent and participant."},
+                        {"id": 9, "responsibility": "Identify and address communication barriers."}
+                    ]
+                },
+                {
+                    "id"              : 4,
+                    "name"            : "Build trusted relationships",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Build relationships based on mutual respect."},
+                        {"id": 2, "responsibility": "Determine what makes the participant feel safe and valued."},
+                        {"id": 3, "responsibility": "Work with both participant and their important people to understand how they are involved."},
+                        {"id": 4, "responsibility": "Communicate directly with the participant unless otherwise determined."},
+                        {"id": 5, "responsibility": "Prioritise participant's voice during any conflict."},
+                        {"id": 6, "responsibility": "Treat equally but recognise the imbalance in the relationship."},
+                        {"id": 7, "responsibility": "Recognise and report any threat in circumstances and environment."}
+                    ]
+                },
+                {
+                    "id" : 5,
+                    "name": "Rights",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Understand participant and worker rights."},
+                        {"id": 2, "responsibility": "support participant to express views, raise concerns, report complaints and incidents."},
+                        {"id": 3, "responsibility": "seek permission before entering the participants' space or touch them and respect their response."},
+                        {"id": 4, "responsibility": "respect privacy and seek permission before collecting, using or sharing information."}
+                    ]
+                },
+                {
+                    "id" : 6,
+                    "name": "Work Collaboratively",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Work collaboratively with the support team – family, friends, advocates and nominated others."},
+                        {"id": 2, "responsibility": "work within role and responsibility."},
+                        {"id": 3, "responsibility": "Recognise the participant's skills, experience and contribution to everyone in the team ."},
+                        {"id": 4, "responsibility": "Keep participants informed when sharing and discussing them ."},
+                        {"id": 5, "responsibility": "Focus on strengths."},
+                        {"id": 6, "responsibility": "Be optimistic, hope and patience."}
+                    ]
+                },
+                {
+                    "id" : 7,
+                    "name": "Observe and respond flexibly to changing needs",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Review all relevant notes and plan data."},
+                        {"id": 2, "responsibility": "Identify needs and strategies."},
+                        {"id": 3, "responsibility": "Clarify their understanding."},
+                        {"id": 4, "responsibility": "Be observant, attentive and present."},
+                        {"id": 5, "responsibility": "Act responsively and flexibly."},
+                        {"id": 6, "responsibility": "Celebrate reaching goals and independence."},
+                        {"id": 7, "responsibility": "Maximise participant's control and confidence."}
+                    ]
+                },
+                {
+                    "id" : 8,
+                    "name": "Heath and Safety",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Respond quickly if the participant is uncomfortable, distressed, apathetic or in poor health."},
+                        {"id": 2, "responsibility": "Identify potential and actual risks, then act promptly and in consultation with the participant."},
+                        {"id": 3, "responsibility": "Review and complete a risk assessment as required."},
+                        {"id": 4, "responsibility": "Identify and report any work health and safety issues."},
+                        {"id": 5, "responsibility": "Promote independence and choice."},
+                    ]
+                },
+                {
+                    "id" : 8,
+                    "name": "Review quality of support and service",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Ascertain participants' preferred way of reflecting and assessing what's working and not working."},
+                        {"id": 2, "responsibility": "Seek feedback on service delivery and adjust when needed."},
+                        {"id": 3, "responsibility": "Maintain and build capacity and confidence to give feedback on the quality and fit of supports and services and whether they meet my goals and expectations."},
+                        {"id": 4, "responsibility": "Support the participant's participation to actively contribute to review processes to build on what is working and address what is not working."},
+                        {"id": 5, "responsibility": "Follow up on requested changes and inform stakeholders."},
+                        {"id": 6, "responsibility": "Support the participant to access and understand health and wellbeing information and seek advice if clarification is required."},                      
+                        {"id": 7, "responsibility": "Identify opportunities for increased independence at a suitable pace."}                        
+                    ]   
+                }
+            ],
+            "requirements_title": "",
+            "requirements"      : [
+                {"id": 1, "requirement": "Bachelor's degree in Psychology, Social Work, or Counselling."},
+                {"id": 2, "requirement": "Accredited Practising Dietitian (APD) with the Dietitian Association of Australian (DAA)."},
+                {"id": 3, "requirement": "Knowledge of relevant legislation, policies and procedures impacting the delivery of services to people with a disability."},
+                {"id": 4, "requirement": "Current Worker Screening ."},
+                {"id": 5, "requirement": "New Worker – NDIS Induction Module."},
+                {"id": 6, "requirement": "Exceptional communication, problem-solving, and listening skills."},
+                {"id": 7, "requirement": "Willingness to continue training and research to keep current on the latest discoveries and developments in the field."},
+                {"id": 8, "requirement": "Strong computer and data entry skills."},
+                {"id": 9, "requirement": "Compassion and genuine interest in helping others develop better eating habits."}
+
+            ],
+            "skills_title": "",
+            "skills"      : [
+                {"id": 1, "requirement": "Excellent communication and interpersonal skills."},
+                {"id": 2, "requirement": "Experience with data entry and data analysis."},
+                {"id": 3, "requirement": "Strong problem solving, project management and organisation skills."},
+                {"id": 4, "requirement": "Demonstrated ability to comply with the professions code of ethics and function following legislation affecting Dietetic practice to maintain accreditation with the DAA."},
+                {"id": 5, "requirement": "Highly developed nutritional assessment and dietary counselling skills."},
+                {"id": 6, "requirement": "Demonstrated ability to work independently and as part of a multidisciplinary team."},
+                {"id": 7, "requirement": "Demonstrated ability to manage a caseload efficiently and effectively."},
+                {"id": 8, "requirement": "Ability to work in a team-oriented and collaborative environment."},
+                {"id": 9, "requirement": "Advanced written and verbal communication skills to develop a professional rapport with a diverse range of people."},
+                {"id": 10, "requirement":"Ability to empathise with participants."},
+                {"id": 11, "requirement": "Excellent problem solving and conflict management skills."},
+                {"id": 12, "requirement": "Incident response and reporting procedures and protocols to ensure the participant's safety, self, and others."},
+                {"id": 13, "requirement": "Techniques and communication skills to take notes and prepare reports that provide objective information free of judgements or assumptions."},
+                {"id": 14, "requirement": "Ability to work independently"},
+                {"id": 15, "requirement": "Infection prevention and control, including personal protective equipment (PPE) and waste handling practices."},
+                {"id": 16, "requirement": "The principles and processes of the NDIS, such as the steps and support required for a participant to access, use and review their plans, and where to find further information."}
             ]
         }
     ]
