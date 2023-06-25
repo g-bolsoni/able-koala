@@ -425,6 +425,145 @@
                 {"id": 15, "requirement": "Infection prevention and control, including personal protective equipment (PPE) and waste handling practices."},
                 {"id": 16, "requirement": "The principles and processes of the NDIS, such as the steps and support required for a participant to access, use and review their plans, and where to find further information."}
             ]
+        },
+        {
+            "id"                    : 4,
+            "title"                 : "Disability Support Worker",
+            "description"           : "The NDIS Workforce Capability Framework describes this role as a General Support Worker for services funded under the NDIS.  Persons working within this role are responsible for using the strategies determined in the participant's support plan.\nAll practices are participant-focused and promote their choices, rights and decisions. Due to the variable nature of participants, this role requires the worker to promote participants' voices, choices and report any areas of concern. The participant is at the centre of all practices.  The disability support worker must apply the Child Safe Standards in their practices.",
+            "description_list_title": "Workers are required to follow all policies and procedures and report to management:",
+            "description_list"      : [
+                {"id": 1, "requirement": "Feedback from participants (positive, constructive and complaints)."},
+                {"id": 2, "requirement": "Changes in participant circumstances or environment."},
+                {"id": 3, "requirement": "Work health and safety issues and concerns."},
+                {"id": 4, "requirement": "Need for resources to undertake the role."},
+                {"id": 5, "requirement": "If you think that the participant is experiencing discrimination, exploitation, neglect, abuse or violence."},
+                {"id": 6, "requirement": "when unsure of appropriate practices."},
+                {"id": 7, "requirement": "When unsure of actions that should be undertaken."},
+                {"id": 8, "requirement": "Stressed or anxious feelings."} 
+
+            ],
+            "type_of_employment"    : "Full time / Part time / Casual",
+            "report_to"             : "",
+            "location"              : "",
+            "main_responsibilities_text": "Provision of care and supports to participants as detailed in their support plans.",
+            "main_responsibilities"     : [
+                {
+                    "id"              : 1,
+                    "name"            : "General",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Always check your understanding of the participant's required tasks before commencing your work."},
+                        {"id": 2, "responsibility": "Implement personal hygiene and infection control procedures."},
+                        {"id": 3, "responsibility": "Be alert if you notice the participant is distressed or apathetic (uninterested or listless)."},
+                        {"id": 4, "responsibility": "Adjust your tasks to meet participant's needs, preferences and priorities."},
+                        {"id": 5, "responsibility": "Record all work as per the organisation's requirements."}
+                    ]
+                },
+                {
+                    "id"              : 2,
+                    "name"            : "Work Practices",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Assisting people to perform important daily activities"},
+                        {"id": 2, "responsibility": "Facilitating daily personal hygiene and dressing tasks"},
+                        {"id": 3, "responsibility": "Performing home-based tasks such as food preparation and housework"},
+                        {"id": 4, "responsibility": "Undertaking tasks outside the home such as shopping."},
+                        {"id": 5, "responsibility": "Ensuring varied programs of social activities."},
+                        {"id": 6, "responsibility": "Providing emotional support and friendship."},
+                        {"id": 7, "responsibility": "Incorporate Child Safe Standards in their practice when working with children and young people."},
+                        {"id": 8, "responsibility": "Report any real or potential risks of harm to a participant, including child and young people."}
+                    ]
+                },
+                {
+                    "id"              : 3,
+                    "name"            : "Communicate",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Clearly, inclusively and respectfully"},
+                        {"id": 2, "responsibility": "Adapt to participant's age, culture and cognitive ability"},
+                        {"id": 3, "responsibility": "Understand individual communication – verbal and non-verbal"},
+                        {"id": 4, "responsibility": "Use the best communication method to recognise the difference between self and participant"},
+                        {"id": 5, "responsibility": "Be persistent and patient"}
+                    ]
+                },
+                {
+                    "id"              : 4,
+                    "name"            : "Build trusted relationships",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Build relationships based on mutual respect."},
+                        {"id": 2, "responsibility": "Determine what makes the participant feel safe and valued."},
+                        {"id": 3, "responsibility": "Work with both participant and their important people to understand how they are involved."},
+                        {"id": 4, "responsibility": "Communicate directly with the participant unless otherwise determined."},
+                        {"id": 5, "responsibility": "Prioritise participant's voice during any conflict."},
+                        {"id": 6, "responsibility": "Treat equally but recognise the imbalance in the relationship."},
+                        {"id": 7, "responsibility": "Recognise and report any threat in circumstances and environment."}
+                    ]
+                },
+                {
+                    "id" : 5,
+                    "name": "Rights",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Understand participant and worker rights."},
+                        {"id": 2, "responsibility": "Support participant to express views, raise concerns, report complaints and incidents."}
+                    ]
+                },
+                {
+                    "id" : 6,
+                    "name": "Work Collaboratively",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Support all supporting stakeholders."},
+                        {"id": 2, "responsibility": "work within role and responsibility."},
+                        {"id": 3, "responsibility": "Recognise the participant's skills, experience and contribution to everyone in the team ."},
+                        {"id": 4, "responsibility": "Keep participants informed when sharing and discussing them ."},
+                        {"id": 5, "responsibility": "Focus on strengths."},
+                        {"id": 6, "responsibility": "Be optimistic, hope and patience."}
+                    ]
+                },
+                {
+                    "id" : 7,
+                    "name": "Observe and respond",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Review all relevant notes and support plan information."},
+                        {"id": 2, "responsibility": "Identify needs and strategies."},
+                        {"id": 3, "responsibility": "Clarify your understanding."},
+                        {"id": 4, "responsibility": "Be observant, attentive and present."},
+                        {"id": 5, "responsibility": "Act responsively and flexibly."},
+                        {"id": 6, "responsibility": "Celebrate reaching goals and independence."},
+                        {"id": 7, "responsibility": "Maximise participant's control and confidence."}
+                    ]
+                },
+                {
+                    "id" : 8,
+                    "name": "Heath and Safety",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Talk to participant/supervisor about any intermittent conditions to determine strategies when confronted with the situation."},
+                        {"id": 2, "responsibility": "Support access to preventative and responsive health, dental etc."},
+                        {"id": 3, "responsibility": "Respond quickly if the participant is uncomfortable, distressed, apathetic or in poor health."},
+                        {"id": 4, "responsibility": "Identify potential and actual risks, then act promptly and in consultation with the participant."},
+                        {"id": 5, "responsibility": "Escalate to your supervisor any situation when the participant is at risk."},
+                        {"id": 6, "responsibility": "Identify and report any work health and safety issues."},
+                        {"id": 7, "responsibility": "Promote independence and choice."},
+                        {"id": 8, "responsibility": "Never use restrictive practice unless approved and trained in the practice."}
+                    ]
+                }
+            ],
+            "requirements_title": "",
+            "requirements"      : [
+                {"id": 1, "requirement": "Current Worker Screening and WWCC (if required)."},
+                {"id": 2, "requirement": "First Aid Certificate."},
+                {"id": 3, "requirement": "Drivers License."},
+                {"id": 4, "requirement": "Reliable and comprehensively insured vehicle."},
+                {"id": 5, "requirement": "New Worker – NDIS Induction Module."},
+                {"id": 6, "requirement": "Smartphone."},
+                {"id": 7, "requirement": "A formal certificate may not be required if the individual has relevant experience and skills – recommended qualifications  Certificate III in Individual Support, Mental Health, Aged Care, Community Services, Disability Work or similar."}
+            ],
+            "skills_title": "",
+            "skills"      : [
+                {"id": 1, "requirement": "Verbal and written communication skills."},
+                {"id": 2, "requirement": "Ability to work with various ages, cultures and ability levels"},
+                {"id": 3, "requirement": "Ability to build rapport and trust with clients. "},
+                {"id": 4, "requirement": "Strong time management and ability to prioritise."},
+                {"id": 5, "requirement": "Ability to use Microsoft Office suite of programs and other computer systems for record-keeping."},
+                {"id": 6, "requirement": "Excellent problem solving and conflict management skills."},
+                {"id": 7, "requirement": "Ability to work as part of a team and maintain good working relationships."}
+            ]
         }
     ]
 }
