@@ -740,6 +740,181 @@
                 {"id": 27, "requirement": "Working within current best practice tools, approaches and expectations about disability and related support."},
                 {"id": 28, "requirement": "Strategies and tools to manage work stress and manage personal wellness."}
             ]
+        },
+        {
+            "id"                    : 6,
+            "title"                 : "Physiotherapist",
+            "description"           : "The NDIS Workforce Capability Framework describes this role as an Advanced Support Worker for services funded under the NDIS.  Persons working within this role are responsible for more complex, specialised or intense support activities, including health and allied health practitioners and other specialists.\n Physiotherapists assist participants in rehabilitating physical problems caused by illness, injury, disability, or ageing through treatment.  The responsibilities of physiotherapists include planning treatments, reviewing recovery, and conducting therapeutic exercises with participants. The Physiotherapist must apply the Child Safe Standards in their practices.\n All practices are participant-focused and promote their choices, rights, and decisions.  Due to the variable nature of participants, this role requires the worker to promote participants' voices and choices and report any areas of concern.",
+            "description_list_title": "The Physiotherapist is required to follow all policies and procedures and report to management:",
+            "description_list"      : [
+                {"id": 1, "requirement": "Feedback from participants (positive, constructive and complaints)."},
+                {"id": 2, "requirement": "Changes in participant circumstances or environment."},
+                {"id": 3, "requirement": "Work health and safety issues and concerns."},
+                {"id": 4, "requirement": "Need for resources to undertake the role."},
+                {"id": 5, "requirement": "If you think that the participant is experiencing discrimination, exploitation, neglect, abuse or violence."},
+                {"id": 6, "requirement": "when unsure of appropriate practices."},
+                {"id": 7, "requirement": "When unsure of actions that should be undertaken."},
+                {"id": 8, "requirement": "Stressed or anxious feelings."} 
+
+            ],
+            "type_of_employment"    : "Full time / Part time / Casual",
+            "report_to"             : "",
+            "location"              : "",
+            "main_responsibilities_text": "Provision of care and supports to participants as detailed in their support plans.",
+            "main_responsibilities"     : [
+                {
+                    "id"              : 1,
+                    "name"            : "General",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Always check the participant's support plan before service provision."},
+                        {"id": 2, "responsibility": "Implement personal hygiene and infection control procedures."},
+                        {"id": 3, "responsibility": "Be alert if you notice the participant is distressed or apathetic (uninterested or listless)."},
+                        {"id": 4, "responsibility": "Record strategies and practices as per the organisation's requirements."}
+                    ]
+                },
+                {
+                    "id"              : 2,
+                    "name"            : "Work Practices",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Perform initial evaluations of participants' needs and develop customised plans, including therapy plans."},
+                        {"id": 2, "responsibility": "Making assessments of participants' physical conditions."},
+                        {"id": 3, "responsibility": "Formulating treatment plans to address the conditions and needs of participants."},
+                        {"id": 4, "responsibility": "Conducting complex mobilisation techniques."},
+                        {"id": 5, "responsibility": "Assisting trauma participants with how to walk again."},
+                        {"id": 6, "responsibility": "Educating patients, family members, and the community on preventing injuries and living a healthy lifestyle."},
+                        {"id": 7, "responsibility": "Planning and organising physiotherapy and fitness programs."},
+                        {"id": 8, "responsibility": "Monitor participants' progress and modify their plans as needed."},
+                        {"id": 9, "responsibility": "Evaluate participants' needs and create a custom treatment plan utilising a strengths-based approach."},
+                        {"id": 10, "responsibility":"Discuss the participants' desired goals and outcomes."},
+                        {"id": 11, "responsibility":"Provide relevant information or resources specific to the participant's needs."},
+                        {"id": 12, "responsibility":"Assist participants in setting goals and adopting strategies to address their issues."},
+                        {"id": 13, "responsibility":"Help individuals with the resources needed to reach personal goals."},
+                        {"id": 14, "responsibility":"Referring participants to other healthcare professionals where appropriate."},
+                        {"id": 15, "responsibility":"Liaising with healthcare professionals as part of a health management team."},
+                        {"id": 16, "responsibility":"Review and adjust the plan to meet current participant needs."},
+                        {"id": 17, "responsibility":"Inform and train relevant staff in new strategies."},
+                        {"id": 18, "responsibility":"Working within NDIS and government legislative requirements."},
+                        {"id": 19, "responsibility":"incorporate Child Safe Standards in their practice when working with children and young people."},
+                        {"id": 20, "responsibility":"Report any real or potential risks of harm to a participant, including child and young people."}                    ]
+                },
+                {
+                    "id"              : 3,
+                    "name"            : "Communicate",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Clearly, inclusively and respectfully."},
+                        {"id": 2, "responsibility": "Observe, listen and check participant's understanding."},
+                        {"id": 3, "responsibility": "Adapt to participant's age, culture and cognitive ability."},
+                        {"id": 4, "responsibility": "Understand individual communication – verbal and non-verbal."},
+                        {"id": 5, "responsibility": "Use the best communication method to recognise the difference between self and participant."},
+                        {"id": 6, "responsibility": "Avoid jargon."},
+                        {"id": 7, "responsibility": "Use appropriate tools to communicate."},
+                        {"id": 8, "responsibility": "Be persistent and patient."},
+                        {"id": 9, "responsibility": "Identify and address communication barriers."}
+                    ]
+                },
+                {
+                    "id"              : 4,
+                    "name"            : "Build trusted relationships",
+                    "responsibilities": [
+                        {"id": 1, "responsibility": "Build relationships based on mutual respect."},
+                        {"id": 2, "responsibility": "Determine what makes the participant feel safe and valued."},
+                        {"id": 3, "responsibility": "Work with both participant and their important people to understand how they are involved."},
+                        {"id": 4, "responsibility": "Communicate directly with the participant unless otherwise determined."},
+                        {"id": 5, "responsibility": "Prioritise participant's voice during any conflict."},
+                        {"id": 6, "responsibility": "Treat equally but recognise the imbalance in the relationship."},
+                        {"id": 7, "responsibility": "Recognise and report any threat in circumstances and environment."}
+                    ]
+                },
+                {
+                    "id" : 5,
+                    "name": "Rights",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Understand participant and worker rights."},
+                        {"id": 2, "responsibility": "Support participant to express views, raise concerns, report complaints and incidents."},
+                        {"id": 3, "responsibility": "Seek permission before entering the participants' space or touch them and respect their response."},
+                        {"id": 4, "responsibility": "Respect privacy and seek permission before collecting, using or sharing information."}
+                    ]
+                },
+                {
+                    "id" : 6,
+                    "name": "Work Collaboratively",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Work collaboratively with the support team – family, friends, advocates and nominated others."},
+                        {"id": 2, "responsibility": "Work within role and responsibility."},
+                        {"id": 3, "responsibility": "Recognise the participant's skills, experience and contribution to everyone in the team."},
+                        {"id": 4, "responsibility": "Keep participants informed when sharing and discussing them."},
+                        {"id": 5, "responsibility": "Focus on strengths."},
+                        {"id": 6, "responsibility": "Be optimistic, hope and patience."}
+                    ]
+                },
+                {
+                    "id" : 7,
+                    "name": "Observe and respond flexibly to changing needs",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Review all relevant notes and plan data."},
+                        {"id": 2, "responsibility": "Identify needs and strategies."},
+                        {"id": 3, "responsibility": "Clarify your understanding."},
+                        {"id": 4, "responsibility": "Be observant, attentive and present."},
+                        {"id": 5, "responsibility": "Act responsively and flexibly."},
+                        {"id": 6, "responsibility": "Celebrate reaching goals and independence."},
+                        {"id": 7, "responsibility": "Maximise participant's control and confidence."}
+                    ]
+                },
+                {
+                    "id" : 8,
+                    "name": "Heath and Safety",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Respond quickly if the participant is uncomfortable, distressed, apathetic or in poor health."},
+                        {"id": 2, "responsibility": "Identify potential and actual risks, then act promptly and in consultation with the participant."},
+                        {"id": 3, "responsibility": "Review and complete a risk assessment as required."},
+                        {"id": 4, "responsibility": "Identify and report any work health and safety issues."},
+                        {"id": 5, "responsibility": "Promote independence and choice."}
+                    ]
+                },
+                {
+                    "id" : 8,
+                    "name": "Review quality of support and service",
+                    "responsibilities" : [
+                        {"id": 1, "responsibility": "Ascertain participants' preferred way of reflecting and assessing what's working and not working."},
+                        {"id": 2, "responsibility": "Seek feedback on service delivery and adjust when needed."},
+                        {"id": 3, "responsibility": "Maintain and build capacity and confidence to give feedback on the quality and fit of supports and services and whether they meet my goals and expectations."},
+                        {"id": 4, "responsibility": "Support the participant's participation to actively contribute to review processes to build on what is working and address what is not working."},
+                        {"id": 5, "responsibility": "Follow up on requested changes and inform stakeholders."},
+                        {"id": 6, "responsibility": "Support the participant to access and understand health and well-being information and seek advice if clarification is required."},
+                        {"id": 7, "responsibility": "Identify opportunities for increased independence at a suitable pace."}
+                    ]   
+                }
+            ],
+            "requirements_title": "",
+            "requirements"      : [
+                {"id": 1, "requirement": "Relevant degree in Physiotherapy and full Australian Health Practitioner Regulation Agency (AHPRA) registration."},
+                {"id": 2, "requirement": "Knowledge of relevant legislation, policies and procedures impacting the delivery of services to people with a disability."},
+                {"id": 3, "requirement": "Current Worker Screening."},
+                {"id": 4, "requirement": "New Worker – NDIS Induction Module."},
+                {"id": 5, "requirement": "Current membership with the Australian Physiotherapy Association (highly recommended)."},
+                {"id": 6, "requirement": "Complete continuing education courses to maintain certification and stay up-to-date on the latest practices."}
+            ],
+            "skills_title": "",
+            "skills"      : [
+                {"id": 1, "requirement":  "Demonstrated ability to work independently and as part of a multidisciplinary team."},
+                {"id": 2, "requirement":  "Demonstrated ability to manage a caseload efficiently and effectively."},
+                {"id": 3, "requirement":  "Ability to work in a team-oriented and collaborative environment."},
+                {"id": 4, "requirement":  "Advanced written and verbal communication skills with an ability to develop a professional rapport with a diverse range of people."},
+                {"id": 5, "requirement":  "Excellent communication skills."},
+
+                {"id": 6, "requirement":  "Ability to empathise with participants."},
+                {"id": 8, "requirement":  "Ability to handle crises."},
+                {"id": 9, "requirement":  "Excellent problem solving and conflict management skills."},
+                {"id": 10, "requirement": "Incident response and reporting procedures and protocols to ensure the participant's safety, self, and others."},
+                {"id": 11, "requirement": "Techniques and communication skills to take notes and prepare reports that provide objective information free of judgements or assumptions."},
+
+                {"id": 12, "requirement": "Ability to work independently."},
+                {"id": 13, "requirement": "Infection prevention and control, including personal protective equipment (PPE) and waste handling practices."},
+                {"id": 14, "requirement": "The principles and processes of the NDIS, such as the steps and support required for a participant to access, use and review their plans, and where to find further information."},
+                {"id": 15, "requirement": "Reflective practices and processes."},
+                {"id": 16, "requirement": "Working within current best practice tools, approaches and expectations about disability and related support."},
+                {"id": 17, "requirement": "Strategies and tools to manage work stress and manage personal wellness."}
+            ]
         }
     ]
 }
