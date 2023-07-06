@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://ablekoala.com.au
+Host: https://www.ablekoala.com.au
 
 # Sitemaps
-Sitemap: https://ablekoala.com.au/sitemap.xml
+Sitemap: https://www.ablekoala.com.au/sitemap.xml

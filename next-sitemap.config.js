@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: 'https://ablekoala.com.au',
+    siteUrl: 'https://www.ablekoala.com.au',
     generateRobotsTxt: true,
     outDir: "./src/pages"
 }
