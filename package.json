@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@mui/material": "^5.13.4",
+    "@vercel/analytics": "^1.0.1",
     "axios": "^1.2.1",
     "firebase": "^9.17.1",
     "next": "12.2.5",
