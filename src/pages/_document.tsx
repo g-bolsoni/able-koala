@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
                     <meta name="generator" content="ABLE KOALA" />
                     <meta name="webmaster" content="ABLE KOALA" />
                     <meta name="copyright" content="ABLE KOALA" />
-                    <link rel="icon" href="/logos/logo.png" sizes="any"/>
+                    <link rel="icon" href="/logos/ab_logo.png" sizes="144x144"/>
                     <title>Able Koala</title>
                 </Head>
                 <body>
