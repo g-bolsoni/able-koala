@@ -17,9 +17,7 @@ const transporter = nodemailer.createTransport({
 // eslint-disable-next-line import/no-anonymous-default-export  
 export default async (req: NextApiRequest, res:NextApiResponse) => {
 
-   
-    
-    if(req.body.origin !== "resume"){
+    if(req.body.origin == "contact_us"){
         const response = await sendContactUs(req.body);
         let responseStatus = response.response.split(' ')[0];
         let responseMessage = response.response.split(' ')[1];
@@ -32,7 +30,7 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
         
     }
 
-    if(req.body.origin !== "resume"){  
+    if(req.body.origin == "services"){  
         const response = await contactUs(req.body); 
         let responseStatus = response.response.split(' ')[0];
         let responseMessage = response.response.split(' ')[1];
@@ -112,27 +110,22 @@ async function contactUs(data){
     Your phone: ${data?.phone}.
     Number of rooms required: ${data?.bedrooms}.
     Room requirements: ${data?.specific_room}.
-
     ${ data?.specializedEquipment == 'none' ? '' : `Specialized equipment: ${data?.specializedEquipment}`}
     ${ data?.specializedEquipmentDetails ? `Specialized equipment details: ${data?.specializedEquipmentDetails}` : ''}
     ${ data?.additional_requirements_text ? `Additional requirements text: ${data?.additional_requirements_text}`: ''}
     Is parking required: ${data?.additional_requirements_text}
     Is car transfers: ${data?.isCarTransfers}
     ${data?.support_coodinator == 'yes' ? `
-
     Support coordinator details:
     Coodinator Name: ${data?.coodinator_name}.
     Coodinator Email: ${data?.coodinator_email}.
     Coodinator Phone: ${data?.coodinator_phone}.
-
     ` : ''}
     ${data?.family_member == 'yes' ? `
 
     Data from the person who filled out the form:
-
     Name of contact person to discuss building your STA: ${data?.contact_person1}.
     Name of person responsible for signing STA service contract: ${data?.contact_person2}.
-
     `: ''}
     STA Accommodation: ${data?.STA_accomodation}.
     STA Respite Check in date: ${data?.STA_check_in_date}
@@ -153,7 +146,7 @@ async function contactUs(data){
 }
 
 //Função da págna contact_us
-async function sendContactUs(data) {
+async function sendContactUs(data){
     let plan = "No plan found";
     const from = data.name && data.email ? `${data.name}<${ data.email}>` : `${data.name || data.email}`;
     const subject = `You have a new e-mail from ${data.name} || STA/Respite Care `;
@@ -170,7 +163,6 @@ async function sendContactUs(data) {
     Your phone: ${data?.phone}.
 
     ${data?.family_member == 'yes' ? `
-    
     Data from the person who filled out the form:
     His name: ${data?.contact_person1}.
     His email: ${data?.servicePersonEmail}.
@@ -197,7 +189,8 @@ async function sendContactUs(data) {
 
 }
 
-function verifyPlan(plan: string){
+function verifyPlan(plan: string) : string
+{
     let text = "";
     switch (plan) {
         case "1":
@@ -217,7 +210,7 @@ function verifyPlan(plan: string){
 }
 
 // Send emails
-function sendEmail(from, subject, messageText) {
+function sendEmail(from, subject, messageText){
 
     const message = {
         from,

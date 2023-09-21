@@ -21,6 +21,7 @@ export interface ContactUsSend {
     additional_requirements_text: string
     isParkingRequired           : string
     isCarTransfers              : string
+    origin                      : string
 }
 
 export function contactUsSendToJson(data?: any): ContactUsSend {
@@ -46,6 +47,7 @@ export function contactUsSendToJson(data?: any): ContactUsSend {
         specializedEquipment        : data['specializedEquipment'],
         additional_requirements_text: data['additional_requirements_text'],
         isParkingRequired           : data['isParkingRequired'],
-        isCarTransfers              : data['isCarTransfers']
+        isCarTransfers              : data['isCarTransfers'],
+        origin                      : data['origin']
     }
 }

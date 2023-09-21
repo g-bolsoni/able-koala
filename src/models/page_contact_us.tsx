@@ -12,12 +12,13 @@ export interface ContactUs {
     family_member     : string
     NDIS_plan         : string
     support_coodinator: string
+    origin            : string
 
 }
 
 
 export function contactUs(data?: any): ContactUs {
-    console.log(JSON.stringify(data));
+
     return {
         name               : data['name'],
         email              : data['email'],
@@ -31,6 +32,7 @@ export function contactUs(data?: any): ContactUs {
         coodinator_phone   : data['coodinator_phone'],
         family_member      : data['family_member'],
         NDIS_plan          : data['NDIS_plan'],
-        support_coodinator : data['support_coodinator']
+        support_coodinator : data['support_coodinator'],
+        origin             : data['origin']
     }
 }

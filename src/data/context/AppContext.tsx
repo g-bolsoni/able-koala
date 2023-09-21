@@ -38,9 +38,7 @@ export function AppProvider(props:AppContextProps){
     }
 
     async function sendContact(contact:ContactUs){
-        try {
-            console.log(JSON.stringify(contact));
-            
+        try {            
             await addDoc(collection(db, "contact_us"),contact);
             await contactUs(contact);
             toast.success('Send e-mail Sucessfully!')                  

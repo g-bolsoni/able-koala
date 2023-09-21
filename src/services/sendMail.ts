@@ -10,7 +10,7 @@ export const  sendResume = async ( name, clientMail, cellphone, file, origin ) =
         fileUrl: file,
         origin
     }
-    
+
     try{
         const res = await axios.post('/api/contact', data);
         return res;
@@ -23,9 +23,7 @@ export const  sendResume = async ( name, clientMail, cellphone, file, origin ) =
 export const sendContactUs = async (contactUs:ContactUsSend) => {
 
     try {
-        const res = await axios.post('/api/contact', contactUs)
-        console.log(res);
-        
+        const res = await axios.post('/api/contact', contactUs)        
         return res;
     } catch (error) {
         console.log(error);
@@ -34,8 +32,6 @@ export const sendContactUs = async (contactUs:ContactUsSend) => {
 
 export const contactUs = async (contactUs:ContactUs) => {
     try {
-        console.log('services sendMail');
-        console.log(JSON.stringify(contactUs));
         const res = await axios.post('/api/contact', contactUs);
         return res;
     } catch (error) {
