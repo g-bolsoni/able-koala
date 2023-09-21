@@ -5,10 +5,14 @@ import Tarja from "../../public/banners/tarja_.png"
 
 import InfoImage from "../../public/banners/p1_1.jpg"
 import Testimonial from "../components/Testimonial";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <link rel="canonical" href="https://www.ablekoala.com.au" />
+      </Head>
       <main>
         <Carousel />
         <div>
