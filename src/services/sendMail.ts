@@ -2,14 +2,13 @@ import axios from "axios";
 import { ContactUsSend } from "../models/contact_us_send";
 import { ContactUs } from "../models/page_contact_us";
 
-export const  sendContactMail = async (name:string, clientMail:string, cellphone: string, file: string, message:String) =>{
-
+export const  sendResume = async ( name, clientMail, cellphone, file, origin ) =>{
     const data = {
         name,
         clientMail,
         cellphone,
         fileUrl: file,
-        messageText:message
+        origin
     }
     
     try{

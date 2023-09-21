@@ -7,7 +7,7 @@ import styles from './details.module.scss';
 
 import works from '../../../openJobs.config.json';
 import { AiOutlineArrowLeft } from 'react-icons/ai'
-import { sendContactMail } from '../../services/sendMail';
+import { sendResume } from '../../services/sendMail';
 import toast from 'react-hot-toast';
 import { storage } from '../../services/firebaseConection';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
@@ -54,7 +54,7 @@ export default function index() {
   async function handleSubmit() {
 
     if(!email.trim() || !name.trim() || !number.trim() ) {
-      toast.error('Preencha todos os campos', {style: {
+      toast.error('Fill in all the fields', {style: {
         background: '#ff5555',
         color: '#fff'
       }});
@@ -66,19 +66,19 @@ export default function index() {
       const resumeLink = await generateLink();
 
       if (resumeLink) {
-        let message = 'Olá, gostaria de declarar meu interesse na vaga';
-        await sendContactMail(name, email, number, resumeLink, message);
-        toast.success("Currículo enviado com sucesso");
-        setName('');
-        setEmail('');
-        setNumber('');
-        setFile(null);
+
+        await sendResume(name, email, number, resumeLink, 'resume');
+        toast.success("Resume sent successfully!");
+        // setName('');
+        // setEmail('');
+        // setNumber('');
+        // setFile(null);
       }else{
-        toast.error("Ocorreu um erro ao enviar o email");
+        toast.error("There was an error sending the email");
       }
 
     } catch (error) {
-      toast.error('Ocorreu um erro ao enviar seu contato, tente mais tarde', {style: {
+      toast.error('There was an error sending your contact, try again later.', {style: {
         background: '#ff5555',
         color: '#fff'
       }});

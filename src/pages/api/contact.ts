@@ -17,11 +17,9 @@ const transporter = nodemailer.createTransport({
 // eslint-disable-next-line import/no-anonymous-default-export  
 export default async (req: NextApiRequest, res:NextApiResponse) => {
 
-    const { NDIS_name } = req.body;
-    const {clientMail, name, cellphone } = req.body
-
    
-    if(req.body?.name){
+    
+    if(req.body.origin !== "resume"){
         const response = await sendContactUs(req.body);
         let responseStatus = response.response.split(' ')[0];
         let responseMessage = response.response.split(' ')[1];
@@ -34,7 +32,7 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
         
     }
 
-    if(NDIS_name){  
+    if(req.body.origin !== "resume"){  
         const response = await contactUs(req.body); 
         let responseStatus = response.response.split(' ')[0];
         let responseMessage = response.response.split(' ')[1];
@@ -46,7 +44,9 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
         }
     }
 
-    if(clientMail || cellphone || name){ 
+    if(req.body.origin == "resume"){ 
+        // Send resume 
+        const {clientMail, name, cellphone } = req.body
 
         if(!clientMail || !name || !cellphone ) {
             res.status(403).send('Erro com os campos do E-mail');
@@ -152,7 +152,7 @@ async function contactUs(data){
     }   
 }
 
-//função da págna contact_us
+//Função da págna contact_us
 async function sendContactUs(data) {
     let plan = "No plan found";
     const from = data.name && data.email ? `${data.name}<${ data.email}>` : `${data.name || data.email}`;
