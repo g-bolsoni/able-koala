@@ -22,13 +22,13 @@ export default function Header() {
     const toggleClassMenuBtn = () => {
         setActive(!isActive);
     };
-  
+
   return (
     <nav className={styles.header_container}>
         <div className={`${styles.header} container`}>
             <div className={styles.logo}>
                 <Link
-                    href='/' 
+                    href='/'
                     passHref
                 >
                     <Image
@@ -38,18 +38,18 @@ export default function Header() {
                     />
                 </Link>
             </div>
-            
+
 
             <div className={styles.header_section}>
                 <div className={styles.menu}>
                     {
-                        isMobile && 
+                        isMobile &&
                         <button className={styles.btn_menu} onClick={toggleClassMenuBtn}>
-                            {isActive ? <AiOutlineClose /> : <HiMenu/>}   
-                        </button> 
+                            {isActive ? <AiOutlineClose /> : <HiMenu/>}
+                        </button>
                     }
-                    
-                    <div className={isActive ? styles.active : styles.nav_links}>   
+
+                    <div className={isActive ? styles.active : styles.nav_links}>
                         <NavLinks  onClick={toggleClassMenuBtn} />
                     </div>
                 </div>
@@ -58,7 +58,7 @@ export default function Header() {
                         {isMobile ? '' : `${process.env.NEXT_PUBLIC_EMAIL}`}
                     </Link>
                 </div>
-    
+
             </div>
         </div>
     </nav>
