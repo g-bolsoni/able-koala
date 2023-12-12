@@ -41,7 +41,7 @@ export default function Form() {
             phone                       : ndisPhone,
             bedrooms                    : numberBedrooms,
             specific_room               : specificRequirements,
-            support_coodinator          : isSupportCoordinator, 
+            support_coodinator          : isSupportCoordinator,
             coodinator_name             : coordinatorName,
             coodinator_email            : coordinatorEmail,
             coodinator_phone            : coordinatorPhone,
@@ -62,7 +62,7 @@ export default function Form() {
 
         }));
         setLoading(false);
-    }   
+    }
 
     return (
         <>
@@ -105,7 +105,7 @@ export default function Form() {
                             <label htmlFor="">Please, detail the room requirements </label>
                             <input type="text" name="additional_requirements_text" value={additional_requirements_text} id="additional_requirements_text" onChange={(e) => setAdditional_requirements_text(e.target.value)} />
                         </div>
-                    )}                
+                    )}
 
                     <div className={style.input_group}>
                         <label htmlFor="specializedEquipment">Will you need specialized equipment</label>
@@ -124,7 +124,7 @@ export default function Form() {
                             <label htmlFor="specializedEquipmentDetails">Please, specify requirements</label>
                             <input type="text" name="specializedEquipmentDetails" value={specializedEquipmentDetails} id="specializedEquipmentDetails" onChange={(e) => setSpecializedEquipmentDetails(e.target.value)} />
                         </div>
-                    )}   
+                    )}
 
                     <div className={style.input_group}>
                         <label htmlFor="isSupportCoordinator">Do you have a support coordinator?</label>
@@ -151,7 +151,7 @@ export default function Form() {
                                 <ReactInputMask mask={'999 999 999'} type="text" name="coordinatorPhone" value={coordinatorPhone} id="coordinatorPhone" onChange={(e) => setCoordinatorPhone(e.target.value)} />
                             </div>
                         </>
-                    )}  
+                    )}
 
 
                 </section>
@@ -186,7 +186,7 @@ export default function Form() {
                             <option value="yes">Yes</option>
                         </select>
                     </div>
-            
+
                     <div className={style.input_group}>
                         <label htmlFor="isCarTransfers">Will you need car transfers?</label>
                         <select name="isCarTransfers" defaultValue={isCarTransfers} id="isCarTransfers" onChange={(e) => setIsCarTransfers(e.target.value)}>

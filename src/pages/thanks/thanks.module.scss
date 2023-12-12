@@ -1,0 +1,21 @@
+.thanks{
+    margin: 40px 0;
+    .person{
+        font-size: 1.5rem ;
+        font-weight: 600;
+        color: var(--gray-900);
+    }
+    .box_text{
+        display: flex;
+        margin-top: 40px;
+        justify-content: start;
+        gap: 15px;
+        align-items: start;
+        flex-direction: column;
+        .text{
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--gray-900);
+        }
+    }
+}
