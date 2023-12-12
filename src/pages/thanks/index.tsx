@@ -24,7 +24,7 @@ const thanks: React.FC = () => {
           </span>
 
           <span className={styles.text}>
-            Should you have any immediate questions, additional details to share, or if there's anything specific you'd like to discuss further, please don't hesitate to contact us directly. We are here to make this process as smooth as possible for you.
+            Should you have any immediate questions, additional details to share, or if there´s anything specific you´d like to discuss further, please don´t hesitate to contact us directly. We are here to make this process as smooth as possible for you.
           </span>
 
           <span className={styles.text}>
