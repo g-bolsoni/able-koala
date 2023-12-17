@@ -4,9 +4,11 @@ import useAppData from "../../data/hook/useAppData";
 import { contactUsSendToJson } from "../../models/contact_us_send";
 import ReactInputMask from "react-input-mask-next"
 import LoadingButton from "../Loading";
+import { useRouter } from 'next/router';
 
 export default function Form() {
 
+    const router = useRouter();
     const { postContactUs } = useAppData();
     const [ndisName, setNdisName] = useState("");
     const [ndisEmail, setNdisEmail] = useState("");
@@ -26,10 +28,7 @@ export default function Form() {
     const [specializedEquipment, setSpecializedEquipment] = useState("hospitalBed");
     const [isOtherPerson, setIsOtherPerson] = useState("no");
     const [planManaged, setPlanManaged] = useState("0");
-    const [isSupportCoordinator, setIsSupportCoordinator] = useState("no");
-    const [coordinatorEmail, setCoordinatorEmail] = useState("");
-    const [coordinatorName, setCoordinatorName] = useState("");
-    const [coordinatorPhone, setCoordinatorPhone] = useState("");
+
 
     const [loading, setLoading] = useState(false);
 
@@ -57,7 +56,9 @@ export default function Form() {
             origin: "services"
 
         }));
+        await localStorage.setItem('customerName', ndisName);
         setLoading(false);
+        router.push('/thanks')
     }
 
     return (

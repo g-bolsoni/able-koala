@@ -25,6 +25,7 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.4.0",
     "react-input-mask-next": "^3.0.0-alpha.12",
+    "react-router-dom": "^6.21.0",
     "sass": "^1.55.0",
     "swiper": "^8.3.2"
   },

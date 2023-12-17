@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './thanks.module.scss';
 
-const thanks: React.FC = () => {
+export default function Thanks() {
+  const [customerName, setCustomerName] = useState("");
+  useEffect(() => {
+    setCustomerName(localStorage.getItem('customerName'));
+  }, []);
   return (
     <div className="container ">
       <div className={styles.thanks}>
-        <span className={styles.person}> Dear [Client name], </span>
+        <span className={styles.person}> Dear {customerName.length ? customerName : "client"}, </span>
 
         <div className={styles.box_text}>
           <span className={styles.text}>
@@ -35,5 +39,3 @@ const thanks: React.FC = () => {
     </div>
   )
 }
-
-export default thanks;
