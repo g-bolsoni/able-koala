@@ -52,10 +52,12 @@ export default function Header() {
                             <NavLinks onClick={toggleClassMenuBtn} />
                         </div>
                     </div>
-                    <div className={styles.contact}>
-                        <Link href={`mailto: ${process.env.NEXT_PUBLIC_EMAIL}`} passHref className={styles.email_link}>
-                            {isMobile ? '' : `${process.env.NEXT_PUBLIC_EMAIL}`}
-                        </Link>
+                    <div className={styles.buttons}>
+                        <div className={styles.contact}>
+                            <Link href={`services/7`} className={styles.email_link}>
+                                STA/Respite Care
+                            </Link>
+                        </div>
                     </div>
 
                 </div>

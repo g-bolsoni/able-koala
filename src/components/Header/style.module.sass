@@ -1,7 +1,7 @@
 @import '../../../styles/mixins.sass'
 @import '../../../styles/variables.sass'
 
-.btn_menu 
+.btn_menu
     @include d-flex()
     background: transparent
     border: none
@@ -42,22 +42,27 @@
                 width: max-content
                 margin: 0 15px
                 @include animationGrow()
-    .contact
-        @include d-flex($justify: flex-end)
-        grid-column-start: 2
-        grid-column-end: 3
-        grid-row-start: 1
-        grid-row-end: 2
-        width: max-content
-        border-radius: 50px
-        padding: 0 15px
-        background: var(--cyan)
-        justify-self: flex-end
-        -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3)
-        box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3)
-        @include animationGrow()
+    .buttons
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 20px
+        .contact
+            @include d-flex($justify: flex-end)
+            grid-column-start: 2
+            grid-column-end: 3
+            grid-row-start: 1
+            grid-row-end: 2
+            width: max-content
+            border-radius: 50px
+            padding: 0 15px
+            background: var(--cyan)
+            justify-self: flex-end
+            -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3)
+            box-shadow: 0px 0px 15px 3px rgba(0,0,0,.3)
+            @include animationGrow()
 
-@media (max-width: 992px) 
+@media (max-width: 992px)
     .header_container
         position: sticky
         top: 0
@@ -68,13 +73,27 @@
         justify-content: flex-end
         .logo
             position: absolute
-            left:50%
+            left: 50%
             transform: translateX(-50%)
+        .header_section
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
+            flex-direction: row
+            .buttons .contact
+                width: 100px
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 5px 6px
+                border-radius: 12px
+                text-align: center
         .menu
-            justify-content:flex-start  
+            justify-content: flex-start
         .logo
         .menu
-            
+
             ul
                 background: var(--cyan)
                 display: flex
@@ -116,6 +135,3 @@
             svg
                 width: 30px
                 height: 30px
-
-
-
