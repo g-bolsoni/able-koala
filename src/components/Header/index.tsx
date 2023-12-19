@@ -54,8 +54,8 @@ export default function Header() {
                     </div>
                     <div className={styles.buttons}>
                         <div className={styles.contact}>
-                            <Link href={`services/7`} className={styles.email_link}>
-                                STA/Respite Care
+                            <Link href="/services/7" className={styles.email_link}>
+                                <a>STA/Respite Care</a>
                             </Link>
                         </div>
                     </div>
