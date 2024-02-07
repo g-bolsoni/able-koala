@@ -1,4 +1,3 @@
-import styles from './styles.module.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -27,7 +26,7 @@ export default function Carousel () {
       }}
       navigation={false}
       modules={[Autoplay, Pagination, Navigation]}
-      className={styles.banners}
+
     >
         <SwiperSlide>
           <Image

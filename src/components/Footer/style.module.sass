@@ -1,42 +1,39 @@
-@import '../../../styles/mixins.sass'
-@import '../../../styles/variables.sass'
-
-
-.footer 
+.footer
     background: var(--background-bottom-top)
     .main
-        @include container()
-        @include d-grid()
+        width: 100vw
+        margin: 0 auto
+        padding: 30px
+        display: grid
         grid-template-columns: repeat(auto-fill, minmax(25%, 1fr))
         line-height: 2.5em
-        padding-top: calc($gap * 3)
-        >div            
+        padding-top: calc(30 * 3)
+        >div
             &:not(:first-child)
-                padding-left: $gap
-        .footer_title 
+                padding-left: 30
+        .footer_title
             font-size: 1.25rem
             font-weight: 700
-        ul 
+        ul
             list-style: none
-            li 
-                font-size: $font-size-links
-        .footer_logo img 
+            li
+                font-size: 20px
+        .footer_logo img
             max-width: 200px !important
             width: 100% !important
             height: max-content !important
-.aside 
+.aside
     text-align: center
-    padding: $gap
+    padding: 30
 
-@media (max-width: 991px) 
+@media (max-width: 991px)
     .footer .main
-        padding-top: calc($gap * 1)
+        padding-top: calc(30 * 1)
         grid-template-columns: repeat(auto-fill, minmax(25%, 100%))
         justify-items: center
         div
             padding-top: 1rem
 
 @media (min-width: 1400px)
-    .footer_logo img 
-        max-width: 300px !important 
-    
+    .footer_logo img
+        max-width: 300px !important
