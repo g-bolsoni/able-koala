@@ -1,4 +1,5 @@
-import '../../styles/globals.css'
+import '../../styles/globals.sass'
+import "./tailwind.css";
 import { Toaster } from 'react-hot-toast'
 import { Analytics } from '@vercel/analytics/react';
 import Header from '../components/Header'
@@ -22,16 +23,13 @@ export default function MyApp({ Component, pageProps }) {
   }, [])
 
   return (
-    <h1 className="text-3xs font-bold underline text-black">
-      Hello world!
-    </h1>
-    // <AppProvider>
-    //   <Analytics />
-    //   <Loading />
-    //   <Toaster position='top-right' />
-    //   <Header />
-    //   <Component />
-    //   <Footer />
-    // </AppProvider>
+    <AppProvider>
+      <Analytics />
+      <Loading />
+      <Toaster position='top-right' />
+      <Header />
+      <Component />
+      <Footer />
+    </AppProvider>
   )
 }
